@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./styles/globals.scss";
 import "./styles/wpStyles.scss";
+import Script from "next/script";
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 export const metadata: Metadata = {
-  title: "Calculador de Solo — Organo Lab",
-  //TODO PERGUNTAR PRA O CLIENTE
-  description: "#",
+  title: "Calculador de Solo — Organo Lab ©",
+  description:
+    "Calculadora da Organo Lab © para que você tenha suas receitas de uma forma simples e comece a montar seu solo em casa!",
 };
 export default function RootLayout({
   children,
@@ -18,9 +19,10 @@ export default function RootLayout({
       <head>
         <noscript>You need JavaScript to run this application.</noscript>
         {/* //TODO ATUALIZAR AO FINAL */}
-        <script
+        <Script
           type="application/ld+json"
           className="yoast-schema-graph"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -94,15 +96,28 @@ export default function RootLayout({
           name="robots"
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
-        {/* //TODO PEDIR PRO CLIENTE */}
-        <meta name="keywords" content="#" />
+        <meta
+          name="keywords"
+          content="Jardinagem, Cultivo, Solo, Compostagem, Horticultura, Fertilizantes, Agricultura sustentável,
+          Substratos, Adubo orgânico, Solo nutritivo, Solo para jardinagem, Melhorador de solo, Composição de solo, Cultivo sustentável,
+          Calculadora de solo, Montagem de solo, Kit de solo, Solo matinho cheiroso, 
+          Receita de solo, Receita matinho cheiroso, Solo vivo, Super solo, Solo organico"
+        />
         <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta name="x-ua-compatible" content="IE-Edge" />
         <meta property="og:locale" content="pt_BR" />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Organo Lab" />
-        <meta property="og:title" content="Calculadora de Solo — Organo Lab" />
+        <meta
+          property="og:title"
+          content="Calculadora de Solo — Organo Lab ©"
+        />
+        <meta
+          property="og:author"
+          content="Aron Barbosa de Oliveira (https://github.com/aronboliveira) & Danilo Sakamoto"
+        />
+        <meta property="og:section" content="Science" />
         {/* //TODO DEFINIR APÓS DEPLOY */}
         <meta property="og:url" content="#" />
         {/* //TODO LOCALIZAR NOS ASSETS DO CLIENTE */}
@@ -113,20 +128,23 @@ export default function RootLayout({
         <meta property="og:image:height" content="#" />
         {/* //TODO PERGUNTAR PRO CLIENTE */}
         <meta property="og:image:type" content="#" />
+        {/* //TODO ATUALIZAR AO FINAL */}
+        <meta property="og:updated_time" content="#" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Calculadora de Solo — Organo Lab" />
+        <meta
+          name="twitter:title"
+          content="Calculadora de Solo — Organo Lab ©"
+        />
         {/* //TODO PERGUNTAR PARA O CLIENTE */}
-        <meta name="twitter:description" content="#" />
+        <meta
+          name="twitter:description"
+          content="Calculadora da Organo Lab © para que você tenha suas receitas de uma forma simples e comece a montar seu solo em casa!"
+        />
         <meta
           name="twitter:image"
           itemProp="image"
           content="https://example.com/path-to-image.jpg"
         />
-        {/* //TODO PERGUNTAR PARA O CLIENTE */}
-        <meta name="twitter:site" content="@OrganoLab" />
-        {/* //TODO PERGUNTAR PARA O CLIENTE */}
-        <meta name="twitter:creator" content="@OrganoLab" />
-        {/* //TODO LOCALIZAR NOS ASSETS DO CLIENTE */}
         <meta name="twitter:image" content="#" />
         <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
@@ -154,6 +172,7 @@ export default function RootLayout({
         {/* //TODO DEFINIR APÓS DEPLOY */}
         <link rel="canonical" href="#" />
         {/* //TODO CAPTURAR <STYLES> */}
+        {/* //TODO AVALIAR SCRIPTS 13-17 */}
       </head>
       <body className={poppins.className}>{children}</body>
     </html>
