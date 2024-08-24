@@ -278,10 +278,6 @@
     -webkit-transform: translateY(0);
   }
 }
-@mixin section-padding() {
-  padding-top: var(--header-section-padding);
-  padding-bottom: var(--header-section-padding);
-}
 @mixin section-padding($padding) {
   padding-top: $padding;
   padding-bottom: $padding;
@@ -290,10 +286,23 @@
   height: $height;
   --divider-width: $width;
 }
+@mixin button-styles($font-size, $line-height, $min-height, $padding) {
+  font-size: $font-size;
+  line-height: $line-height;
+  min-height: $min-height;
+  padding: $padding;
+}
 %button {
   color: #fff;
   background-color: var(--primary-classic-color);
   text-decoration: none;
+}
+%button-reset {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  width: auto;
 }
 %flex-center {
   display: flex;
@@ -783,6 +792,184 @@ p {
 .wp-block-file__button {
   background: var(--button-classic-font-size);
 }
+.wp-core-ui {
+  .button,
+  .button-primary,
+  .button-secondary {
+    @include button-styles(
+      var(--button-font-size),
+      var(--button-line-height),
+      var(--button-min-height),
+      var(--button-padding)
+    );
+    border-radius: var(--button-border-radius);
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0;
+    text-decoration: none;
+    white-space: nowrap;
+    &.button-large {
+      @include button-styles(1rem, 2.30769231, 2rem, 0 0.75rem);
+    }
+    &.button-small {
+      @include button-styles(0.6875rem, 2.18181818, 1.625rem, 0 0.5rem);
+    }
+    &.button-hero {
+      @include button-styles(0.875rem, 3.14285714, 2.875rem, 0 2.25rem);
+    }
+    &.hidden {
+      display: none;
+    }
+    &:hover,
+    &:focus {
+      background: #f6f7f7;
+      border-color: #3582c4;
+      color: #0a4b78;
+      outline: 2px solid transparent;
+      outline-offset: 0;
+      box-shadow: 0 0 0 0.0625rem #3582c4;
+    }
+    &:active {
+      background: #f6f7f7;
+      border-color: #8c8f94;
+      box-shadow: none;
+    }
+    &.active {
+      background-color: #dcdcde;
+      border-color: #0a4b78;
+      box-shadow: inset 0 0.3125rem 0.3125rem -0.1875rem #0a4b78;
+      &:hover,
+      &:focus {
+        box-shadow: inset 0 0.3125rem 0.3125rem -0.1875rem #0a4b78,
+          0 0 0 0.0625rem #3582c4;
+      }
+    }
+    &.disabled,
+    &[disabled] {
+      @extend %button-reset;
+      background: #f6f7f7 !important;
+      border-color: #dcdcde !important;
+      color: #a7aaad !important;
+      cursor: default;
+    }
+    &[aria-disabled="true"] {
+      cursor: default;
+    }
+    &.button-primary {
+      background: var(--primary-header-color);
+      border-color: var(--primary-header-color);
+      color: #fff;
+      text-shadow: none;
+      &:hover,
+      &:focus {
+        background: #135e96;
+        border-color: #135e96;
+        box-shadow: 0 0 0 0.0625rem #fff,
+          0 0 0 0.1875rem var(--primary-header-color);
+      }
+      &:active {
+        box-shadow: none;
+      }
+      &.disabled {
+        @extend %button-reset;
+      }
+    }
+    &.button-secondary {
+      background: #f6f7f7;
+      border-color: var(--primary-header-color);
+      color: var(--primary-header-color);
+      &:hover,
+      &:focus {
+        background: #f0f0f1;
+        border-color: #0a4b78;
+        color: #0a4b78;
+      }
+    }
+    &-link {
+      background: none;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      color: var(--primary-header-color);
+      cursor: pointer;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      text-decoration: underline;
+      transition: border 0.05s ease-in-out, background 0.05s ease-in-out,
+        color 0.05s ease-in-out;
+      &:hover,
+      &:focus {
+        color: #135e96;
+        box-shadow: 0 0 0 0.125rem var(--primary-header-color);
+        outline: 2px solid transparent;
+      }
+      &-delete {
+        color: #d63638;
+        &:hover,
+        &:focus {
+          color: #d63638;
+          background: none;
+        }
+        &:disabled {
+          background: none !important;
+        }
+      }
+    }
+  }
+  .button-group {
+    display: inline-block;
+    font-size: 0;
+    position: relative;
+    vertical-align: middle;
+    white-space: nowrap;
+    > .button {
+      border-radius: 0;
+      display: inline-block;
+      margin-right: -1px;
+      &:focus {
+        position: relative;
+        z-index: 1;
+      }
+      &:first-child {
+        border-radius: var(--button-border-radius) 0 0
+          var(--button-border-radius);
+      }
+      &:last-child {
+        border-radius: 0 var(--button-border-radius) var(--button-border-radius)
+          0;
+      }
+      &.button-primary + .button {
+        border-left: 0;
+      }
+      &.active {
+        background-color: #dcdcde;
+        border-color: #0a4b78;
+        box-shadow: inset 0 0.3125rem 0.3125rem -0.1875rem #0a4b78;
+        &:focus {
+          box-shadow: inset 0 0.3125rem 0.3125rem -0.1875rem #0a4b78,
+            0 0 0 0.0625rem #3582c4;
+        }
+      }
+    }
+  }
+  input[type="reset"] {
+    &[type="reset"],
+    &[type="button"]::-moz-focus-inner,
+    &[type="submit"]::-moz-focus-inner,
+    &[type="reset"]::-moz-focus-inner {
+      @extend %button-reset;
+    }
+  }
+  p {
+    .button {
+      vertical-align: baseline;
+    }
+  }
+}
 .wp-element-button {
   cursor: pointer;
 }
@@ -896,18 +1083,17 @@ p {
     }
   }
 }
-@media screen and (max-width: 48.875rem) {
+@media screen and (max-width: 782px) {
   .copy-to-clipboard-container {
     .copy-attachment-url {
       margin-bottom: 0;
     }
   }
-  #media-upload {
-    .button {
-      padding: 0 0.625rem 0.0625rem;
-      min-height: 1.5rem;
-      line-height: 1.375rem;
-      font-size: 0.8125rem;
+  .interim-login {
+    .button.button-large {
+      min-height: 1.875rem;
+      line-height: 2;
+      padding: 0 0.75rem 0.125rem;
     }
   }
   .media-frame {
@@ -919,10 +1105,88 @@ p {
       }
     }
   }
+  .media-modal-content {
+    .media-toolbar-primary {
+      .media-button {
+        margin-top: 0.625rem;
+        margin-left: 0.3125rem;
+      }
+    }
+  }
   .save-post-status {
     .button {
       position: relative;
       margin: 0 0.875rem 0 0.625rem;
+    }
+  }
+  .wp-core-ui {
+    .button,
+    .button.button-large,
+    .button.button-small,
+    a.preview,
+    input#publish,
+    input#save-post {
+      font-size: 0.875rem;
+      line-height: 2.71428571;
+      margin-bottom: 0.25rem;
+      min-height: 2.5rem;
+      padding: 0 0.875rem;
+      vertical-align: middle;
+    }
+    .button-group {
+      .copy-attachment-url {
+        margin-bottom: 0;
+      }
+    }
+    .button.button-hero {
+      font-size: 0.875rem;
+      min-height: 2.5rem;
+      padding: 0 0.875rem;
+    }
+    .copy-to-clipboard-container {
+      .copy-attachment-url {
+        margin-bottom: 0;
+      }
+    }
+    .interim-login {
+      .button.button-large {
+        line-height: 2;
+        min-height: 1.875rem;
+        padding: 0 0.75rem 0.125rem;
+      }
+    }
+    .media-frame {
+      .mode-grid {
+        .bulk-select .button {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .media-modal-content {
+      .media-toolbar-primary .media-button {
+        margin-left: 0.3125rem;
+        margin-top: 0.625rem;
+      }
+    }
+    .save-post-status {
+      button {
+        margin: 0 0.875rem 0 0.625rem;
+        position: relative;
+      }
+    }
+    .theme-overlay {
+      .theme-actions .button {
+        margin-bottom: 0.3125rem;
+      }
+    }
+    &.wp-customizer {
+      .button {
+        font-size: 0.8125rem;
+        line-height: 2.15384615;
+        margin: 0;
+        min-height: 1.875rem;
+        vertical-align: inherit;
+      }
     }
   }
   .wp-customizer {
@@ -941,19 +1205,12 @@ p {
       }
     }
   }
-  .media-modal-content {
-    .media-toolbar-primary {
-      .media-button {
-        margin-top: 0.625rem;
-        margin-left: 0.3125rem;
-      }
-    }
-  }
-  .interim-login {
-    .button.button-large {
-      min-height: 1.875rem;
-      line-height: 2;
-      padding: 0 0.75rem 0.125rem;
+  #media-upload {
+    .button {
+      padding: 0 0.625rem 0.0625rem;
+      min-height: 1.5rem;
+      line-height: 1.375rem;
+      font-size: 0.8125rem;
     }
   }
 }
