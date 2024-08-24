@@ -10,5 +10,13 @@ export default function JsInitializer(): JSX.Element {
     ))
       noscript.remove();
   }, []);
-  return <Script type="text/javascript" defer id="remove-no-js" />;
+  return (
+    <Script
+      type="text/javascript"
+      defer
+      id="remove-no-js"
+      strategy="afterInteractive"
+      crossOrigin="anonymous"
+    />
+  );
 }

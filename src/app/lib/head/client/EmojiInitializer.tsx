@@ -14,6 +14,7 @@ export default function EmojiInitializer(): JSX.Element {
       defer
       id="wp-emoji-settings"
       strategy="lazyOnload"
+      crossOrigin="anonymous"
       dangerouslySetInnerHTML={{
         __html: `${emojiScript}`,
       }}

@@ -136,6 +136,12 @@ export default function JQueryForminatorIntegrator(): JSX.Element {
     initializeForminatorModule(1712);
   }, []);
   return (
-    <Script type="text/javascript" defer id="jquery-forminator-integrator" />
+    <Script
+      type="text/javascript"
+      defer
+      id="jquery-forminator-integrator"
+      strategy="afterInteractive"
+      crossOrigin="anonymous"
+    />
   );
 }

@@ -6,6 +6,7 @@ export default function FlatsomeInitializer(): JSX.Element {
     <Script
       id="flatsome-js-js-extra"
       strategy="afterInteractive"
+      crossOrigin="anonymous"
       dangerouslySetInnerHTML={{
         __html: `window.flatsomeVars = ${flatsomeVars};`,
       }}

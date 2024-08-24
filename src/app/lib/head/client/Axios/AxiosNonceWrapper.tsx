@@ -22,5 +22,13 @@ export default function AxiosNonceWrapper(): JSX.Element {
     updateNonce(1711);
     updateNonce(1712);
   }, []);
-  return <Script type="text/javascript" defer id="axios-nonce-updater" />;
+  return (
+    <Script
+      type="text/javascript"
+      defer
+      id="axios-nonce-updater"
+      strategy="afterInteractive"
+      crossOrigin="anonymous"
+    />
+  );
 }

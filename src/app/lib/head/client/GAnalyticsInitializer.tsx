@@ -13,9 +13,10 @@ export default function GAnalyticsInitializer(): JSX.Element {
       async
       id="google_gtagjs-js-after"
       strategy="afterInteractive"
+      crossOrigin="anonymous"
       dangerouslySetInnerHTML={{
         __html: { fooStr },
       }}
-    ></Script>
+    />
   );
 }
