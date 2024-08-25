@@ -256,31 +256,159 @@ export default function RootLayout({
           integrity="sha384-pRFRCUhYEgd5cGnDnUOud4CcC7XDIknq1/3G9K4yTyfxi8sCOJP9ztLJBnOGXTRQ"
         />
         {/* Icons */}
-        <meta
-          name="msapplication-TileImage"
-          content="https://blog.organolab.com.br/wp-content/uploads/2022/05/cropped-ORGLAB_Logo-270x270.png"
+        <link
+          href="../../public/images/org_lab_logo_favicon_16.png"
+          data-icon-group="favicon"
+          id="favicon_16"
+          sizes="16x16"
+          rel="icon"
+          crossOrigin="anonymous"
         />
         <link
+          href="../../public/images/org_lab_logo_safari.png"
+          data-icon-group="safari"
+          id="safari_icon"
+          sizes="16x16"
           rel="icon"
+          crossOrigin="anonymous"
+        />
+        <link
           href="https://blog.organolab.com.br/wp-content/uploads/2022/05/cropped-ORGLAB_Logo-32x32.png"
+          data-icon-group="favicon"
+          id="favicon_32"
+          rel="icon"
           sizes="32x32"
           crossOrigin="anonymous"
           integrity="sha384-DIALoX8G5LpyVsVqCKCGL4/6EZVJUw9wOjQ2DI97RVXiZSCGLSj7yyI0wAOJK5lR"
         />
         <link
+          href="../../public/images/org_lab_logo_favicon_64.png"
+          data-icon-group="favicon"
+          id="favicon_64"
+          sizes="64x64"
           rel="icon"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="../../public/images/org_lab_logo_ati_57.png"
+          data-icon-group="apple-touch-icon"
+          id="ati_icon_57"
+          sizes="57x57"
+          rel="apple-touch-icon"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="../../public/images/org_lab_logo_ati_60.png"
+          data-icon-group="apple-touch-icon"
+          id="ati_icon_60"
+          sizes="60x60"
+          rel="apple-touch-icon"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="../../public/images/org_lab_logo_ati_72.png"
+          data-icon-group="apple-touch-icon"
+          id="ati_icon_72"
+          sizes="72x72"
+          rel="apple-touch-icon"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="../../public/images/org_lab_logo_ati_76.png"
+          data-icon-group="apple-touch-icon"
+          id="ati_icon_76"
+          sizes="76x76"
+          rel="apple-touch-icon"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="../../public/images/org_lab_logo_favicon_96.png"
+          data-icon-group="favicon"
+          id="favicon_96"
+          sizes="96x96"
+          rel="icon"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="../../public/images/org_lab_logo_ati_114.png"
+          data-icon-group="apple-touch-icon"
+          id="ati_icon_114"
+          sizes="114x114"
+          rel="apple-touch-icon"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="../../public/images/org_lab_logo_ati_120.png"
+          data-icon-group="apple-touch-icon"
+          id="ati_icon_120"
+          sizes="120x120"
+          rel="apple-touch-icon"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="../../public/images/org_lab_logo_ati_144.png"
+          data-icon-group="apple-touch-icon"
+          id="ati_icon_144"
+          sizes="144x144"
+          rel="apple-touch-icon"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="../../public/images/org_lab_logo_ati_152.png"
+          data-icon-group="apple-touch-icon"
+          id="ati_icon_152"
+          sizes="152x152"
+          rel="apple-touch-icon"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="../../public/images/org_lab_logo_ati_167.png"
+          data-icon-group="apple-touch-icon"
+          id="ati_icon_167"
+          sizes="167x167"
+          rel="apple-touch-icon"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="apple-touch-icon"
+          data-icon-group="apple-touch-icon"
+          id="ati_icon_180"
+          sizes="180x180"
+          crossOrigin="anonymous"
+          href="https://blog.organolab.com.br/wp-content/uploads/2022/05/cropped-ORGLAB_Logo-180x180.png"
+          integrity="sha384-+y0NwbBte0bB7MMcmtzVuqlGa7qp80rj2RoBPjjqEhKUflvejvNLyiftKYVoUHg8"
+        />
+        <link
           href="https://blog.organolab.com.br/wp-content/uploads/2022/05/cropped-ORGLAB_Logo-192x192.png"
+          data-icon-group="android-chrome"
+          id="android_chrome_icon_192"
+          rel="icon"
           sizes="192x192"
           crossOrigin="anonymous"
           integrity="sha384-I6tJqOez3XOojpZ2+syqhRWSdNuSYVYMoCbQmgcWBifQJtRChSrDr2vQ94Sm0e1m"
         />
-        {/* //TODO PEDIR AO CLIENTE VARIAÇÕES DE TAMANHO (60, 114, 144) */}
         <link
-          rel="apple-touch-icon"
-          id="ATIDef"
+          href="../../public/images/org_lab_logo_and_196.png"
+          data-icon-group="android-chrome"
+          id="android_chrome_icon_196"
+          sizes="196x196"
+          rel="icon"
           crossOrigin="anonymous"
-          href="https://blog.organolab.com.br/wp-content/uploads/2022/05/cropped-ORGLAB_Logo-180x180.png"
-          integrity="sha384-+y0NwbBte0bB7MMcmtzVuqlGa7qp80rj2RoBPjjqEhKUflvejvNLyiftKYVoUHg8"
+        />
+        <meta name="msapplication-config" content="./browserConfig.xml" />
+        <meta
+          id="icon_ms_tile"
+          data-sizes="270x270"
+          name="msapplication-TileImage"
+          content="https://blog.organolab.com.br/wp-content/uploads/2022/05/cropped-ORGLAB_Logo-270x270.png"
+        />
+        <link
+          href="../../public/images/org_lab_logo_and_512.png"
+          data-icon-group="android-chrome"
+          id="android_chrome_icon_512"
+          sizes="512x512"
+          rel="icon"
+          crossOrigin="anonymous"
         />
         {/* Embeds */}
         <link
