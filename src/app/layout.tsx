@@ -148,7 +148,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta name="X-UA-Compatible" content="IE=Edge" />
         {/* Social Media and SEO Indexers */}
-        <NextSeo
+        {/* <NextSeo
           openGraph={{
             locale: "pt_BR",
             type: "article",
@@ -196,7 +196,7 @@ export default function RootLayout({
                 "Calculadora da Organo Lab © para que você tenha suas receitas de uma forma simples e comece a montar seu solo em casa!",
             },
           ]}
-        />
+        /> */}
         {/* DNS Prefetches */}
         <link
           rel="dns-prefetch"
@@ -454,6 +454,25 @@ export default function RootLayout({
           crossOrigin="anonymous"
           integrity="sha384-2r1mP0SQcF1nIDXSFU3Tvy//wHR7oeY8Bn0qFTF2SA5nwdu2fB5cq0ki2pm1WWM/"
         />
+        {/* Polyfill and delivr */}
+        <Script
+          type="text/javascript"
+          defer
+          strategy="beforeInteractive"
+          crossOrigin="anonymous"
+          src="https://blog.organolab.com.br/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0"
+          id="wp-polyfill-js"
+          integrity="sha384-Wv/Z6lsRW2CJ5nLojZYtFAXqWAd0R/zpDKTYRJBU5K0Ep4v9qGTIrm/TrAbGWHfB"
+        />
+        <Script
+          type="text/javascript"
+          defer
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+          crossOrigin="anonymous"
+          id="jsdelivr"
+          strategy="afterInteractive"
+        />
         {/* Google Analytics */}
         <Script
           type="text/javascript"
@@ -515,44 +534,6 @@ export default function RootLayout({
           id="forminator-form-js"
           integrity="sha384-owEWCP97OyAlK9EhkbAk+38ZJArxodqafQkWlLES2njGpVhRdZN5Sn/EJ/O9MhgM"
         />
-        {/* Forminator chunks */}
-        <Script
-          type="text/javascript"
-          defer
-          id="forminator-front-scripts-js-extra"
-          crossOrigin="anonymous"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `const ForminatorFront = ${forminatorProps}`,
-          }}
-        />
-        <Script
-          type="text/javascript"
-          defer
-          strategy="afterInteractive"
-          crossOrigin="anonymous"
-          src="https://blog.organolab.com.br/wp-content/plugins/forminator/build/front/front.multi.min.js?ver=1.28.0"
-          id="forminator-front-scripts-js"
-          integrity="sha384-a1FiYAG3ISqv/DhIe4ZOaXVGeSlyLbPiAAhit+iQdU2XnRkmGF7dCLV0ShgwkKpX"
-        />
-        <Script
-          type="text/javascript"
-          defer
-          strategy="afterInteractive"
-          crossOrigin="anonymous"
-          src="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/js/library/inputmask.min.js?ver=1.28.0"
-          id="forminator-inputmask-js"
-          integrity="sha384-aUPHuXAJF+ohHX7TgMM9gI9X1BGhWqTcDigm1VVB+sOZKM18DT8yvqzgPP2D8h1J"
-        />
-        <Script
-          type="text/javascript"
-          defer
-          strategy="afterInteractive"
-          crossOrigin="anonymous"
-          src="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/js/library/inputmask.binding.js?ver=1.28.0"
-          id="forminator-inputmask-binding-js"
-          integrity="sha384-5/QNW3hy8X5q6O99uGaZYeL9LVtNdXFnoRfE91OuDev2Z76uc4PM0JEyO/sPV9TH"
-        />
         {/* Wp emoji chunks */}
         <EmojiInitializer />
         <Script
@@ -562,26 +543,7 @@ export default function RootLayout({
           id="wp-emoji-release"
           integrity="sha384-kb/iwIefTlNaT8PTyAdU3tFrLX08KYY4rC0RXn4ltVQiAdodvQ2Nnic5joZBljQW"
         />
-        {/* Other chunks */}
-        <Script
-          type="text/javascript"
-          defer
-          strategy="beforeInteractive"
-          crossOrigin="anonymous"
-          src="https://blog.organolab.com.br/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0"
-          id="wp-polyfill-js"
-          integrity="sha384-Wv/Z6lsRW2CJ5nLojZYtFAXqWAd0R/zpDKTYRJBU5K0Ep4v9qGTIrm/TrAbGWHfB"
-        />
-        <Script
-          type="text/javascript"
-          defer
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-        <AxiosNonceWrapper />
-        <JQueryForminatorIntegrator />
+        {/* jQuery chunks */}
         <Script
           type="text/javascript"
           defer
@@ -621,12 +583,62 @@ export default function RootLayout({
         <Script
           type="text/javascript"
           defer
-          src="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/js/library/jquery.validate.min.js?ver=1.28.0"
-          id="forminator-jquery-validate-js"
+          src="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/js/library/inputmask.binding.js?ver=1.28.0"
+          id="forminator-inputmask-binding-js"
           strategy="afterInteractive"
           crossOrigin="anonymous"
-          integrity="sha384-aEDtD4n2FLrMdE9psop0SHdNyy/W9cBjH22rSRp+3wPHd62Y32uijc0H2eLmgaSn"
+          integrity="sha384-5/QNW3hy8X5q6O99uGaZYeL9LVtNdXFnoRfE91OuDev2Z76uc4PM0JEyO/sPV9TH"
         />
+        <Script
+          type="text/javascript"
+          defer
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+          src="https://blog.organolab.com.br/wp-content/plugins/forminator/build/front/front.multi.min.js?ver=1.28.0"
+          id="forminator-front-scripts-js"
+          integrity="sha384-a1FiYAG3ISqv/DhIe4ZOaXVGeSlyLbPiAAhit+iQdU2XnRkmGF7dCLV0ShgwkKpX"
+        />
+        {/* Axios */}
+        <AxiosNonceWrapper />
+        {/* Forminator chunks */}
+        <Script
+          type="text/javascript"
+          defer
+          id="forminator-front-scripts-js-extra"
+          crossOrigin="anonymous"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `const ForminatorFront = ${forminatorProps}`,
+          }}
+        />
+        <Script
+          type="text/javascript"
+          defer
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+          src="https://blog.organolab.com.br/wp-content/plugins/forminator/build/front/front.multi.min.js?ver=1.28.0"
+          id="forminator-front-scripts-js"
+          integrity="sha384-a1FiYAG3ISqv/DhIe4ZOaXVGeSlyLbPiAAhit+iQdU2XnRkmGF7dCLV0ShgwkKpX"
+        />
+        <Script
+          type="text/javascript"
+          defer
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+          src="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/js/library/inputmask.min.js?ver=1.28.0"
+          id="forminator-inputmask-js"
+          integrity="sha384-aUPHuXAJF+ohHX7TgMM9gI9X1BGhWqTcDigm1VVB+sOZKM18DT8yvqzgPP2D8h1J"
+        />
+        <Script
+          type="text/javascript"
+          defer
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+          src="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/js/library/inputmask.binding.js?ver=1.28.0"
+          id="forminator-inputmask-binding-js"
+          integrity="sha384-5/QNW3hy8X5q6O99uGaZYeL9LVtNdXFnoRfE91OuDev2Z76uc4PM0JEyO/sPV9TH"
+        />
+        <JQueryForminatorIntegrator />
         {/* Bootstrap styelsheets */}
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"

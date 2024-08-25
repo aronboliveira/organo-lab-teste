@@ -1,4 +1,4 @@
-export const emojiScript = (() => {
+export const emojiScript = () => {
   window._wpemojiSettings = {
     baseUrl: "https://s.w.org/images/core/emoji/15.0.3/72x72/",
     ext: ".png",
@@ -103,7 +103,7 @@ export const emojiScript = (() => {
       loadEmojiScripts(window._wpemojiSettings.source);
     }
   })(window, document);
-})();
+};
 const emojiScriptStr = `
 window._wpemojiSettings = {
 	baseUrl: "https://s.w.org/images/core/emoji/15.0.3/72x72/",

@@ -5,10 +5,6 @@ export default function JsInitializer(): JSX.Element {
   useEffect(() => {
     document.documentElement.className =
       document.documentElement.className.replace(/\bno-js\b/, "js");
-    for (const noscript of Array.from(
-      document.getElementsByTagName("noscript")
-    ))
-      noscript.remove();
   }, []);
   return (
     <Script

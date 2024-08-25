@@ -1,4 +1,4 @@
-export const gTagJsAfter = (() => {
+export const gTagJsAfter = () => {
   window.dataLayer = window.dataLayer || [];
   const gtag = (...args) => window.dataLayer.push(args);
   gtag("set", "linker", { domains: ["blog.organolab.com.br"] });
@@ -8,7 +8,7 @@ export const gTagJsAfter = (() => {
     anonymize_ip: true,
   });
   gtag("config", "G-EK3Y6QCW4W");
-})().toString();
+};
 const gTagJsAfterStr = `
 /* <![CDATA[ */
 window.dataLayer = window.dataLayer || [];

@@ -1,3 +1,4 @@
+"use client";
 import axios from "axios";
 import Script from "next/script";
 import { useEffect } from "react";
@@ -13,8 +14,12 @@ export default function AxiosNonceWrapper(): JSX.Element {
       document
         .querySelector(`#forminator-module-${moduleId} #forminator_nonce`)
         ?.setAttribute("value", response.data);
-    } catch (error) {
-      console.error(`Failed to update nonce for module ${moduleId}:`, error);
+    } catch (e) {
+      console.error(
+        `Failed to update nonce for module ${moduleId}:\n${
+          (e as Error).message
+        }`
+      );
     }
   };
   useEffect(() => {
