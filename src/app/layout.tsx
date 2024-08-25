@@ -104,16 +104,23 @@ export default function RootLayout({
           }}
         />
         {/* //TODO DEFINIR APÓS DEPLOY */}
-        <link rel="canonical" href="#" crossOrigin="anonymous" />
+        <link
+          rel="canonical"
+          href="https://blog.organolab.com.br/calculadora-de-solo/"
+          crossOrigin="anonymous"
+          integrity="sha384-7XN4Czpe997dvWH0TWGoV73sSd/r5mooFcjAVxx5O8gdp+iJzTkhS4x1fCVNbaOr"
+        />
         <link
           rel="profile"
           href="https://gmpg.org/xfn/11"
           crossOrigin="anonymous"
+          integrity="sha384-x4tW5vxzpqXWNAknu5akF+v8EnyE0TfLkG1jGubWLGr9fX2LkoZ3CljMvz9aWI1b"
         />
         <link
           rel="pingback"
           href="https://blog.organolab.com.br/xmlrpc.php"
           crossOrigin="anonymous"
+          integrity="sha384-OZE7GpJ+ct9cqkbFg4frtg/ir5iOIJPQ0Oub+s+bh6xJQGu/BZZEjRep9eNKiTYz"
         />
         {/* Basic descriptions */}
         <link
@@ -122,16 +129,19 @@ export default function RootLayout({
           title="RSD"
           href="https://blog.organolab.com.br/xmlrpc.php?rsd"
           crossOrigin="anonymous"
+          integrity="sha384-qzMdtl/q6ylv1XEC1+3HzzuxX5E9+wFAaFtJuHUs3MvnYUgA02DijgIz0LWN+Gie"
         />
         <link
           rel="shortlink"
           href="https://blog.organolab.com.br/?p=1708"
           crossOrigin="anonymous"
+          integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb"
         />
         <link
           rel="https://api.w.org/"
           href="https://blog.organolab.com.br/wp-json/"
           crossOrigin="anonymous"
+          integrity="sha384-56HO63RVqu1uTLf9NZi23uLFaCmdMdeehon2GLvmizdWZE/E7y/wvOwmuCF45D9g"
         />
         <meta charSet="UTF-8" />
         <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
@@ -190,21 +200,24 @@ export default function RootLayout({
         {/* DNS Prefetches */}
         <link
           rel="dns-prefetch"
-          href="//cdn.jsdelivr.net"
+          href="https://cdn.jsdelivr.net"
           id="prefetch-jsDelivr"
           crossOrigin="anonymous"
+          integrity="sha384-aoyvEG2/1QDJh1N1aA/bW4qrY/B/T4R6jnmZZm8776U8SKAUK7BabPzVhuHh3Jea"
         />
         <link
           rel="dns-prefetch"
-          href="//www.googletagmanager.com"
+          href="https://www.googletagmanager.com"
           id="prefetch-google-tag-manager"
           crossOrigin="anonymous"
+          integrity="sha384-o+SdmONPZGMQfeWYDOyRHbCBLFsppgowAJHA03UUCGF5mIUIeuD1EYnqbMqOqxeT"
         />
         <link
           rel="dns-prefetch"
-          href="//fonts.googleapis.com"
+          href="https://fonts.googleapis.com"
           id="prefetch-google-fonts"
           crossOrigin="anonymous"
+          integrity="sha384-0wcy8qFgK2KW18OIp7CDk5LA4IXc+dCW2jh5umyKxHgJWDx+o57w1LK/ZVNi73PQ"
         />
         {/* Flatsome prefetches */}
         <link
@@ -212,30 +225,35 @@ export default function RootLayout({
           href="https://blog.organolab.com.br/wp-content/themes/flatsome/assets/js/chunk.countup.fe2c1016.js"
           id="prefetch-chunk-countup"
           crossOrigin="anonymous"
+          integrity="sha384-jynUzHH5GzeD89NjMgKexqF7/+mTyfA01bFRrVitre1e3OgoFLxpu4cQa75oZb3m"
         />
         <link
           rel="prefetch"
           href="https://blog.organolab.com.br/wp-content/themes/flatsome/assets/js/chunk.sticky-sidebar.a58a6557.js"
           id="prefetch-chunk-sticky-sidebar"
           crossOrigin="anonymous"
+          integrity="sha384-abmMzw9HKNxmcGVUnHeNC1Sx+QYqa+R2HuabtuIVnm5S1gdSGzUaD0z2xPK9agCU"
         />
         <link
           rel="prefetch"
           href="https://blog.organolab.com.br/wp-content/themes/flatsome/assets/js/chunk.tooltips.29144c1c.js"
           id="prefetch-chunk-tooltips"
           crossOrigin="anonymous"
+          integrity="sha384-YgeQ/3fXQsWnOXViKtxEnb9gq44BqZOFY6KhW3UjvmEyJvWWPH4fylorAJjwelis"
         />
         <link
           rel="prefetch"
           href="https://blog.organolab.com.br/wp-content/themes/flatsome/assets/js/chunk.vendors-popups.947eca5c.js"
           id="prefetch-chunk-vendors-popups"
           crossOrigin="anonymous"
+          integrity="sha384-GxtiP0VfzZ1+HZ8Uftwz4hI09anSy6JtS8TLf5UtPIvtrqhYwKba25wKEYYi9Yeu"
         />
         <link
           rel="prefetch"
           href="https://blog.organolab.com.br/wp-content/themes/flatsome/assets/js/chunk.vendors-slider.f0d2cbc9.js"
           id="prefetch-chunk-vendors-slider"
           crossOrigin="anonymous"
+          integrity="sha384-pRFRCUhYEgd5cGnDnUOud4CcC7XDIknq1/3G9K4yTyfxi8sCOJP9ztLJBnOGXTRQ"
         />
         {/* Icons */}
         <meta
@@ -247,12 +265,14 @@ export default function RootLayout({
           href="https://blog.organolab.com.br/wp-content/uploads/2022/05/cropped-ORGLAB_Logo-32x32.png"
           sizes="32x32"
           crossOrigin="anonymous"
+          integrity="sha384-DIALoX8G5LpyVsVqCKCGL4/6EZVJUw9wOjQ2DI97RVXiZSCGLSj7yyI0wAOJK5lR"
         />
         <link
           rel="icon"
           href="https://blog.organolab.com.br/wp-content/uploads/2022/05/cropped-ORGLAB_Logo-192x192.png"
           sizes="192x192"
           crossOrigin="anonymous"
+          integrity="sha384-I6tJqOez3XOojpZ2+syqhRWSdNuSYVYMoCbQmgcWBifQJtRChSrDr2vQ94Sm0e1m"
         />
         {/* //TODO PEDIR AO CLIENTE VARIAÇÕES DE TAMANHO (60, 114, 144) */}
         <link
@@ -260,6 +280,7 @@ export default function RootLayout({
           id="ATIDef"
           crossOrigin="anonymous"
           href="https://blog.organolab.com.br/wp-content/uploads/2022/05/cropped-ORGLAB_Logo-180x180.png"
+          integrity="sha384-+y0NwbBte0bB7MMcmtzVuqlGa7qp80rj2RoBPjjqEhKUflvejvNLyiftKYVoUHg8"
         />
         {/* Embeds */}
         <link
@@ -268,6 +289,7 @@ export default function RootLayout({
           type="application/json"
           crossOrigin="anonymous"
           href="https://blog.organolab.com.br/wp-json/wp/v2/pages/1708"
+          integrity="sha384-L+UfpLhFxiO/myagJDVlOYkO3BgOTdPQJbFpwMNGG1QhvNYoOwtC820UwEiMLAbb"
         />
         <link
           rel="alternate"
@@ -275,6 +297,7 @@ export default function RootLayout({
           type="application/json+oembed"
           crossOrigin="anonymous"
           href="https://blog.organolab.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.organolab.com.br%2Fcalculadora-de-solo%2F"
+          integrity="sha384-+X03etEJfLzUNgaWf9PqPizut3iL0UG65Cg2QXGjzOi8iK+Uai/H9COsZvwHebRj"
         />
         <link
           rel="alternate"
@@ -282,6 +305,7 @@ export default function RootLayout({
           type="text/xml+oembed"
           crossOrigin="anonymous"
           href="https://blog.organolab.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.organolab.com.br%2Fcalculadora-de-solo%2F&amp;format=xml"
+          integrity="sha384-kaUPzrQ1xmQuUgB4HetCaXE+Jruyd56+GYirIVLTqD2Q0Xh20nartldJhrTSxtNn"
         />
         {/* RSS */}
         <link
@@ -291,6 +315,7 @@ export default function RootLayout({
           href="https://blog.organolab.com.br/feed/"
           id="feed-blog"
           crossOrigin="anonymous"
+          integrity="sha384-0Txx8SISzmlkjvi045qZ+9/VCPJIJY1McUin0KUMSt6f4CHQ3ModV3k9TF75urR2"
         />
         <link
           rel="alternate"
@@ -299,6 +324,7 @@ export default function RootLayout({
           href="https://blog.organolab.com.br/comments/feed/"
           id="feed-comments-blog"
           crossOrigin="anonymous"
+          integrity="sha384-2r1mP0SQcF1nIDXSFU3Tvy//wHR7oeY8Bn0qFTF2SA5nwdu2fB5cq0ki2pm1WWM/"
         />
         {/* Google Analytics */}
         <Script
@@ -308,6 +334,7 @@ export default function RootLayout({
           id="google-analytics"
           strategy="afterInteractive"
           crossOrigin="anonymous"
+          integrity="sha384-n7dNaa3cQ6phJdeSMWcH2w0YhFtqEazxQPj8vYg/kdYpRxEfqlIEfq/5/pfe5Bzi"
         />
         <GAnalyticsInitializer />
         <Script
@@ -315,18 +342,21 @@ export default function RootLayout({
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-EK3Y6QCW4W&amp;l=dataLayer&amp;cx=c"
           id="google-tag-manager-1"
+          integrity="sha384-6yFFCWHQCzHp3IBqt+DxIR9Q7S0Dqx23tghb65zXCEDphkQZZe5Xa7Rva7bFSdjv"
         />
         <Script
           type="text/javascript"
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-4ZD7M3FZ3N&amp;l=dataLayer&amp;cx=c"
           id="google-tag-manager-2"
+          integrity="sha384-L/4D2fUEz7kN/dLlHpFU37dLIO/yc6yMSfExNiB2aI+Mn62gttUTcbCQ+Sn3FFcf"
         />
         <Script
           type="text/javascript"
           async
           src="https://www.googletagmanager.com/gtag/js?id=UA-135835861-37"
           id="google_gtagjs-js"
+          integrity="sha384-zJ4fdVywcoBj2H3B5lP3iNcIno2G1aYDo6EulY0qy9j24lBH6aw33eLzIATOjXv7"
         />
         {/* Flatsome chunks */}
         <FlatsomeInitializer />
@@ -337,6 +367,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
           src="https://blog.organolab.com.br/wp-content/themes/flatsome/inc/extensions/flatsome-live-search/flatsome-live-search.js?ver=3.15.5"
           id="flatsome-live-search-js"
+          integrity="sha384-3en60K1L1eQ8ImArgQjTMzpVCPe11nMt3P/4MY4uFYXitxD2uiXgo6cjiVpXZH0W"
         />
         <Script
           type="text/javascript"
@@ -345,6 +376,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
           src="https://blog.organolab.com.br/wp-content/themes/flatsome/assets/js/flatsome.js?ver=8d32fe071187c00e5c8eae51dcdefdd9"
           id="flatsome-js-js"
+          integrity="sha384-HAQG5tcz8f+kOj2jJRZnj5is7NbvBKf0w+skR+c4HYoztIsqZyxqBrAfSiczuhan"
         />
         <Script
           type="text/javascript"
@@ -353,6 +385,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
           src="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/forminator-ui/js/forminator-form.min.js?ver=1.28.0"
           id="forminator-form-js"
+          integrity="sha384-owEWCP97OyAlK9EhkbAk+38ZJArxodqafQkWlLES2njGpVhRdZN5Sn/EJ/O9MhgM"
         />
         {/* Forminator chunks */}
         <Script
@@ -372,6 +405,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
           src="https://blog.organolab.com.br/wp-content/plugins/forminator/build/front/front.multi.min.js?ver=1.28.0"
           id="forminator-front-scripts-js"
+          integrity="sha384-a1FiYAG3ISqv/DhIe4ZOaXVGeSlyLbPiAAhit+iQdU2XnRkmGF7dCLV0ShgwkKpX"
         />
         <Script
           type="text/javascript"
@@ -380,6 +414,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
           src="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/js/library/inputmask.min.js?ver=1.28.0"
           id="forminator-inputmask-js"
+          integrity="sha384-aUPHuXAJF+ohHX7TgMM9gI9X1BGhWqTcDigm1VVB+sOZKM18DT8yvqzgPP2D8h1J"
         />
         <Script
           type="text/javascript"
@@ -388,6 +423,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
           src="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/js/library/inputmask.binding.js?ver=1.28.0"
           id="forminator-inputmask-binding-js"
+          integrity="sha384-5/QNW3hy8X5q6O99uGaZYeL9LVtNdXFnoRfE91OuDev2Z76uc4PM0JEyO/sPV9TH"
         />
         {/* Wp emoji chunks */}
         <EmojiInitializer />
@@ -396,6 +432,7 @@ export default function RootLayout({
           defer
           src="https://blog.organolab.com.br/wp-includes/js/wp-emoji-release.min.js?ver=6.6.1"
           id="wp-emoji-release"
+          integrity="sha384-kb/iwIefTlNaT8PTyAdU3tFrLX08KYY4rC0RXn4ltVQiAdodvQ2Nnic5joZBljQW"
         />
         {/* Other chunks */}
         <Script
@@ -405,6 +442,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
           src="https://blog.organolab.com.br/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0"
           id="wp-polyfill-js"
+          integrity="sha384-Wv/Z6lsRW2CJ5nLojZYtFAXqWAd0R/zpDKTYRJBU5K0Ep4v9qGTIrm/TrAbGWHfB"
         />
         <Script
           type="text/javascript"
@@ -421,6 +459,7 @@ export default function RootLayout({
           defer
           src="https://blog.organolab.com.br/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"
           id="jquery-core-js"
+          integrity="sha384-vT0xsrWPQ3JMjk9+X3p3J4glfdqQsMBzYwpxS1LPybrkJs6kZDw7slFXJ2iUkUy4"
           strategy="beforeInteractive"
           crossOrigin="anonymous"
         />
@@ -431,6 +470,7 @@ export default function RootLayout({
           id="jquery-migrate-js"
           strategy="beforeInteractive"
           crossOrigin="anonymous"
+          integrity="sha384-ez4i72z0XhJqm0ZRoQkpPN0bDV8Kw8PK3n8kjEZsWhRDrfICLd0AGghHJB+vytx0"
         />
         <Script
           type="text/javascript"
@@ -439,6 +479,7 @@ export default function RootLayout({
           id="hoverIntent-js"
           strategy="afterInteractive"
           crossOrigin="anonymous"
+          integrity="sha384-rh2wODSO92I4kkH65Wap0BDa/7/nJ54xl7yHgB7wBZjruN+S02lzQmbrSuxOzYt+"
         />
         <Script
           type="text/javascript"
@@ -447,6 +488,7 @@ export default function RootLayout({
           id="forminator-jquery-inputmask-js"
           strategy="afterInteractive"
           crossOrigin="anonymous"
+          integrity="sha384-hZvMi8RmeJb+r1i0bQbUrcFgyJi70eRyil2ex7ykc2DD2a+NoRs8xZOWvNk6zxmc"
         />
         <Script
           type="text/javascript"
@@ -455,6 +497,7 @@ export default function RootLayout({
           id="forminator-jquery-validate-js"
           strategy="afterInteractive"
           crossOrigin="anonymous"
+          integrity="sha384-aEDtD4n2FLrMdE9psop0SHdNyy/W9cBjH22rSRp+3wPHd62Y32uijc0H2eLmgaSn"
         />
         {/* Bootstrap styelsheets */}
         <link
@@ -471,6 +514,7 @@ export default function RootLayout({
           type="text/css"
           media="all"
           crossOrigin="anonymous"
+          integrity="sha384-DcmB74ycdPDAwtAFXEzFByhRAOX2MJhcVvUNf81djrxNRlNyq9gYaw3lP8wkBGjA"
         />
         <link
           rel="stylesheet"
@@ -479,14 +523,16 @@ export default function RootLayout({
           type="text/css"
           media="all"
           crossOrigin="anonymous"
+          integrity="sha384-1nUg1NQaiEceQ689CvjTRVcqz1sZGgKuXbQyw+BwdbRqt+YDENyMy20BRM89C/4y"
         />
         <link
           rel="stylesheet"
           id="flatsome-googlefonts-css"
-          href="//fonts.googleapis.com/css?family=Lato%3Aregular%2C700%2C400%2C700%7CDancing+Script%3Aregular%2C400&amp;display=swap&amp;ver=3.9"
+          href="https://fonts.googleapis.com/css?family=Lato%3Aregular%2C700%2C400%2C700%7CDancing+Script%3Aregular%2C400&amp;display=swap&amp;ver=3.9"
           type="text/css"
           media="all"
           crossOrigin="anonymous"
+          integrity="sha384-VQVoSaANX4BG2O6UVK/4vCju4nCvDQIWAg1AI5QNVJxjsgLzxR7vvuWR1nF5d4rK"
         />
         {/* Forminator stylesheets */}
         <link
@@ -496,6 +542,7 @@ export default function RootLayout({
           type="text/css"
           media="all"
           crossOrigin="anonymous"
+          integrity="sha384-r4B0oxzHddLVtVFA1m1XacaUUne3YtTna+5evQYxBv0Cvgcp+8gdfqiOELSAHbpZ"
         />
         <link
           rel="stylesheet"
@@ -504,6 +551,7 @@ export default function RootLayout({
           type="text/css"
           media="all"
           crossOrigin="anonymous"
+          integrity="sha384-WilVgpn235/olNu+N4BzVBfVV1f7NpdacabzA3HHwHz2sbUkjXXRsRn3vBY6nV/Z"
         />
         <link
           rel="stylesheet"
@@ -512,6 +560,7 @@ export default function RootLayout({
           type="text/css"
           media="all"
           crossOrigin="anonymous"
+          integrity="sha384-DsEMlBweXwG3pHbH27Vv30zNOFalol6Cej5cPVcCiTuGmJRJh2I6xExvOSpuLRkH"
         />
         <link
           rel="stylesheet"
@@ -520,6 +569,7 @@ export default function RootLayout({
           type="text/css"
           media="all"
           crossOrigin="anonymous"
+          integrity="sha384-LMZPLstQEMtj3U0sIwRjv1+FWHIr+i4GEkOfFlHYpjG8gcszwLm/LWi986wYzsIs"
         />
         <link
           rel="stylesheet"
@@ -528,6 +578,7 @@ export default function RootLayout({
           type="text/css"
           media="all"
           crossOrigin="anonymous"
+          integrity="sha384-s0NKljkN2GrK21H8NtbgSdnulNgMDuEXBGCweRsfZlm6XiSj0t4RlDodu1uGe882"
         />
         <link
           rel="stylesheet"
@@ -536,6 +587,7 @@ export default function RootLayout({
           type="text/css"
           media="all"
           crossOrigin="anonymous"
+          integrity="sha384-GIAi7Z0i493if9dkWMW2NT8/gOsbuaep/qH5wRbPeT9Iij0bkv2Aqc4FcfQfvX0V"
         />
         <link
           rel="stylesheet"
@@ -544,6 +596,7 @@ export default function RootLayout({
           type="text/css"
           media="all"
           crossOrigin="anonymous"
+          integrity="sha384-Vhqwa10mtGY99ZzPyKBEgmRYJXia3YHJ2HpadXFj1XLk3Oc6Lv+enAbdKrUBnAXb"
         />
       </head>
       <body className={poppins.className}>{children}</body>
