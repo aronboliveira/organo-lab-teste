@@ -2,8 +2,24 @@
 import { useEffect } from "react";
 import $ from "jquery";
 import Script from "next/script";
+import loadJQuery from "@/app/lib/head/js/jquery/jquery";
+import loadJQueryMigrate from "@/app/lib/head/js/jquery/jquery-migrate";
+import loadJQueryInputMask from "@/app/lib/head/js/forminator/jquery-inputmask";
+import loadJQueryValidate from "@/app/lib/head/js/forminator/jquery.validate";
+import loadForminatorForm from "@/app/lib/head/js/forminator/ui/forminator-form";
+import loadHoverIntent from "@/app/lib/head/js/wp/hoverIntent";
+import loadInputMask from "@/app/lib/head/js/forminator/inputmask";
+import loadInputMaskBinding from "@/app/lib/head/js/forminator/inputmask-binding";
 export default function JQueryForminatorIntegrator(): JSX.Element {
   useEffect(() => {
+    const jQuery = loadJQuery();
+    loadJQueryMigrate();
+    loadJQueryValidate();
+    loadJQueryInputMask(jQuery);
+    loadInputMask();
+    loadInputMaskBinding();
+    loadHoverIntent();
+    loadForminatorForm();
     const initializeForminatorModule = (moduleId: number): void => {
       (window as any).Forminator_Cform_Paginations =
         (window as any).Forminator_Cform_Paginations || [];

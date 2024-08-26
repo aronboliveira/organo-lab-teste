@@ -15,7 +15,7 @@ export default function GAnalyticsInitializer(): JSX.Element {
       strategy="afterInteractive"
       crossOrigin="anonymous"
       dangerouslySetInnerHTML={{
-        __html: { fooStr },
+        __html: fooStr,
       }}
     />
   );

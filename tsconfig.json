@@ -26,7 +26,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/api/generateSHA.js"
+    "src/app/api/generateSHA.js",
+    "src/app/lib/head/js/flatsome/flatsome-live-search.js",
+    "src/app/lib/head/flatsome/flatsomeAsset.js"
   ],
   "exclude": ["node_modules"]
 }

@@ -8,7 +8,7 @@ export default function FlatsomeInitializer(): JSX.Element {
       strategy="afterInteractive"
       crossOrigin="anonymous"
       dangerouslySetInnerHTML={{
-        __html: `window.flatsomeVars = ${flatsomeVars};`,
+        __html: `window.flatsomeVars = ${JSON.stringify(flatsomeVars)};`,
       }}
     />
   );
