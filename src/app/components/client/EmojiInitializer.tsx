@@ -1,7 +1,7 @@
 "use client";
 import { WpEmojiSettings } from "@/app/declarations/interfaces";
 import Script from "next/script";
-import emojiScript from "../js/client/emojiScript";
+import emojiScript from "../../lib/head/js/client/emojiScript";
 declare global {
   interface Window {
     _wpemojiSettings: WpEmojiSettings;

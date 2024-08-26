@@ -1,3 +1,5 @@
+import SearchHeader from "../client/inputs/header/SearchHeader";
+import Image from "next/image";
 export default function Header(): JSX.Element {
   return (
     <header
@@ -11,24 +13,22 @@ export default function Header(): JSX.Element {
             className="header-inner flex-row container logo-left"
             role="navigation"
           >
-            {/* <!-- Logo --> */}
             <div id="logo" className="flex-col logo">
-              {/* <!-- Header logo --> */}
               <a
                 href="https://blog.organolab.com.br/"
                 title="Organo Lab – Blog - Cultive conhecimento."
                 rel="home"
               >
-                <img
-                  width="300"
-                  height="100"
+                <Image
+                  width={300}
+                  height={100}
                   src="https://blog.organolab.com.br/wp-content/uploads/2022/05/LOGO-BLOG.png"
                   className="header_logo header-logo"
                   alt="Organo Lab – Blog"
                 />
-                <img
-                  width="1020"
-                  height="1020"
+                <Image
+                  width={1020}
+                  height={1020}
                   src="https://blog.organolab.com.br/wp-content/uploads/2022/05/ORGLAB_Logo-1024x1024.png"
                   className="header-logo-dark"
                   alt="Organo Lab – Blog"
@@ -69,18 +69,12 @@ export default function Header(): JSX.Element {
                         className="searchform"
                         action="https://blog.organolab.com.br/"
                         role="search"
+                        encType="x-www-formurl-encoded"
+                        id="header-search-form"
                       >
                         <div className="flex-row relative">
                           <div className="flex-col flex-grow">
-                            <input
-                              type="search"
-                              className="search-field mb-0"
-                              name="s"
-                              value=""
-                              id="s"
-                              placeholder="Search…"
-                              autoComplete="off"
-                            />
+                            <SearchHeader />
                           </div>
                           <div className="flex-col">
                             <button
@@ -88,7 +82,7 @@ export default function Header(): JSX.Element {
                               className="ux-search-submit submit-button secondary button icon mb-0"
                               aria-label="Enviar"
                             >
-                              <i className="icon-search"></i>{" "}
+                              <i className="icon-search"></i>
                             </button>
                           </div>
                         </div>
@@ -110,31 +104,31 @@ export default function Header(): JSX.Element {
                 <li className="header-divider"></li>
                 <li className="html custom html_topbar_right">
                   <a href="https://www.organolab.com.br/">
-                    <img
-                      alt=""
+                    <Image
+                      alt="Loja"
                       src="https://blog.organolab.com.br/wp-content/uploads/2022/12/Sem-titulo-1.png"
-                      width='150"'
-                      height="70"
+                      width={150}
+                      height={70}
                     />
                   </a>
                 </li>
                 <li className="html custom html_top_right_text">
                   <a href="https://blog.organolab.com.br/blog">
-                    <img
-                      alt=""
+                    <Image
+                      alt="Artigos"
                       src="https://blog.organolab.com.br/wp-content/uploads/2022/05/artigos.png"
-                      width='150"'
-                      height="70"
+                      width={150}
+                      height={70}
                     />
                   </a>
                 </li>
                 <li className="html custom html_nav_position_text">
                   <a href="https://blog.organolab.com.br/">
-                    <img
-                      alt=""
+                    <Image
+                      alt="Downloads"
                       src="https://blog.organolab.com.br/wp-content/uploads/2022/05/downloads.png"
-                      width='150"'
-                      height="70"
+                      width={150}
+                      height={70}
                     />
                   </a>
                 </li>{" "}
@@ -145,7 +139,6 @@ export default function Header(): JSX.Element {
               <ul className="mobile-nav nav nav-right ">
                 <li className="nav-icon has-icon">
                   <div className="header-button">
-                    {" "}
                     <a
                       href="#"
                       data-open="#main-menu"
@@ -159,8 +152,8 @@ export default function Header(): JSX.Element {
                     >
                       <i className="icon-menu"></i>
                     </a>
-                  </div>{" "}
-                </li>{" "}
+                  </div>
+                </li>
               </ul>
             </div>
           </div>

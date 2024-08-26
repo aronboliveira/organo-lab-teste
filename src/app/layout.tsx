@@ -3,13 +3,13 @@ import { Poppins } from "next/font/google";
 import "./styles/style.scss";
 import "./styles/wpBanned.scss";
 import Script from "next/script";
-import JsInitializer from "./lib/head/client/JsInitializer";
-import GAnalyticsInitializer from "./lib/head/client/GAnalyticsInitializer";
-import FlatsomeInitializer from "./lib/head/client/FlatsomeInitializer";
-import EmojiInitializer from "./lib/head/client/EmojiInitializer";
+import JsInitializer from "./components/client/JsInitializer";
+import GAnalyticsInitializer from "./components/client/GAnalyticsInitializer";
+import FlatsomeInitializer from "./components/client/FlatsomeInitializer";
+import EmojiInitializer from "./components/client/EmojiInitializer";
 import forminatorProps from "./lib/head/js/client/forminatorProps";
-import AxiosNonceWrapper from "./lib/head/client/Axios/AxiosNonceWrapper";
-import JQueryForminatorIntegrator from "./lib/head/client/jQuery/JQueryForminatorIntegrator";
+import AxiosNonceWrapper from "./components/client/Axios/AxiosNonceWrapper";
+import JQueryForminatorIntegrator from "./components/client/jQuery/JQueryForminatorIntegrator";
 import { NextSeo } from "next-seo";
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 export const metadata: Metadata = {
@@ -148,55 +148,55 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta name="X-UA-Compatible" content="IE=Edge" />
         {/* Social Media and SEO Indexers */}
-        {/* <NextSeo
-          openGraph={{
-            locale: "pt_BR",
-            type: "article",
-            site_name: "Organo Lab",
-            title: "Calculadora de Solo — Organo Lab ©",
-            url: "https://blog.organolab.com.br/calculadora-de-solo/",
-            images: [
-              {
-                url: "https://example.com/path-to-image.jpg", // Update with the actual image URL
-                width: 1200, // Replace with actual width
-                height: 630, // Replace with actual height
-                alt: "Calculadora de Solo",
-              },
-            ],
-            article: {
-              authors: [
-                "Aron Barbosa de Oliveira (https://github.com/aronboliveira)",
-                "Danilo Sakamoto",
-              ],
-              section: "Science",
-              modifiedTime: "2024-01-29T01:40:09+00:00", // Update with the actual modification time
-            },
-          }}
-          twitter={{
-            cardType: "summary_large_image",
-          }}
-          additionalMetaTags={[
-            {
-              name: "robots",
-              content:
-                "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
-            },
-            {
-              name: "keywords",
-              content:
-                "Jardinagem, Cultivo, Solo, Compostagem, Horticultura, Fertilizantes, Agricultura sustentável, Substratos, Adubo orgânico, Solo nutritivo, Solo para jardinagem, Melhorador de solo, Composição de solo, Cultivo sustentável, Calculadora de solo, Montagem de solo, Kit de solo, Solo matinho cheiroso, Receita de solo, Receita matinho cheiroso, Solo vivo, Super solo, Solo orgânico",
-            },
-            {
-              name: "twitter:title",
-              content: "Calculadora de Solo — Organo Lab ©",
-            },
-            {
-              name: "twitter:description",
-              content:
-                "Calculadora da Organo Lab © para que você tenha suas receitas de uma forma simples e comece a montar seu solo em casa!",
-            },
-          ]}
-        /> */}
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+        <meta
+          name="keywords"
+          content="Jardinagem, Cultivo, Solo, Compostagem, Horticultura, Fertilizantes, Agricultura sustentável, Substratos, Adubo orgânico, Solo nutritivo, Solo para jardinagem, Melhorador de solo, Composição de solo, Cultivo sustentável, Calculadora de solo, Montagem de solo, Kit de solo, Solo matinho cheiroso, Receita de solo, Receita matinho cheiroso, Solo vivo, Super solo, Solo orgânico"
+        />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Organo Lab" />
+        <meta
+          property="og:title"
+          content="Calculadora de Solo — Organo Lab ©"
+        />
+        <meta
+          property="og:url"
+          content="https://blog.organolab.com.br/calculadora-de-solo/"
+        />
+        <meta
+          property="og:image"
+          content="https://blog.organolab.com.br/images/orglab_logo_og_630.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Calculadora de Solo" />
+        <meta
+          property="article:author"
+          content="Aron Barbosa de Oliveira (https://github.com/aronboliveira)"
+        />
+        <meta property="article:author" content="Danilo Sakamoto" />
+        <meta property="article:section" content="Science" />
+        <meta
+          property="article:modified_time"
+          content="2024-01-29T01:40:09+00:00"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Calculadora de Solo — Organo Lab ©"
+        />
+        <meta
+          name="twitter:image"
+          content="https://blog.organolab.com.br/images/orglab_logo_twitter_628.png"
+        />
+        <meta
+          name="twitter:description"
+          content="Calculadora da Organo Lab © para que você tenha suas receitas de uma forma simples e comece a montar seu solo em casa!"
+        />
         {/* DNS Prefetches */}
         <link
           rel="dns-prefetch"
@@ -220,7 +220,7 @@ export default function RootLayout({
           integrity="sha384-0wcy8qFgK2KW18OIp7CDk5LA4IXc+dCW2jh5umyKxHgJWDx+o57w1LK/ZVNi73PQ"
         />
         {/* Flatsome prefetches */}
-        <link
+        {/* <link
           rel="prefetch"
           href="https://blog.organolab.com.br/wp-content/themes/flatsome/assets/js/chunk.countup.fe2c1016.js"
           id="prefetch-chunk-countup"
@@ -254,7 +254,7 @@ export default function RootLayout({
           id="prefetch-chunk-vendors-slider"
           crossOrigin="anonymous"
           integrity="sha384-pRFRCUhYEgd5cGnDnUOud4CcC7XDIknq1/3G9K4yTyfxi8sCOJP9ztLJBnOGXTRQ"
-        />
+        /> */}
         {/* Icons */}
         <link
           href="../../public/images/org_lab_logo_favicon_16.png"
@@ -411,7 +411,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         {/* Embeds */}
-        <link
+        {/* <link
           rel="alternate"
           title="JSON"
           type="application/json"
@@ -434,9 +434,9 @@ export default function RootLayout({
           crossOrigin="anonymous"
           href="https://blog.organolab.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.organolab.com.br%2Fcalculadora-de-solo%2F&amp;format=xml"
           integrity="sha384-kaUPzrQ1xmQuUgB4HetCaXE+Jruyd56+GYirIVLTqD2Q0Xh20nartldJhrTSxtNn"
-        />
+        /> */}
         {/* RSS */}
-        <link
+        {/* <link
           rel="alternate"
           type="application/rss+xml"
           title="Feed para Organo Lab - Blog »"
@@ -453,9 +453,9 @@ export default function RootLayout({
           id="feed-comments-blog"
           crossOrigin="anonymous"
           integrity="sha384-2r1mP0SQcF1nIDXSFU3Tvy//wHR7oeY8Bn0qFTF2SA5nwdu2fB5cq0ki2pm1WWM/"
-        />
+        /> */}
         {/* Polyfill and delivr */}
-        <Script
+        {/* <Script
           type="text/javascript"
           defer
           strategy="beforeInteractive"
@@ -463,7 +463,7 @@ export default function RootLayout({
           src="https://blog.organolab.com.br/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0"
           id="wp-polyfill-js"
           integrity="sha384-Wv/Z6lsRW2CJ5nLojZYtFAXqWAd0R/zpDKTYRJBU5K0Ep4v9qGTIrm/TrAbGWHfB"
-        />
+        /> */}
         <Script
           type="text/javascript"
           defer
@@ -474,7 +474,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         {/* Google Analytics */}
-        <Script
+        {/* <Script
           type="text/javascript"
           async
           src="https://www.google-analytics.com/analytics.js"
@@ -504,9 +504,9 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=UA-135835861-37"
           id="google_gtagjs-js"
           integrity="sha384-zJ4fdVywcoBj2H3B5lP3iNcIno2G1aYDo6EulY0qy9j24lBH6aw33eLzIATOjXv7"
-        />
+        /> */}
         {/* Flatsome chunks */}
-        <FlatsomeInitializer />
+        {/* <FlatsomeInitializer />
         <Script
           type="text/javascript"
           defer
@@ -533,18 +533,18 @@ export default function RootLayout({
           src="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/forminator-ui/js/forminator-form.min.js?ver=1.28.0"
           id="forminator-form-js"
           integrity="sha384-owEWCP97OyAlK9EhkbAk+38ZJArxodqafQkWlLES2njGpVhRdZN5Sn/EJ/O9MhgM"
-        />
+        /> */}
         {/* Wp emoji chunks */}
-        <EmojiInitializer />
-        <Script
+        {/* <EmojiInitializer /> */}
+        {/* <Script
           type="text/javascript"
           defer
           src="https://blog.organolab.com.br/wp-includes/js/wp-emoji-release.min.js?ver=6.6.1"
           id="wp-emoji-release"
           integrity="sha384-kb/iwIefTlNaT8PTyAdU3tFrLX08KYY4rC0RXn4ltVQiAdodvQ2Nnic5joZBljQW"
-        />
+        /> */}
         {/* jQuery chunks */}
-        <Script
+        {/* <Script
           type="text/javascript"
           defer
           src="https://blog.organolab.com.br/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"
@@ -597,11 +597,11 @@ export default function RootLayout({
           src="https://blog.organolab.com.br/wp-content/plugins/forminator/build/front/front.multi.min.js?ver=1.28.0"
           id="forminator-front-scripts-js"
           integrity="sha384-a1FiYAG3ISqv/DhIe4ZOaXVGeSlyLbPiAAhit+iQdU2XnRkmGF7dCLV0ShgwkKpX"
-        />
+        /> */}
         {/* Axios */}
-        <AxiosNonceWrapper />
+        {/* <AxiosNonceWrapper /> */}
         {/* Forminator chunks */}
-        <Script
+        {/* <Script
           type="text/javascript"
           defer
           id="forminator-front-scripts-js-extra"
@@ -637,8 +637,8 @@ export default function RootLayout({
           src="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/js/library/inputmask.binding.js?ver=1.28.0"
           id="forminator-inputmask-binding-js"
           integrity="sha384-5/QNW3hy8X5q6O99uGaZYeL9LVtNdXFnoRfE91OuDev2Z76uc4PM0JEyO/sPV9TH"
-        />
-        <JQueryForminatorIntegrator />
+        /> */}
+        {/* <JQueryForminatorIntegrator /> */}
         {/* Bootstrap styelsheets */}
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -646,36 +646,8 @@ export default function RootLayout({
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
           crossOrigin="anonymous"
         />
-        {/* Flatsome stylesheets */}
-        <link
-          rel="stylesheet"
-          id="flatsome-main-css"
-          href="https://blog.organolab.com.br/wp-content/themes/flatsome/assets/css/flatsome.css?ver=3.15.5"
-          type="text/css"
-          media="all"
-          crossOrigin="anonymous"
-          integrity="sha384-DcmB74ycdPDAwtAFXEzFByhRAOX2MJhcVvUNf81djrxNRlNyq9gYaw3lP8wkBGjA"
-        />
-        <link
-          rel="stylesheet"
-          id="flatsome-style-css"
-          href="https://blog.organolab.com.br/wp-content/themes/flatsome/style.css?ver=3.15.5"
-          type="text/css"
-          media="all"
-          crossOrigin="anonymous"
-          integrity="sha384-1nUg1NQaiEceQ689CvjTRVcqz1sZGgKuXbQyw+BwdbRqt+YDENyMy20BRM89C/4y"
-        />
-        <link
-          rel="stylesheet"
-          id="flatsome-googlefonts-css"
-          href="https://fonts.googleapis.com/css?family=Lato%3Aregular%2C700%2C400%2C700%7CDancing+Script%3Aregular%2C400&amp;display=swap&amp;ver=3.9"
-          type="text/css"
-          media="all"
-          crossOrigin="anonymous"
-          integrity="sha384-VQVoSaANX4BG2O6UVK/4vCju4nCvDQIWAg1AI5QNVJxjsgLzxR7vvuWR1nF5d4rK"
-        />
         {/* Forminator stylesheets */}
-        <link
+        {/* <link
           rel="stylesheet"
           id="forminator-module-css-1707-css"
           href="https://blog.organolab.com.br/wp-content/uploads/forminator/1707_03bf21c0e19c91648417a24d869761a9/css/style-1707.css?ver=1701624781"
@@ -683,8 +655,8 @@ export default function RootLayout({
           media="all"
           crossOrigin="anonymous"
           integrity="sha384-r4B0oxzHddLVtVFA1m1XacaUUne3YtTna+5evQYxBv0Cvgcp+8gdfqiOELSAHbpZ"
-        />
-        <link
+        /> */}
+        {/* <link
           rel="stylesheet"
           id="forminator-icons-css"
           href="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/forminator-ui/css/forminator-icons.min.css?ver=1.28.0"
@@ -692,8 +664,8 @@ export default function RootLayout({
           media="all"
           crossOrigin="anonymous"
           integrity="sha384-WilVgpn235/olNu+N4BzVBfVV1f7NpdacabzA3HHwHz2sbUkjXXRsRn3vBY6nV/Z"
-        />
-        <link
+        /> */}
+        {/* <link
           rel="stylesheet"
           id="forminator-utilities-css"
           href="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/forminator-ui/css/src/forminator-utilities.min.css?ver=1.28.0"
@@ -701,8 +673,8 @@ export default function RootLayout({
           media="all"
           crossOrigin="anonymous"
           integrity="sha384-DsEMlBweXwG3pHbH27Vv30zNOFalol6Cej5cPVcCiTuGmJRJh2I6xExvOSpuLRkH"
-        />
-        <link
+        /> */}
+        {/* <link
           rel="stylesheet"
           id="forminator-grid-default-css"
           href="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/forminator-ui/css/src/grid/forminator-grid.open.min.css?ver=1.28.0"
@@ -710,8 +682,8 @@ export default function RootLayout({
           media="all"
           crossOrigin="anonymous"
           integrity="sha384-LMZPLstQEMtj3U0sIwRjv1+FWHIr+i4GEkOfFlHYpjG8gcszwLm/LWi986wYzsIs"
-        />
-        <link
+        /> */}
+        {/* <link
           rel="stylesheet"
           id="forminator-forms-flat-base-css"
           href="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/forminator-ui/css/src/form/forminator-form-flat.base.min.css?ver=1.28.0"
@@ -719,8 +691,8 @@ export default function RootLayout({
           media="all"
           crossOrigin="anonymous"
           integrity="sha384-s0NKljkN2GrK21H8NtbgSdnulNgMDuEXBGCweRsfZlm6XiSj0t4RlDodu1uGe882"
-        />
-        <link
+        /> */}
+        {/* <link
           rel="stylesheet"
           id="forminator-module-css-1711-css"
           href="https://blog.organolab.com.br/wp-content/uploads/forminator/1711_276234a71a141fc089793744a3f3ecaa/css/style-1711.css?ver=1701624640"
@@ -728,8 +700,8 @@ export default function RootLayout({
           media="all"
           crossOrigin="anonymous"
           integrity="sha384-GIAi7Z0i493if9dkWMW2NT8/gOsbuaep/qH5wRbPeT9Iij0bkv2Aqc4FcfQfvX0V"
-        />
-        <link
+        /> */}
+        {/* <link
           rel="stylesheet"
           id="forminator-module-css-1712-css"
           href="https://blog.organolab.com.br/wp-content/uploads/forminator/1712_58b1c954bcfe1039cd12d62d66a36ba5/css/style-1712.css?ver=1701625478"
@@ -737,7 +709,7 @@ export default function RootLayout({
           media="all"
           crossOrigin="anonymous"
           integrity="sha384-Vhqwa10mtGY99ZzPyKBEgmRYJXia3YHJ2HpadXFj1XLk3Oc6Lv+enAbdKrUBnAXb"
-        />
+        /> */}
       </head>
       <body className={poppins.className}>{children}</body>
     </html>

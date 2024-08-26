@@ -1,6 +1,6 @@
 "use client";
 import Script from "next/script";
-import flatsomeVars from "../js/client/flatsomeProps";
+import flatsomeVars from "../../lib/head/js/client/flatsomeProps";
 export default function FlatsomeInitializer(): JSX.Element {
   return (
     <Script
