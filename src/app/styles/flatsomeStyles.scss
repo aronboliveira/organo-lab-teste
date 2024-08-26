@@ -6211,7 +6211,7 @@ button.flickity-prev-next-button[disabled] {
   right: -10%;
   background-size: 100% 100%;
   z-index: -2;
-  background-image: url("../img/shadow@2x.png");
+  background-image: url("../../../public/images/flatsome/shadow@2x.png");
 }
 
 .slider-style-shadow .flickity-slider > *:not(.is-selected) {
@@ -7255,7 +7255,8 @@ span.widget-title {
   top: 100%;
   height: 9px;
   image-rendering: -webkit-optimize-contrast;
-  background: url("../img/underline.png") 50% top no-repeat;
+  background: url("../../../public/images/flatsome/underline.png") 50% top
+    no-repeat;
   background-size: 100% 9px;
 }
 

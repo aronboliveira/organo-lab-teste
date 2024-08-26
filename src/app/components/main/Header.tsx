@@ -1,11 +1,11 @@
 import SearchHeader from "../client/inputs/header/SearchHeader";
 import Image from "next/image";
+import FSSearchIcon from "../icons/FSSearchIcon";
 export default function Header(): JSX.Element {
   return (
     <header
       id="header"
       className="header header-full-width has-sticky sticky-jump"
-      style={{ height: 100 }}
     >
       <div className="header-wrapper stuck">
         <div id="masthead" className="header-main">
@@ -35,18 +35,16 @@ export default function Header(): JSX.Element {
                 />
               </a>
             </div>
-            {/* <!-- Mobile Left Elements --> */}
             <div className="flex-col show-for-medium flex-left">
               <ul className="mobile-nav nav nav-left "></ul>
             </div>
-            {/* <!-- Left Elements --> */}
             <div
               className="flex-col hide-for-medium flex-left
             flex-grow"
             >
               <ul className="header-nav header-nav-main nav nav-left  nav-uppercase nav-prompts-overlay"></ul>
             </div>
-            {/* <!-- Right Elements --> */}
+            {/* //TODO PARADO AQUI */}
             <div className="flex-col hide-for-medium flex-right">
               <ul className="header-nav header-nav-main nav nav-right  nav-uppercase nav-prompts-overlay">
                 <li className="header-search header-search-lightbox has-icon">
@@ -57,7 +55,7 @@ export default function Header(): JSX.Element {
                     data-focus="input.search-field"
                     className="is-small"
                   >
-                    <i className="icon-search" style={{ fontSize: 16 }}></i>
+                    <FSSearchIcon />
                   </a>
                   <div
                     id="search-lightbox"

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./styles/style.scss";
 import "./styles/wpBanned.scss";
+import "./styles/flatsomeStyles.scss";
 import "./lib/head/js/wp/wp-emoji-release";
 import "./lib/head/js/wp/wp-polyfill";
 import "./lib/head/js/flatsome/flatsome";
