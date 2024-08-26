@@ -10,6 +10,8 @@ import loadForminatorForm from "@/app/lib/head/js/forminator/ui/forminator-form"
 import loadHoverIntent from "@/app/lib/head/js/wp/hoverIntent";
 import loadInputMask from "@/app/lib/head/js/forminator/inputmask";
 import loadInputMaskBinding from "@/app/lib/head/js/forminator/inputmask-binding";
+import loadFlatsome from "@/app/lib/head/js/flatsome/flatsome";
+import loadFlatsomeLiveSearch from "@/app/lib/head/js/flatsome/flatsome-live-search";
 export default function JQueryForminatorIntegrator(): JSX.Element {
   useEffect(() => {
     const jQuery = loadJQuery();
@@ -20,6 +22,8 @@ export default function JQueryForminatorIntegrator(): JSX.Element {
     loadInputMaskBinding();
     loadHoverIntent();
     loadForminatorForm();
+    loadFlatsome(jQuery);
+    loadFlatsomeLiveSearch(jQuery);
     const initializeForminatorModule = (moduleId: number): void => {
       (window as any).Forminator_Cform_Paginations =
         (window as any).Forminator_Cform_Paginations || [];

@@ -4,6 +4,8 @@ import "./styles/style.scss";
 import "./styles/wpBanned.scss";
 import "./lib/head/js/wp/wp-emoji-release";
 import "./lib/head/js/wp/wp-polyfill";
+import "./lib/head/js/flatsome/flatsome";
+import "./lib/head/js/flatsome/flatsome-live-search";
 import Script from "next/script";
 import JsInitializer from "./components/client/JsInitializer";
 import GAnalyticsInitializer from "./components/client/GAnalyticsInitializer";
@@ -568,7 +570,6 @@ export default function RootLayout({
           crossOrigin="anonymous"
           integrity="sha384-rh2wODSO92I4kkH65Wap0BDa/7/nJ54xl7yHgB7wBZjruN+S02lzQmbrSuxOzYt+"
         /> */}
-        {/* //TODO */}
         {/* <Script
           type="text/javascript"
           defer
@@ -578,7 +579,6 @@ export default function RootLayout({
           crossOrigin="anonymous"
           integrity="sha384-hZvMi8RmeJb+r1i0bQbUrcFgyJi70eRyil2ex7ykc2DD2a+NoRs8xZOWvNk6zxmc"
         /> */}
-        {/* //TODO */}
         {/* <Script
           type="text/javascript"
           defer
@@ -588,7 +588,6 @@ export default function RootLayout({
           crossOrigin="anonymous"
           integrity="sha384-5/QNW3hy8X5q6O99uGaZYeL9LVtNdXFnoRfE91OuDev2Z76uc4PM0JEyO/sPV9TH"
         /> */}
-        {/* //TODO */}
         {/* <Script
           type="text/javascript"
           defer
@@ -598,8 +597,8 @@ export default function RootLayout({
           id="forminator-front-scripts-js"
           integrity="sha384-a1FiYAG3ISqv/DhIe4ZOaXVGeSlyLbPiAAhit+iQdU2XnRkmGF7dCLV0ShgwkKpX"
         /> */}
-        {/* Axios */}
         {/* //TODO */}
+        {/* Axios */}
         {/* <AxiosNonceWrapper />  */}
         {/* Forminator chunks */}
         <Script
@@ -614,7 +613,6 @@ export default function RootLayout({
             )}`,
           }}
         />
-        {/* //TODO */}
         {/* <Script
           type="text/javascript"
           defer
@@ -624,7 +622,6 @@ export default function RootLayout({
           id="forminator-front-scripts-js"
           integrity="sha384-a1FiYAG3ISqv/DhIe4ZOaXVGeSlyLbPiAAhit+iQdU2XnRkmGF7dCLV0ShgwkKpX"
         /> */}
-        {/* //TODO */}
         {/* <Script
           type="text/javascript"
           defer
@@ -634,7 +631,6 @@ export default function RootLayout({
           id="forminator-inputmask-js"
           integrity="sha384-aUPHuXAJF+ohHX7TgMM9gI9X1BGhWqTcDigm1VVB+sOZKM18DT8yvqzgPP2D8h1J"
         /> */}
-        {/* //TODO */}
         {/* <Script
           type="text/javascript"
           defer
