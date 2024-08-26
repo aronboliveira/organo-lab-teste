@@ -106,7 +106,7 @@ export default function Header(): JSX.Element {
                       alt="Loja"
                       src="https://blog.organolab.com.br/wp-content/uploads/2022/12/Sem-titulo-1.png"
                       width={150}
-                      height={70}
+                      height={50}
                     />
                   </a>
                 </li>
@@ -116,7 +116,7 @@ export default function Header(): JSX.Element {
                       alt="Artigos"
                       src="https://blog.organolab.com.br/wp-content/uploads/2022/05/artigos.png"
                       width={150}
-                      height={70}
+                      height={50}
                     />
                   </a>
                 </li>
@@ -126,7 +126,7 @@ export default function Header(): JSX.Element {
                       alt="Downloads"
                       src="https://blog.organolab.com.br/wp-content/uploads/2022/05/downloads.png"
                       width={150}
-                      height={70}
+                      height={50}
                     />
                   </a>
                 </li>{" "}
