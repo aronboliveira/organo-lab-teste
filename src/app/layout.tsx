@@ -10,7 +10,6 @@ import EmojiInitializer from "./components/client/EmojiInitializer";
 import forminatorProps from "./lib/head/js/client/forminatorProps";
 import AxiosNonceWrapper from "./components/client/Axios/AxiosNonceWrapper";
 import JQueryForminatorIntegrator from "./components/client/jQuery/JQueryForminatorIntegrator";
-import { NextSeo } from "next-seo";
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 export const metadata: Metadata = {
   title: "Calculador de Solo — Organo Lab ©",
@@ -154,7 +153,7 @@ export default function RootLayout({
         />
         <meta
           name="keywords"
-          content="Jardinagem, Cultivo, Solo, Compostagem, Horticultura, Fertilizantes, Agricultura sustentável, Substratos, Adubo orgânico, Solo nutritivo, Solo para jardinagem, Melhorador de solo, Composição de solo, Cultivo sustentável, Calculadora de solo, Montagem de solo, Kit de solo, Solo matinho cheiroso, Receita de solo, Receita matinho cheiroso, Solo vivo, Super solo, Solo orgânico"
+          content="Jardinagem, Cultivo, Solo, Compostagem, Horticultura, Fertilizantes, Agricultura sustentável, Substratos, Adubo orgânico, Solo nutritivo, Solo para jardinagem, Melhorador de solo, Composição de solo, Cultivo sustentável, Calculadora de solo, Montagem de solo, Kit de solo, Solo matinho cheiroso, Receita de solo, Receita matinho cheiroso, Solo vivo, Super solo, Solo orgânico, Gardening, Cultivation, Soil, Composting, Horticulture, Fertilizers, Sustainable agriculture, Substrates, Organic fertilizer, Nutritious soil, Gardening soil, Soil enhancer, Soil composition, Sustainable cultivation, Soil calculator, Soil assembly, Soil kit, Fragrant soil, Soil recipe, Fragrant soil recipe, Living soil, Super soil, Organic soil, Jardinería, Cultivo, Suelo, Compostaje, Horticultura, Fertilizantes, Agricultura sostenible, Sustratos, Fertilizante orgánico, Suelo nutritivo, Suelo para jardinería, Mejorador de suelo, Composición del suelo, Cultivo sostenible, Calculadora de suelo, Montaje de suelo, Kit de suelo, Suelo fragante, Receta de suelo, Receta de suelo fragante, Suelo vivo, Súper suelo, Suelo orgánico"
         />
         <meta property="og:locale" content="pt_BR" />
         <meta property="og:type" content="article" />
