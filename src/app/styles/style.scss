@@ -286,6 +286,22 @@
     width: 270px;
   }
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes highlight {
+  0% {
+    filter: contrast(1);
+  }
+  100% {
+    filter: contrast(1.2);
+  }
+}
 @mixin section-padding($padding) {
   padding-top: $padding;
   padding-bottom: $padding;
@@ -388,6 +404,17 @@ a {
 }
 header {
   display: block;
+  * {
+    animation: fadeIn 1s ease-in;
+  }
+  button,
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"] {
+    &:hover {
+      animation: highlight 2s ease-in-out infinite;
+    }
+  }
 }
 article,
 aside,
