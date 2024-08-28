@@ -8,10 +8,10 @@ import "./lib/head/js/wp/wp-polyfill";
 import "./lib/head/js/flatsome/flatsome";
 import "./lib/head/js/flatsome/flatsome-live-search";
 import Script from "next/script";
-import JsInitializer from "./components/client/JsInitializer";
-import GAnalyticsInitializer from "./components/client/GAnalyticsInitializer";
-import FlatsomeInitializer from "./components/client/FlatsomeInitializer";
-import EmojiInitializer from "./components/client/EmojiInitializer";
+import JsInitializer from "./components/client/initializers/JsInitializer";
+import GAnalyticsInitializer from "./components/client/initializers/GAnalyticsInitializer";
+import FlatsomeInitializer from "./components/client/initializers/FlatsomeInitializer";
+import EmojiInitializer from "./components/client/initializers/EmojiInitializer";
 import forminatorProps from "./lib/head/js/client/forminatorProps";
 import JQueryForminatorIntegrator from "./components/client/jQuery/JQueryForminatorIntegrator";
 // import AxiosNonceWrapper from "./components/client/Axios/AxiosNonceWrapper";
@@ -147,9 +147,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
           integrity="sha384-56HO63RVqu1uTLf9NZi23uLFaCmdMdeehon2GLvmizdWZE/E7y/wvOwmuCF45D9g"
         />
-        <meta charSet="UTF-8" />
         <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta name="X-UA-Compatible" content="IE=Edge" />
         {/* Social Media and SEO Indexers */}
         <meta

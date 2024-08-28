@@ -1,6 +1,8 @@
 import SearchHeader from "../client/inputs/header/SearchHeader";
 import Image from "next/image";
 import FSSearchIcon from "../icons/FSSearchIcon";
+import HeaderMenu from "../client/anchors/HeaderMenu";
+import HeaderWatcher from "../client/watchers/HeaderWatcher";
 export default function Header(): JSX.Element {
   return (
     <header
@@ -25,6 +27,7 @@ export default function Header(): JSX.Element {
                   src="https://blog.organolab.com.br/wp-content/uploads/2022/05/LOGO-BLOG.png"
                   className="header_logo header-logo"
                   alt="Organo Lab – Blog"
+                  priority={true}
                 />
                 <Image
                   width={1020}
@@ -132,25 +135,10 @@ export default function Header(): JSX.Element {
                 </li>{" "}
               </ul>
             </div>
-            {/* <!-- Mobile Right Elements --> */}
             <div className="flex-col show-for-medium flex-right">
               <ul className="mobile-nav nav nav-right ">
                 <li className="nav-icon has-icon">
-                  <div className="header-button">
-                    <a
-                      href="#"
-                      data-open="#main-menu"
-                      data-pos="left"
-                      data-bg="main-menu-overlay"
-                      data-color=""
-                      className="icon primary button round is-small"
-                      aria-label="Menu"
-                      aria-controls="main-menu"
-                      aria-expanded="false"
-                    >
-                      <i className="icon-menu"></i>
-                    </a>
-                  </div>
+                  <HeaderMenu />
                 </li>
               </ul>
             </div>
@@ -164,6 +152,7 @@ export default function Header(): JSX.Element {
           <div className="header-bg-color fill"></div>
         </div>
       </div>
+      <HeaderWatcher />
     </header>
   );
 }
