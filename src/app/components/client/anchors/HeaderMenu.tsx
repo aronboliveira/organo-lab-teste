@@ -4,7 +4,40 @@ import { useState, useEffect } from "react";
 import { Root, createRoot } from "react-dom/client";
 import SidebarContent from "../content/SidebarContent";
 import { rMouseEvent } from "@/app/declarations/types";
+import { titles } from "../../main/Header";
 const menuRoots: { [k: string]: Root } = {};
+function applyAttributesAndStyles(
+  sideMenu: HTMLElement,
+  altText: string,
+  translateY: number,
+  title: string
+) {
+  try {
+    const element =
+      sideMenu.querySelector(`[alt="${altText}"]`) ??
+      sideMenu.querySelector(`[alt="${altText.toLowerCase()}"]`);
+
+    if (!(element instanceof HTMLElement))
+      throw new Error(`Failed to fetch ${altText} image`);
+
+    element.style.transition = "transform .5s ease-in-out";
+    element.style.transform = `scale(1.3) translate(2px, ${translateY}px)`;
+
+    const elementAnchor = element.closest("a") ?? element.querySelector("a");
+
+    if (!(elementAnchor instanceof HTMLElement))
+      throw new Error(`Failed to fetch ${altText} anchor`);
+
+    elementAnchor.title = title;
+    elementAnchor.classList.add("anchor-shop", "menu-external");
+  } catch (e) {
+    console.error(
+      `Error executing procedures to apply attributes and styles to ${altText} elements:\n${
+        (e as Error).message
+      }`
+    );
+  }
+}
 export default function HeaderMenu(): JSX.Element {
   const [shouldOpenMenu, setMenu] = useState<boolean>(false);
   const handleClick = (c: rMouseEvent) => {
@@ -55,9 +88,44 @@ export default function HeaderMenu(): JSX.Element {
             );
           }
           setTimeout(() => {
-            console.log(
-              document.getElementById("main-menu") ?? "Failed to render menu!"
-            );
+            const sideMenu = document.getElementById("main-menu");
+            if (!(sideMenu instanceof Element)) {
+              const message = "Failed o render menu. Try reloading!";
+              alert(message);
+              console.warn(`${message}\n
+              Root: ${menuRoots[idf] ?? "Failed to define"}\n
+              innerRoot: ${
+                (menuRoots[idf] as any)?._innerRoot
+              } ?? 'Failed to define.`);
+            } else {
+              try {
+                applyAttributesAndStyles(sideMenu, "Loja", -10, titles.shop);
+                applyAttributesAndStyles(
+                  sideMenu,
+                  "Artigos",
+                  0,
+                  titles.articles
+                );
+                applyAttributesAndStyles(
+                  sideMenu,
+                  "Downloads",
+                  10,
+                  titles.downloads
+                );
+                applyAttributesAndStyles(
+                  sideMenu,
+                  "Categorias",
+                  0,
+                  titles.categories
+                );
+              } catch (e) {
+                console.error(
+                  `Error executing procedures to applying attributes and styles to menu elements:\n${
+                    (e as Error).message
+                  }`
+                );
+              }
+            }
           }, 200);
         }, 200);
       } else menuRoots[idf].render(<div></div>);
@@ -77,6 +145,7 @@ export default function HeaderMenu(): JSX.Element {
         return;
       }
       console.log("Searching content...");
+      document.querySelector("body")!.style.display = "100vw";
       searchContent(menuWrapper);
     }, 200);
   };
@@ -111,24 +180,22 @@ export default function HeaderMenu(): JSX.Element {
     }, 100);
   }, [shouldOpenMenu]);
   return (
-    <>
-      <div className="header-button">
-        <a
-          href="#"
-          id="headerButtonAnchor"
-          data-open="#main-menu"
-          data-pos="left"
-          data-bg="main-menu-overlay"
-          data-color=""
-          className="icon primary button round is-small"
-          aria-label="Menu"
-          aria-controls="main-menu"
-          aria-expanded="false"
-          onClick={() => setMenu(true)}
-        >
-          <i className="icon-menu"></i>
-        </a>
-      </div>
-    </>
+    <div className="header-button">
+      <a
+        href="#"
+        id="headerButtonAnchor"
+        data-open="#main-menu"
+        data-pos="left"
+        data-bg="main-menu-overlay"
+        data-color=""
+        className="icon primary button round is-small"
+        aria-label="Menu"
+        aria-controls="main-menu"
+        aria-expanded="false"
+        onClick={() => setMenu(true)}
+      >
+        <i className="icon-menu"></i>
+      </a>
+    </div>
   );
 }

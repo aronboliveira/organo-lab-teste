@@ -1,45 +1,46 @@
 "use client";
+import { InpProps } from "@/app/declarations/componentsInterfaces";
 import { useState } from "react";
 export default function LNumInp({
   title,
   id,
   name,
-}: {
-  title: string;
-  id?: string;
-  name?: string;
-}): JSX.Element {
+  large,
+}: InpProps): JSX.Element {
   const [v, setV] = useState<string>("");
   return (
     <fieldset
       id={`fs-${id || name || title.replaceAll(" ", "__")}`}
       data-title={title}
-      style={{ display: "flex", flexFlow: "column nowrap" }}
+      className={large ? "large-calc-fs" : "calc-fs"}
     >
-      <label id={`lb-${id}`} htmlFor={id}>
+      <label
+        id={`lb-${id}`}
+        htmlFor={id}
+        className="calc-lab"
+        data-title={title}
+      >
         <b>Quantidade de Solo:</b>
       </label>
-      <div style={{ display: "flex", flexFlow: "row wrap" }}>
+      <div id={`div-${id}`} className="calc-inp-div" data-title={title}>
         <input
           id={id}
           type="number"
-          className="form-control"
+          className="form-control calc-inp"
           name={name}
           data-title={title}
-          style={{
-            width: "20.625rem",
-            height: "3.4375rem",
-            borderRadius: "0.625rem",
-            backgroundColor: "#D9D9D9",
-          }}
+          autoComplete="off"
+          value={v}
           onChange={(ev) => setV(ev.currentTarget.value)}
         />
         <select
-          className="form-select"
-          style={{ width: "4.4rem", height: "3.3rem" }}
+          id={`select-${id}`}
+          className="form-select calc-select"
+          // style={{ width: "4.4rem", height: "3.3rem" }}
+          data-title={title}
         >
-          <option value="Kg">Kg</option>
-          <option value="L">Lg</option>
+          <option value="kg">Kg</option>
+          <option value="l">L</option>
         </select>
       </div>
     </fieldset>

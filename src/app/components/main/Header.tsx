@@ -3,6 +3,12 @@ import Image from "next/image";
 import FSSearchIcon from "../icons/FSSearchIcon";
 import HeaderMenu from "../client/anchors/HeaderMenu";
 import HeaderWatcher from "../client/watchers/HeaderWatcher";
+export const titles = {
+  shop: "Clique aqui para visitar a nossa Loja!",
+  articles: "Clique aqui para visitar nossos Artigos!",
+  downloads: "Clique aqui para visitar nossa seção de Downloads!",
+  categories: 'Clique aqui para visitar as nossas Categorias!'
+};
 export default function Header(): JSX.Element {
   return (
     <header
@@ -47,7 +53,6 @@ export default function Header(): JSX.Element {
             >
               <ul className="header-nav header-nav-main nav nav-left  nav-uppercase nav-prompts-overlay"></ul>
             </div>
-            {/* //TODO PARADO AQUI */}
             <div className="flex-col hide-for-medium flex-right">
               <ul className="header-nav header-nav-main nav nav-right  nav-uppercase nav-prompts-overlay">
                 <li className="header-search header-search-lightbox has-icon">
@@ -104,9 +109,14 @@ export default function Header(): JSX.Element {
                 </li>
                 <li className="header-divider"></li>
                 <li className="html custom html_topbar_right">
-                  <a href="https://www.organolab.com.br/">
+                  <a
+                    href="https://www.organolab.com.br/"
+                    title={titles.shop}
+                    className="anchor-shop menu-external"
+                  >
                     <Image
                       alt="Loja"
+                      className="shop"
                       src="https://blog.organolab.com.br/wp-content/uploads/2022/12/Sem-titulo-1.png"
                       width={150}
                       height={50}
@@ -114,9 +124,14 @@ export default function Header(): JSX.Element {
                   </a>
                 </li>
                 <li className="html custom html_top_right_text">
-                  <a href="https://blog.organolab.com.br/blog">
+                  <a
+                    href="https://blog.organolab.com.br/blog"
+                    title={titles.articles}
+                    className="articles-shop menu-external"
+                  >
                     <Image
                       alt="Artigos"
+                      className="articles"
                       src="https://blog.organolab.com.br/wp-content/uploads/2022/05/artigos.png"
                       width={150}
                       height={50}
@@ -124,15 +139,20 @@ export default function Header(): JSX.Element {
                   </a>
                 </li>
                 <li className="html custom html_nav_position_text">
-                  <a href="https://blog.organolab.com.br/">
+                  <a
+                    href="https://blog.organolab.com.br/"
+                    title={titles.downloads}
+                    className="anchor-shop menu-external"
+                  >
                     <Image
                       alt="Downloads"
+                      className="downloads"
                       src="https://blog.organolab.com.br/wp-content/uploads/2022/05/downloads.png"
                       width={150}
                       height={50}
                     />
                   </a>
-                </li>{" "}
+                </li>
               </ul>
             </div>
             <div className="flex-col show-for-medium flex-right">
