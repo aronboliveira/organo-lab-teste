@@ -394,7 +394,7 @@ html {
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: top;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -605,12 +605,13 @@ header .logo a,
   opacity: 1;
 }
 $baseLargeValue: 3rem;
+$baseDefValue: 1.8125rem;
 $calcInpWid: 90%;
-.large-calc-fs {
+.calc-fs {
   display: flex;
   flex-flow: column nowrap;
-  width: calc($baseLargeValue * 7.5);
-  height: $baseLargeValue;
+  width: calc($baseDefValue * 7.5);
+  height: $baseDefValue * 1.2;
   .calc-lab {
     width: $calcInpWid;
   }
@@ -621,7 +622,37 @@ $calcInpWid: 90%;
     height: 100%;
     .calc-inp {
       width: $calcInpWid;
-      height: 100%;
+      height: $baseLargeValue * 0.795;
+      border-radius: 0.625rem;
+      background-color: #d9d9d9;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .calc-select {
+      width: calc((100% - $calcInpWid) * 3.55);
+      height: 101%;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
+.calc-fs-large {
+  display: flex;
+  flex-flow: column nowrap;
+  width: calc($baseLargeValue * 7.5);
+  height: $baseLargeValue;
+  margin: 0 0 3rem 0;
+  .calc-lab {
+    width: $calcInpWid;
+  }
+  .calc-inp-div {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 100%;
+    .calc-inp {
+      width: $calcInpWid;
+      height: $baseLargeValue * 0.79;
       border-radius: 0.625rem;
       background-color: #d9d9d9;
       border-top-right-radius: 0;
@@ -914,6 +945,19 @@ $calcInpWid: 90%;
       --wp-admin--admin-bar--position-offset: 0rem;
     }
   }
+}
+@mixin sectsDefs() {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.kit-sect {
+  @include sectsDefs;
+}
+.kit-subsect {
+  @include sectsDefs;
 }
 .logo {
   line-height: 1;
@@ -1321,10 +1365,22 @@ input[type="button"].primary,
     padding: 1.125rem 0;
   }
 }
+#header {
+  height: 0 !important;
+}
 #main,
 #wrapper {
   background-color: #fff;
   position: relative;
+}
+#main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 2rem;
+  height: 90%;
+  width: 90%;
+  margin-top: 12%;
 }
 #text-1180665482 {
   text-align: center;
@@ -1377,6 +1433,14 @@ input[type="button"].primary,
       @include shape-divider(var(--divider-height), var(--divider-width));
     }
   }
+}
+body {
+  height: 70rem;
+}
+#wrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
 }
 @media screen and (min-width: 850px) {
   .mfp-content,

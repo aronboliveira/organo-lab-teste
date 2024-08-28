@@ -4,6 +4,7 @@ export interface SidebarProps {
 }
 export interface InpProps {
   title: string;
+  iniValue?: string;
   id?: string;
   name?: string;
   large?: boolean;
