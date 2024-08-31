@@ -12,7 +12,7 @@ export default function LNumInp({
   name,
   large,
 }: InpProps): JSX.Element {
-  const pascalId = `${id?.charAt(0) ?? ""}${id?.slice(1) ?? ""}`;
+  const pascalId = `${id?.charAt(0).toUpperCase() ?? ""}${id?.slice(1) ?? ""}`;
   const joinedTitle = title.replace(/[\s\|]/g, "");
   const optRef = useRef<nlSel>(null);
   const inpRef = useRef<nlInp>(null);

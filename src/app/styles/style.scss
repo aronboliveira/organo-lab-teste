@@ -1,3 +1,8 @@
+$baseLargeValue: 3rem;
+$baseDefValue: 1.8125rem;
+$calcInpWid: 12rem;
+$calcRadius: 0.625rem;
+$translateX: -0.855rem;
 :root {
   --atomic-cream-gradient: linear-gradient(135deg, #fdd79a, #004a59);
   --background-color-black: rgb(0, 0, 0);
@@ -409,9 +414,8 @@ body {
   justify-content: center;
   align-items: top;
   width: 100vw;
-  height: 150rem;
   margin: 0;
-  padding: 0;
+  padding: 0 0 10% 0;
   background-color: #f4f4f4;
   color: #777;
   font-family: "Lato", Arial, sans-serif;
@@ -456,6 +460,11 @@ header {
       }
     }
   }
+}
+footer {
+  @extend %flex-center;
+  width: 50%;
+  margin: auto;
 }
 article,
 aside,
@@ -503,6 +512,11 @@ input[type="submit"] {
     width: auto;
   }
 }
+input {
+  &::selection {
+    background-color: #a7a6a6dd;
+  }
+}
 img {
   &.wp-smiley,
   &.emoji {
@@ -520,6 +534,13 @@ img {
 p {
   .button {
     vertical-align: baseline;
+  }
+}
+select {
+  &.form-select {
+    background-color: white;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+    border-color: rgb(222, 226, 230);
   }
 }
 :where(.has-border-color) {
@@ -618,6 +639,7 @@ header .logo a,
   opacity: 1;
 }
 .btn {
+  border-radius: 0.5625rem;
   &#brand-invite-shop-btn {
     height: 2.5rem;
     width: 12.5rem;
@@ -651,11 +673,6 @@ header .logo a,
     }
   }
 }
-$baseLargeValue: 3rem;
-$baseDefValue: 1.8125rem;
-$calcInpWid: 12rem;
-$calcRadius: 0.625rem;
-$translateX: -0.855rem;
 .calc-btn {
   width: ($calcInpWid * 0.975);
   transform: translate($translateX, 0);
@@ -1035,7 +1052,8 @@ $translateX: -0.855rem;
 }
 .kit-title {
   font-size: 1.3rem;
-  font-weight: 800;
+  font-weight: 900;
+  text-shadow: 0 0 1px #000;
 }
 .logo {
   line-height: 1;
@@ -1395,10 +1413,9 @@ input[type="button"].primary,
 }
 #brand-wrapper {
   @include flRNoW;
-  width: 75%;
   gap: 3rem;
   justify-content: space-around;
-  margin-top: 6rem;
+  margin-top: 12rem;
   #brand-invite-sect {
     @include flCNoW;
     @extend %flex-center;
@@ -1471,6 +1488,13 @@ input[type="button"].primary,
     }
   }
 }
+#calc-title {
+  margin-bottom: 2.5rem;
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
+}
 #col-1161238638 {
   > .col-inner {
     padding: 1.875rem 0 0 0;
@@ -1483,6 +1507,22 @@ input[type="button"].primary,
 }
 #header {
   height: 0 !important;
+}
+#invite-logo-wrapper {
+  @include flRNoW;
+  @extend %flex-center;
+  width: 100%;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  #invite-logo-title {
+    @include flCNoW;
+    @extend %flex-center;
+    height: 100%;
+    vertical-align: middle;
+    margin: 0;
+    font-weight: 400;
+    font-size: 2rem;
+  }
 }
 #kits-wrapper {
   display: flex;
@@ -1555,6 +1595,10 @@ input[type="button"].primary,
   width: 100%;
   flex-flow: row wrap;
   gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+#soilSacs {
+  padding-block: 2.5%;
 }
 #text-1180665482 {
   text-align: center;
