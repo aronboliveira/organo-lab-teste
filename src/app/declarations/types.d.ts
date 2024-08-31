@@ -6,3 +6,4 @@ export type nlSel = HTMLSelectElement | null;
 export type nlInp = HTMLInputElement | null;
 export type nOutp = HTMLOutputElement | null;
 export type nlDl = HTMLDataListElement | null;
+export type kitGroups = "main" | "coots" | "matinho" | "gynetcs";

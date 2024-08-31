@@ -143,12 +143,23 @@ export default function Main(): JSX.Element {
             ],
           },
         ].map((s, i) => {
-          const normalizedKn = regularToCamel(
+          let normalizedKn = regularToCamel(
             s.kn.replace(/\|/g, " ").replace(/\s{2,}/g, " ")
           );
           const pascalKn = regularToPascal(
             s.kn.replace(/\|/g, " ").replace(/\s{2,}/g, " ")
           );
+          if (/[A-Z]/g.test(normalizedKn)) {
+            normalizedKn = /[A-Z]/g.test(normalizedKn.charAt(0))
+              ? normalizedKn.slice(
+                  0,
+                  /[A-Z\_\-]/g.exec(normalizedKn.slice(1))!.index
+                )
+              : normalizedKn.slice(
+                  0,
+                  /[A-Z\_\-]/g.exec(normalizedKn.slice(0))!.index
+                );
+          }
           return (
             <section
               id={`sect${pascalKn}`}

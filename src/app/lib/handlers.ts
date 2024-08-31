@@ -1,4 +1,4 @@
-import { rMouseEvent } from "@/app/declarations/types";
+import { kitGroups, rMouseEvent } from "@/app/declarations/types";
 
 export const removeOverlay = (): void => {
   console.log("removing overlay...");
@@ -68,4 +68,30 @@ export function parseNotNaN(
     return returnVal || 0;
   }
 }
-export function calcKits() {}
+export function calcKits(v: string = "0", g: kitGroups = "main") {
+  try {
+    if (typeof v !== "string")
+      throw new Error(
+        `Inadequate primitive type argumented to calcKits as value`
+      );
+    let v_n = parseNotNaN(v);
+    if (!Number.isFinite(v_n)) {
+      console.warn(`Value parsed as Not Finite. Defaulting to -1.`);
+      v_n = -1;
+    }
+    if (typeof g !== "string")
+      throw new Error(
+        `Inadequate primitive type argumented to calcKits as group`
+      );
+    if (
+      !(g === "main" || g === "coots" || g === "matinho" || g === "gynetcs")
+    ) {
+      console.error(
+        `Inadequate string value argumented to calcKits as group. Defaulting to main.`
+      );
+      g = "main";
+    }
+  } catch (e) {
+    console.error(`Error executing calcKits:\n${(e as Error).message}`);
+  }
+}
