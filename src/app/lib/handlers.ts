@@ -29,7 +29,6 @@ export function isClickOutside(event: rMouseEvent, query: string): boolean[] {
     return [false, false, false, false];
   }
 }
-
 export function parseNotNaN(
   iniVal: string,
   def: number = 0,
@@ -69,3 +68,4 @@ export function parseNotNaN(
     return returnVal || 0;
   }
 }
+export function calcKits() {}
