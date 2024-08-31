@@ -4,3 +4,5 @@ export type voidishDiv = HTMLDivElement | voidish;
 export type nullishDiv = HTMLDivElement | null;
 export type nlSel = HTMLSelectElement | null;
 export type nlInp = HTMLInputElement | null;
+export type nOutp = HTMLOutputElement | null;
+export type nlDl = HTMLDataListElement | null;

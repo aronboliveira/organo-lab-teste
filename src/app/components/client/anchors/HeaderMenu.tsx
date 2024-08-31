@@ -1,5 +1,5 @@
 "use client";
-import { isClickOutside, removeOverlay } from "@/app/lib/head/handlers";
+import { isClickOutside, removeOverlay } from "@/app/lib/handlers";
 import { useState, useEffect } from "react";
 import { Root, createRoot } from "react-dom/client";
 import SidebarContent from "../content/SidebarContent";
@@ -45,9 +45,9 @@ export default function HeaderMenu(): JSX.Element {
     setTimeout(() => {
       if (
         document.querySelector(".off-canvas") &&
-        isClickOutside(c, ".mfp-content").some((coord) => coord === true) &&
+        isClickOutside(c, ".mfp-content").some(coord => coord === true) &&
         isClickOutside(c, ".mfp-wrap.off-canvas").every(
-          (coord) => coord === false
+          coord => coord === false
         )
       ) {
         console.log("click setting to false...");
