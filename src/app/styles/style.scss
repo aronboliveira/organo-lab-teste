@@ -518,6 +518,11 @@ input {
   }
 }
 img {
+  animation: fadeIn 2s ease-in-out;
+  &[id*="soil"] {
+    transition: opacity 3s ease-in-out, height 2s ease-in-out,
+      width 2s ease-in-out;
+  }
   &.wp-smiley,
   &.emoji {
     display: inline !important;
@@ -1529,6 +1534,8 @@ input[type="button"].primary,
   flex-flow: row wrap;
   justify-content: space-around;
   width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
 }
 #logo {
   width: 21rem;
@@ -1594,11 +1601,12 @@ input[type="button"].primary,
   @extend %flex-center;
   width: 100%;
   flex-flow: row wrap;
-  gap: 3rem;
+  column-gap: 3rem;
   margin-bottom: 2.5rem;
 }
 #soilSacs {
   padding-block: 2.5%;
+  max-width: 90vw;
 }
 #text-1180665482 {
   text-align: center;
@@ -1606,6 +1614,43 @@ input[type="button"].primary,
 #wrapper {
   width: 100%;
   @include flCNoW;
+}
+@media screen and (max-width: 860px) {
+  #brand-wrapper {
+    @include flCNoW;
+    margin-top: 10rem;
+    #brand-invite-sect {
+      padding-inline: 3rem;
+    }
+  }
+  #kits-wrapper {
+    display: grid;
+    row-gap: 5rem;
+    column-gap: 0.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    padding-inline: 1rem;
+    .kit-sect {
+      &:nth-of-type(even) {
+        grid-column: 1 / 2;
+      }
+      &:nth-of-type(3n + 2) {
+        grid-row: span 1;
+        grid-column: 2 / 3;
+      }
+      &:last-child {
+        &:nth-of-type(odd) {
+          &:nth-last-child(1) {
+            grid-column: 1 / -1;
+          }
+        }
+      }
+    }
+    .kit-title {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
 }
 @media screen and (min-width: 850px) {
   .mfp-content,
@@ -1750,7 +1795,7 @@ input[type="button"].primary,
     }
   }
 }
-@media (max-width: 549px) {
+@media screen and (max-width: 549px) {
   .header-main {
     height: 100%;
     .header-inner {
@@ -1767,7 +1812,69 @@ input[type="button"].primary,
   }
   #logo {
     img {
-      max-height: 4.375rem;
+      margin-top: 0.5rem;
+      max-height: 5rem;
     }
+  }
+}
+@media screen and (max-width: 535px) {
+  body {
+    padding: 0 0 40% 0;
+  }
+  .header-main {
+    #logo {
+      img {
+        transform: scale(1) translate(0.5rem, 0rem);
+        max-height: 100%;
+        margin-top: 0rem;
+      }
+    }
+  }
+  #fsSoilQuant {
+    width: 80%;
+    .calc-group-large {
+      .calc-inp-div {
+        width: 80%;
+        margin-inline: auto;
+      }
+    }
+  }
+  #invite-logo-wrapper {
+    width: 75%;
+    margin-inline: auto;
+  }
+  #kits-wrapper {
+    @include flCNoW;
+    row-gap: 4rem;
+    justify-content: start;
+    .kit-subsect {
+      width: 100%;
+      &:first-of-type {
+        margin-bottom: 2rem;
+      }
+      .calc-group {
+        width: 80%;
+        > * {
+          width: 100%;
+        }
+        .calc-outp {
+          width: 100%;
+        }
+      }
+    }
+    .kit-title {
+      padding-left: 0;
+      margin-bottom: 0;
+      text-align: center;
+      max-width: 90%;
+    }
+    .calc-btn {
+      margin-left: 1.2rem;
+    }
+  }
+}
+@media screen and (max-width: 335px) {
+  #calc-title {
+    font-size: 2.5rem;
   }
 }

@@ -35,7 +35,7 @@ const secondInpBlockDef = [
   },
   {
     n: "neem_pie",
-    t: "Perlita",
+    t: "Torta de Neem",
   },
   {
     n: "shell_ls",
@@ -54,9 +54,6 @@ const secondInpBlockB = [
     t: "Biochar",
   },
 ];
-
-//1.9742930591259640102827763496144
-//0.50651041666666666666666666666667
 export default function Main(): JSX.Element {
   return (
     <main id="main">

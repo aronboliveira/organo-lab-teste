@@ -6,8 +6,6 @@ export default function HeaderWatcher(): JSX.Element {
     const headerWrapper = document
       .querySelector("header")
       ?.querySelector(".header-wrapper");
-    console.log(scrollY);
-    console.log(headerWrapper);
     if (
       scrollY === 0 &&
       headerWrapper instanceof HTMLElement &&
@@ -19,6 +17,31 @@ export default function HeaderWatcher(): JSX.Element {
       headerWrapper.classList.remove("stuck");
   };
   useEffect(() => {
+    document.querySelectorAll(".kit-title").forEach(title => {
+      if (!(title instanceof HTMLElement)) return;
+      if (title.innerText.length < 35) {
+        let acc = 0;
+        const nCicles = 35 - title.innerText.length;
+        for (let i = 0; i <= nCicles; i++) acc += 1.2;
+        let prevPad =
+          parseNotNaN(
+            getComputedStyle(title).paddingRight.replace("px", "").trim()
+          ) || 0;
+        if (!Number.isFinite(prevPad)) {
+          console.warn(
+            `Previous title padding not validated as Finite. Defaulting to 0.`
+          );
+          prevPad = 0;
+        }
+        title.style.transition =
+          getComputedStyle(title).transition !== ""
+            ? `${
+                getComputedStyle(title).transition ?? ""
+              }, padding 0.25s ease-in-out`
+            : "padding 0.25s ease-in-out";
+        title.style.paddingRight = `${prevPad + acc}px`;
+      }
+    });
     handleScroll();
     addEventListener("scroll", handleScroll);
     return () => removeEventListener("scroll", handleScroll);

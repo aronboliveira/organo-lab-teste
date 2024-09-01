@@ -68,6 +68,49 @@ export function parseNotNaN(
     return returnVal || 0;
   }
 }
+export const factorsKits: Map<string, Map<string, number>> = new Map([
+  [
+    "coots",
+    new Map([
+      ["peat", 0],
+      ["perlite", 0],
+      ["earthworm_humus", 0],
+      ["basalt_rp", 0],
+      ["shell_ls", 0],
+      ["agr_plaster", 0],
+      ["sw_flour", 0],
+    ]),
+  ],
+  [
+    "gynetcs",
+    new Map([
+      ["peat", 0],
+      ["perlite", 0],
+      ["earthworm_humus", 0],
+      ["basalt_rp", 0],
+      ["shell_ls", 0],
+      ["agr_plaster", 0],
+      ["biochar", 0],
+      ["bakashi", 0],
+      ["nt_phosp", 0],
+    ]),
+  ],
+  [
+    "matinho",
+    new Map([
+      ["peat", 0],
+      ["perlite", 0],
+      ["earthworm_humus", 0],
+      ["basalt_rp", 0],
+      ["shell_ls", 0],
+      ["agr_plaster", 0],
+      ["biochar", 0],
+      ["bakashi", 0],
+      ["sw_flour", 0],
+      ["cr_flour", 0],
+    ]),
+  ],
+]);
 export function calcKits(v: string = "0", g: kitGroups = "main") {
   try {
     if (typeof v !== "string")
