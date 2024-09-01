@@ -1,9 +1,9 @@
 "use client";
-import { InpProps } from "@/app/declarations/componentsInterfaces";
+import { IOProps } from "@/app/declarations/componentsInterfaces";
 import { nOutp, nlSel } from "@/app/declarations/types";
 import { parseNotNaN } from "@/app/lib/handlers";
+import { removeAccents } from "@/app/lib/models";
 import { useRef, useEffect } from "react";
-const recent: { [k: string]: string[] } = {};
 export default function LNumOutp({
   title,
   group,
@@ -11,9 +11,9 @@ export default function LNumOutp({
   id,
   name,
   large,
-}: InpProps): JSX.Element {
+}: IOProps): JSX.Element {
   const pascalId = `${id?.charAt(0) ?? ""}${id?.slice(1) ?? ""}`;
-  const joinedTitle = title.replace(/[\s\|]/g, "");
+  const joinedTitle = removeAccents(title.replace(/[\s\|]/g, ""));
   const optRef = useRef<nlSel>(null);
   const outpRef = useRef<nOutp>(null);
   useEffect(() => {
@@ -63,12 +63,12 @@ export default function LNumOutp({
         <output
           id={id}
           className="form-control calc-outp"
-          name={name}
+          data-name={name}
           data-title={joinedTitle}
           data-group={group}
           ref={outpRef}
         />
-        <span
+        <abbr
           id={`measure${pascalId}`}
           className="calc-measure"
           ref={optRef}
@@ -79,7 +79,7 @@ export default function LNumOutp({
             : `${iniValue.charAt(0).toUpperCase()}${iniValue
                 .slice(1)
                 .toLowerCase()}`}
-        </span>
+        </abbr>
       </div>
     </div>
   );

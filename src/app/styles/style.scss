@@ -712,10 +712,6 @@ header .logo a,
       border-radius: $calcRadius;
       background-color: #d9d9d9;
     }
-    .calc-inp {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
     .calc-select,
     .calc-measure {
       height: 101%;
@@ -736,7 +732,7 @@ header .logo a,
 .calc-fs-large,
 .calc-group-large {
   @include flCNoW;
-  width: calc($baseLargeValue * 7.5);
+  width: calc($baseLargeValue * 7.2);
   height: $baseLargeValue;
   margin: 0 0 3rem 0;
   .calc-lab {
@@ -751,15 +747,29 @@ header .logo a,
       height: $baseLargeValue * 0.84;
       border-radius: 0.625rem;
       background-color: #d9d9d9;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
     }
     .calc-select {
       width: 4.5rem;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
+    .calc-measure {
+      @extend %flex-center;
+      height: 101%;
+      padding-left: 0.5rem;
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
   }
+}
+.calc-outp {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transition: color 1s ease-in-out;
+}
+.calc-alert {
+  font-size: 0.8rem !important;
+  color: #9f3515 !important;
 }
 .flex-col {
   &:has(.header-nav) {
@@ -1601,7 +1611,7 @@ input[type="button"].primary,
   @extend %flex-center;
   width: 100%;
   flex-flow: row wrap;
-  column-gap: 3rem;
+  column-gap: 0;
   margin-bottom: 2.5rem;
 }
 #soilSacs {
@@ -1620,7 +1630,7 @@ input[type="button"].primary,
     @include flCNoW;
     margin-top: 10rem;
     #brand-invite-sect {
-      padding-inline: 3rem;
+      padding-inline: 3rem 3.8rem;
     }
   }
   #kits-wrapper {
@@ -1649,6 +1659,7 @@ input[type="button"].primary,
       display: flex;
       justify-content: center;
       width: 100%;
+      min-height: 3.25rem;
     }
   }
 }
@@ -1792,6 +1803,16 @@ input[type="button"].primary,
       min-height: 1.5rem;
       line-height: 1.375rem;
       font-size: 0.8125rem;
+    }
+  }
+}
+@media screen and (max-width: 554px) {
+  .calc-group-large {
+    width: 75%;
+    .calc-inp-div {
+      .calc-inp {
+        width: 100%;
+      }
     }
   }
 }

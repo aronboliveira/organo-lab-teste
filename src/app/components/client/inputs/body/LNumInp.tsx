@@ -1,24 +1,23 @@
 "use client";
 import { InpProps } from "@/app/declarations/componentsInterfaces";
-import { nlDl, nlInp, nlSel } from "@/app/declarations/types";
+import { nlDl } from "@/app/declarations/types";
 import { parseNotNaN } from "@/app/lib/handlers";
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 const recent: { [k: string]: string[] } = {};
 export default function LNumInp({
   title,
   group,
-  iniValue = "kg",
   id,
   name,
   large,
+  s,
+  d,
+  r,
 }: InpProps): JSX.Element {
   const pascalId = `${id?.charAt(0).toUpperCase() ?? ""}${id?.slice(1) ?? ""}`;
   const joinedTitle = title.replace(/[\s\|]/g, "");
-  const optRef = useRef<nlSel>(null);
-  const inpRef = useRef<nlInp>(null);
+  const optRef = useRef<HTMLElement | null>(null);
   const dlRef = useRef<nlDl>(null);
-  const [v, setV] = useState<string>("");
-  const [s, setS] = useState<string>(iniValue);
   const sanitazeValue = (n: string) => {
     if (/[^0-9,\.]/g.test(n)) n = n.replace(/[^0-9,\.]/g, "");
     if (n.length > 5) n = n.slice(0, 5);
@@ -28,10 +27,10 @@ export default function LNumInp({
     const handleResize = (): void => {
       if (
         optRef.current instanceof HTMLElement &&
-        inpRef.current instanceof HTMLElement
+        r.current instanceof HTMLElement
       ) {
         const prevHeight = getComputedStyle(optRef.current).height;
-        optRef.current.style.height = `${getComputedStyle(inpRef.current)
+        optRef.current.style.height = `${getComputedStyle(r.current)
           .height.replace("px", "")
           .trim()}px`;
         if (
@@ -47,18 +46,17 @@ export default function LNumInp({
   }, []);
   useEffect(() => {
     try {
-      if (!(inpRef.current instanceof HTMLInputElement)) return;
+      if (!(r.current instanceof HTMLInputElement)) return;
       if (!(dlRef.current instanceof HTMLDataListElement)) return;
-      if (v !== "") {
-        if (!recent[`${inpRef.current.id}`])
-          recent[`${inpRef.current.id}`] = [];
-        console.log(recent[`${inpRef.current.id}`]);
-        if (!recent[`${inpRef.current.id}`].includes(v)) {
-          recent[`${inpRef.current.id}`].push(v);
-          if (recent[`${inpRef.current.id}`].length > 3)
-            recent[`${inpRef.current.id}`].shift();
+      sessionStorage.setItem("v", s);
+      if (s !== "") {
+        if (!recent[`${r.current.id}`]) recent[`${r.current.id}`] = [];
+        if (!recent[`${r.current.id}`].includes(s)) {
+          recent[`${r.current.id}`].push(s);
+          if (recent[`${r.current.id}`].length > 3)
+            recent[`${r.current.id}`].shift();
           dlRef.current.innerHTML = "";
-          recent[`${inpRef.current.id}`].forEach(value => {
+          recent[`${r.current.id}`].forEach(value => {
             dlRef.current?.appendChild(
               Object.assign(document.createElement("option"), {
                 value: value,
@@ -74,7 +72,7 @@ export default function LNumInp({
         }`
       );
     }
-  }, [v]);
+  }, [s]);
   return (
     <fieldset
       id={`fs${pascalId}`}
@@ -104,13 +102,18 @@ export default function LNumInp({
           name={name}
           data-title={joinedTitle}
           data-group={group}
-          ref={inpRef}
           type="number"
+          pattern="^[0-9]{1,}$"
+          min={0}
+          max={99999}
+          minLength={1}
+          maxLength={5}
           autoComplete="off"
           list={`dl${pascalId}`}
-          value={v}
-          onInput={ev => setV(sanitazeValue(ev.currentTarget.value))}
-          onChange={ev => setV(sanitazeValue(ev.currentTarget.value))}
+          ref={r}
+          value={s}
+          onInput={ev => d(sanitazeValue(ev.currentTarget.value))}
+          onChange={ev => d(sanitazeValue(ev.currentTarget.value))}
         />
         <datalist
           id={`dl${pascalId}`}
@@ -118,22 +121,14 @@ export default function LNumInp({
           data-group={group}
           ref={dlRef}
         ></datalist>
-        <select
+        <abbr
           id={`select${pascalId}`}
-          className="form-select calc-select"
+          className="calc-measure"
           ref={optRef}
           data-title={joinedTitle}
-          value={s}
-          onChange={ev => setS(ev.currentTarget.value)}
         >
-          {iniValue.length === 1
-            ? iniValue.toUpperCase()
-            : `${iniValue.charAt(0).toUpperCase()}${iniValue
-                .slice(1)
-                .toLowerCase()}`}
-          <option value="kg">Kg</option>
-          <option value="l">L</option>
-        </select>
+          L
+        </abbr>
       </div>
     </fieldset>
   );

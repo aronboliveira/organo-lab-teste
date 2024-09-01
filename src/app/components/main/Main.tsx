@@ -3,9 +3,12 @@ import {
   regularToCamel,
   regularToPascal,
 } from "@/app/lib/models";
-import LNumInp from "../client/inputs/body/LNumInp";
 import LNumOutp from "../client/inputs/body/LNumOutp";
 import Image from "next/image";
+import SoilDiv from "./SoilDiv";
+import { calcKits } from "@/app/lib/handlers";
+import { kitGroups } from "@/app/declarations/types";
+import CalcBtn from "../client/buttons/CalcBtn";
 const ap = {
   n: "agr_plaster",
   t: "Gesso Agrícola",
@@ -46,8 +49,8 @@ const secondInpBlockDef = [
 const secondInpBlockB = [
   ...secondInpBlockDef,
   {
-    n: "bakashi",
-    t: "Bakashi",
+    n: "bokashi",
+    t: "Bokashi",
   },
   {
     n: "biochar",
@@ -75,22 +78,7 @@ export default function Main(): JSX.Element {
         />
         <strong id="invite-logo-title">E aí, bora cultivar?</strong>
       </div>
-      <div id="soilDiv">
-        <LNumInp
-          name="soil_quant"
-          id="soilQuant"
-          title="Quantidade de Solo"
-          large={true}
-          group="main"
-        />
-        <button
-          className="btn btn-secondary calc-btn"
-          data-group="main"
-          id="btnMain"
-        >
-          Calcular
-        </button>
-      </div>
+      <SoilDiv />
       <div id="kits-wrapper">
         {[
           {
@@ -195,13 +183,7 @@ export default function Main(): JSX.Element {
                   ))}
                 </div>
               ))}
-              <button
-                className="btn btn-secondary calc-btn"
-                data-group={normalizedKn}
-                id={`btn${pascalKn}`}
-              >
-                Calcular
-              </button>
+              <CalcBtn id={pascalKn} group={normalizedKn} />
             </section>
           );
         })}
