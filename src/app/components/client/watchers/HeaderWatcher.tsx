@@ -42,9 +42,6 @@ export default function HeaderWatcher(): JSX.Element {
         title.style.paddingRight = `${prevPad + acc}px`;
       }
     });
-    alert(
-      "Esta é uma implantação estática para teste do aplicativo da Calculadora de Solo para o E-Commerce e Blog da Organo Lab©.\nFuncionalidades ligadas ao servidor WordPress (como pesquisas), ativas no sistema funcional, não terão resultado.\nCheque https://blog.organolab.com.br/ ou a url canônica para visitar o site ativo!"
-    );
     handleScroll();
     addEventListener("scroll", handleScroll);
     return () => removeEventListener("scroll", handleScroll);

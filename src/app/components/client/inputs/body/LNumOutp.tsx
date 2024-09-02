@@ -81,6 +81,16 @@ export default function LNumOutp({
                 .toLowerCase()}`}
         </abbr>
       </div>
+      {name === "cr_flour" ? (
+        <small
+          className="recommendation outp-recommendation"
+          id={`cr-flour-${title}-recommendation`}
+        >
+          Indicamos substituir esse item por Farinha de Algas
+        </small>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

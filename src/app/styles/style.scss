@@ -326,6 +326,17 @@ $translateX: -0.855rem;
     filter: contrast(0.8);
   }
 }
+@keyframes stretchWidth {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 144.58px;
+  }
+  100% {
+    width: 289.16px;
+  }
+}
 @mixin button-styles($font-size, $line-height, $min-height, $padding) {
   font-size: $font-size;
   line-height: $line-height;
@@ -443,6 +454,9 @@ body {
   &.container-width {
     width: 100vw;
   }
+  > * {
+    animation: fadeIn 1s ease-in;
+  }
 }
 a {
   color: #353535;
@@ -457,20 +471,28 @@ header {
   input[type="reset"],
   input[type="submit"],
   #logo {
-    &:hover {
+    &:hover,
+    &:focus {
       animation: fadeIn 1s ease-in, highlight 2s ease-in-out infinite;
       &:active {
         transform: translateY(0.03rem);
       }
     }
+    &:active {
+      transform: translateY(0.03rem);
+    }
   }
   .menu-external {
-    &:hover {
+    &:hover,
+    &:focus {
       animation: fadeIn 1s ease-in, highlight-weak 2s ease-in-out infinite;
       transform: translateY(-0.1rem);
       &:active {
         transform: translateY(0.05rem);
       }
+    }
+    &:active {
+      transform: translateY(0.05rem);
     }
   }
 }
@@ -675,11 +697,15 @@ header .logo a,
     border-radius: 0.5625rem;
     filter: drop-shadow(0 0.25rem 4px #000000);
     margin-top: 0.25rem;
-    &:hover {
+    &:hover,
+    &:focus {
       transform: translate(0, -0.05rem);
       &:active {
         transform: translate(0, 0.05rem);
       }
+    }
+    &:active {
+      transform: translate(0, 0.05rem);
     }
     a {
       text-decoration: none;
@@ -691,13 +717,18 @@ header .logo a,
     border-color: #110b0b;
     font-weight: 800;
     font-size: 20;
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: #110b0b;
       border-color: #110b0b;
       &:active {
         background-color: #110b0b;
         border-color: #110b0b;
       }
+    }
+    &:active {
+      background-color: #110b0b;
+      border-color: #110b0b;
     }
   }
 }
@@ -708,11 +739,18 @@ header .logo a,
     border-radius: $calcRadius;
     font-weight: 600;
   }
-  &:hover {
+  &:hover,
+  &:focus {
     transform: translate($translateX, -0.05rem);
     &:active {
       transform: translate($translateX, 0.05rem);
     }
+  }
+  &:active {
+    transform: translate($translateX, 0.05rem);
+  }
+  &[data-group*="matinho"] {
+    margin-top: 0.5rem;
   }
 }
 .calc-fs,
@@ -1117,12 +1155,16 @@ header .logo a,
   }
 }
 .menu-external {
-  &:hover {
+  &:hover,
+  &:focus {
     animation: highlight-weak 2s ease-in-out infinite;
     transform: translateY(-0.1rem);
     &:active {
       transform: translateY(0.05rem);
     }
+  }
+  &:active {
+    transform: translateY(0.05rem);
   }
 }
 .nav {
@@ -1133,6 +1175,15 @@ header .logo a,
     > a {
       @include header-anchor;
     }
+  }
+}
+.recommendation {
+  color: #929292;
+  font-size: 0.7rem;
+  &.outp-recommendation {
+    width: 87.5%;
+    padding: 0.5rem 0 0.5rem 2.5%;
+    margin-bottom: 0.5rem;
   }
 }
 .screen-reader-text {
@@ -1534,12 +1585,31 @@ input[type="button"].primary,
     }
   }
 }
-#calc-title {
-  margin-bottom: 2.5rem;
-  width: 100%;
+#calc-title-group {
+  margin-bottom: 0.75rem;
   text-align: center;
-  font-size: 3rem;
-  font-weight: 900;
+  margin-inline: auto;
+  width: 100%;
+  animation: fadeIn 1.5s ease-in;
+  .calc-title-parts {
+    width: 100%;
+    text-align: center;
+    font-weight: 900;
+    text-align: center;
+  }
+  .copyright-icon {
+    font-size: 1.5rem;
+    vertical-align: text-top;
+  }
+  #calc-title-brand {
+    animation: fadeIn 2s ease-in;
+    opacity: 0.7;
+  }
+  #calc-title {
+    width: 100%;
+    font-size: 3rem;
+    font-weight: 900;
+  }
 }
 #col-1161238638 {
   > .col-inner {
@@ -1568,6 +1638,10 @@ input[type="button"].primary,
     margin: 0;
     font-weight: 400;
     font-size: 2rem;
+    animation: fadeIn 4s ease-in;
+  }
+  #invite-logo-img {
+    animation: fadeIn 3s ease-in;
   }
 }
 #kits-wrapper {
@@ -1645,9 +1719,22 @@ input[type="button"].primary,
   column-gap: 0;
   margin-bottom: 2.5rem;
 }
+#soilPackage {
+  transition: transform 0.5s ease-in-out, border 0.5s ease-in-out;
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    border: 0.2rem rgb(175, 201, 239) solid;
+  }
+}
 #soilSacs {
   padding-block: 2.5%;
   max-width: 90vw;
+  transition: transform 0.5s ease-in-out;
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+  }
 }
 #text-1180665482 {
   text-align: center;
@@ -1873,6 +1960,13 @@ input[type="button"].primary,
   body {
     padding: 0 0 40% 0;
   }
+  #calc-title-group {
+    #calc-title {
+      font-size: 2.5rem;
+      padding-inline: 10vw;
+      margin-bottom: 1rem;
+    }
+  }
   .header-main {
     #logo {
       img {
@@ -1892,8 +1986,15 @@ input[type="button"].primary,
     }
   }
   #invite-logo-wrapper {
-    width: 75%;
+    width: 60%;
     margin-inline: auto;
+    #invite-logo-img {
+      transform: scale(0.8) translateX(0.3rem);
+    }
+    #invite-logo-title {
+      font-size: 1.2rem;
+      transform: translateX(-1rem);
+    }
   }
   #kits-wrapper {
     @include flCNoW;

@@ -1,14 +1,9 @@
 import { keyPhrase } from "../../page";
+import LiveSoil from "../client/images/LiveSoil";
 export default function Footer(): JSX.Element {
   return (
     <footer id="brand-wrapper">
-      <img
-        id="soilPackage"
-        alt={`${keyPhrase} — Pacote de Solo Vivo`}
-        src="/images/kit_super_solo.jpg"
-        width={375}
-        height={480}
-      />
+      <LiveSoil />
       <section id="brand-invite-sect">
         <h3 id="brand-invite-header">Conheça Todas as Soluções</h3>
         <div id="brand-invite-body">
@@ -32,6 +27,7 @@ export default function Footer(): JSX.Element {
               href="https://www.organolab.com.br/"
               target="_blank"
               rel="noopener"
+              title="Clique aqui para acessar o site principal da loja!"
             >
               Conheça a Loja
             </a>

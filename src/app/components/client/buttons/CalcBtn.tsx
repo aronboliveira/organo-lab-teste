@@ -9,7 +9,9 @@ export default function CalcBtn({ group, id }: CalcBtnProps): JSX.Element {
     <button
       className="btn btn-secondary calc-btn"
       data-group={group}
-      title={`Clique aqui para realizar o cálculo do grupo ${group}`}
+      title={`Clique aqui para realizar os cálculos para o grupo ${
+        group === "main" ? "geral" : group
+      }`}
       id={`btn${id}`}
       onClick={ev =>
         calcKits(

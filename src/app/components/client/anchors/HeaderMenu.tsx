@@ -5,6 +5,7 @@ import { Root, createRoot } from "react-dom/client";
 import SidebarContent from "../content/SidebarContent";
 import { rMouseEvent } from "../../../../app/declarations/types";
 import { titles } from "../../main/Header";
+import { keyPhrase } from "../../../../app/page";
 const menuRoots: { [k: string]: Root } = {};
 function applyAttributesAndStyles(
   sideMenu: HTMLElement,
@@ -14,20 +15,19 @@ function applyAttributesAndStyles(
 ) {
   try {
     const element =
+      sideMenu.querySelector(`[alt="${keyPhrase} — ${altText}"]`) ??
+      sideMenu.querySelector(
+        `[alt="${keyPhrase} — ${altText.toLowerCase()}"]`
+      ) ??
       sideMenu.querySelector(`[alt="${altText}"]`) ??
       sideMenu.querySelector(`[alt="${altText.toLowerCase()}"]`);
-
     if (!(element instanceof HTMLElement))
       throw new Error(`Failed to fetch ${altText} image`);
-
     element.style.transition = "transform .5s ease-in-out";
     element.style.transform = `scale(1.3) translate(2px, ${translateY}px)`;
-
     const elementAnchor = element.closest("a") ?? element.querySelector("a");
-
     if (!(elementAnchor instanceof HTMLElement))
       throw new Error(`Failed to fetch ${altText} anchor`);
-
     elementAnchor.title = title;
     elementAnchor.classList.add("anchor-shop", "menu-external");
   } catch (e) {

@@ -14,6 +14,7 @@ import "./lib/head/js/flatsome/flatsome";
 import "./lib/head/js/flatsome/flatsome-live-search";
 import NextOnlyHead from "./components/heads/NextOnlyHead";
 import { keyPhrase } from "./page";
+import WPHead from "./components/heads/WPHead";
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 export const metadata: Metadata = {
   title: `${keyPhrase} — Calculadora de Solo`,

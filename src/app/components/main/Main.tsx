@@ -7,6 +7,7 @@ import LNumOutp from "../client/inputs/body/LNumOutp";
 import SoilDiv from "./SoilDiv";
 import CalcBtn from "../client/buttons/CalcBtn";
 import { keyPhrase } from "../../page";
+import Invite from "../client/content/Invite";
 const ap = {
   n: "agr_plaster",
   t: "Gesso Agrícola",
@@ -65,7 +66,15 @@ export default function Main(): JSX.Element {
         width={527}
         height={197}
       />
-      <h1 id="calc-title">{keyPhrase} Calculadora de Solo</h1>
+      <hgroup id="calc-title-group">
+        <h1 className="calc-title-parts" id="calc-title">
+          Calculadora de Solo
+        </h1>
+        <h2 className="calc-title-parts" id="calc-title-brand">
+          <strong>{keyPhrase.slice(0, -1)}</strong>
+          <abbr className="copyright-icon">{keyPhrase.slice(-1)}</abbr>
+        </h2>
+      </hgroup>
       <div id="invite-logo-wrapper">
         <img
           id="invite-logo-img"
@@ -74,7 +83,7 @@ export default function Main(): JSX.Element {
           width={86}
           height={84}
         />
-        <strong id="invite-logo-title">E aí, bora cultivar?</strong>
+        <Invite />
       </div>
       <SoilDiv />
       <div id="kits-wrapper">
@@ -151,13 +160,13 @@ export default function Main(): JSX.Element {
               data-group={normalizedKn}
               key={`kit_sect__${i}`}
             >
-              <h2
+              <h3
                 className="kit-title"
                 id={`title${pascalKn}`}
                 data-group={normalizedKn}
               >
                 Kit — {s.kn}
-              </h2>
+              </h3>
               {s.sub.map((sc, j) => (
                 <div
                   className="kit-subsect coots-soil-subsect"

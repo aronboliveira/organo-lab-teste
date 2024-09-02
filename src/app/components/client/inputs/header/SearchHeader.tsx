@@ -11,7 +11,18 @@ export default function SearchHeader(): JSX.Element {
       id="s"
       placeholder="Search…"
       autoComplete="off"
-      onChange={(ev) => setSearch(ev.currentTarget.value)}
+      onChange={ev => {
+        setSearch(ev.currentTarget.value);
+        if (ev.currentTarget.value.length < 1)
+          alert(
+            "Esta é uma implantação estática do aplicativo de Calculadora.\nPesquisas no sistema ativo não funcionarão!\nPor favor visite https://www.organolab.com.br/ para mais informações."
+          );
+      }}
+      onClick={() =>
+        alert(
+          "Esta é uma implantação estática do aplicativo de Calculadora.\nPesquisas no sistema ativo não funcionarão!\nPor favor visite https://www.organolab.com.br/ para mais informações."
+        )
+      }
     />
   );
 }
