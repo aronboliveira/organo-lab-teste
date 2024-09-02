@@ -147,7 +147,7 @@ export default function NextOnlyHead(): JSX.Element {
       <meta property="og:url" content={origin} />
       <meta
         property="og:image"
-        content={`${origin}images/orglab_logo_og_700x630.png`}
+        content={`${origin}images/orglab_logo_og_630.png`}
       />
       <meta property="og:image:width" content="630" />
       <meta property="og:image:height" content="630" />
