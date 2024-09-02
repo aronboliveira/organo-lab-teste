@@ -1,5 +1,5 @@
 COPYRIGHTED BY: Aron Barbosa de Oliveira
-Under GPL License
+Under GNU/GPL License
 https://github.com/aronboliveira
 
 This app is a Next.js only version of the Soil Kits Calculator used by the Organo Lab © shop as part

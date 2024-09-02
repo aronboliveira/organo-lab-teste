@@ -1,6 +1,6 @@
 /*
 COPYRIGHTED BY: Aron Barbosa de Oliveira
-Under GPL License
+Under GNU/GPL License
 https://github.com/aronboliveira
 */
 import type { Metadata } from "next";
