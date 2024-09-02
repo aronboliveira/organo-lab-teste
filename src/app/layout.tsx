@@ -12,7 +12,7 @@ import "./lib/head/js/wp/wp-emoji-release";
 import "./lib/head/js/wp/wp-polyfill";
 import "./lib/head/js/flatsome/flatsome";
 import "./lib/head/js/flatsome/flatsome-live-search";
-import WPHead from "./components/heads/WPHead";
+import NextOnlyHead from "./components/heads/NextOnlyHead";
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 export const metadata: Metadata = {
   title: "Calculador de Solo — Organo Lab ©",
@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <WPHead />
+      <NextOnlyHead />
       <body className={poppins.className}>{children}</body>
     </html>
   );
