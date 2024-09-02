@@ -154,7 +154,7 @@ export default function NextOnlyHead(): JSX.Element {
         property="og:image"
         content="https://organo-lab-calculadora.netlify.app/images/orglab_logo_og_630.png"
       />
-      <meta property="og:image:width" content="630" />
+      <meta property="og:image:width" content="800" />
       <meta property="og:image:height" content="630" />
       <meta
         property="og:image:alt"

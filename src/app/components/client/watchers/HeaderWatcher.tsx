@@ -47,7 +47,7 @@ export default function HeaderWatcher(): JSX.Element {
     addEventListener("scroll", handleScroll);
     setTimeout(() => {
       alert(
-        "Esta é uma implantação estática de teste feita com Next.js para posterior integração no sistema WordPress da Organo Lab©.\nPor favor visite https://organolab.com.br/ para informações em produção\n. Código aberto disponível em: https://github.com/aronboliveira/organo-lab-teste."
+        "Esta é uma implantação estática de teste feita com Next.js para posterior integração no sistema WordPress da Organo Lab©.\nPor favor visite https://organolab.com.br/ para informações em produção.\n Código aberto disponível em: https://github.com/aronboliveira/organo-lab-teste"
       );
     }, 4100);
     return () => removeEventListener("scroll", handleScroll);
