@@ -145,7 +145,10 @@ export default function NextOnlyHead(): JSX.Element {
         content={`${keyPhrase} — Calculadora de Solo`}
       />
       <meta property="og:url" content={origin} />
-      <meta property="og:image" content={`/images/orglab_logo_og_630.png`} />
+      <meta
+        property="og:image"
+        content={`${origin}/images/orglab_logo_og_630.png`}
+      />
       <meta property="og:image:width" content="630" />
       <meta property="og:image:height" content="630" />
       <meta
