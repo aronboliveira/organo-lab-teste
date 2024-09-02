@@ -1,9 +1,9 @@
 "use client";
-import { isClickOutside, removeOverlay } from "@/app/lib/handlers";
+import { isClickOutside, removeOverlay } from "../../../../app/lib/handlers";
 import { useState, useEffect } from "react";
 import { Root, createRoot } from "react-dom/client";
 import SidebarContent from "../content/SidebarContent";
-import { rMouseEvent } from "@/app/declarations/types";
+import { rMouseEvent } from "../../../../app/declarations/types";
 import { titles } from "../../main/Header";
 const menuRoots: { [k: string]: Root } = {};
 function applyAttributesAndStyles(

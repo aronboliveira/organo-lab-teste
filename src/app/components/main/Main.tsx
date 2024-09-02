@@ -2,12 +2,12 @@ import {
   kebabToCamel,
   regularToCamel,
   regularToPascal,
-} from "@/app/lib/models";
+} from "../../../app/lib/models";
 import LNumOutp from "../client/inputs/body/LNumOutp";
 import Image from "next/image";
 import SoilDiv from "./SoilDiv";
-import { calcKits } from "@/app/lib/handlers";
-import { kitGroups } from "@/app/declarations/types";
+import { calcKits } from "../../../app/lib/handlers";
+import { kitGroups } from "../../../app/declarations/types";
 import CalcBtn from "../client/buttons/CalcBtn";
 const ap = {
   n: "agr_plaster",

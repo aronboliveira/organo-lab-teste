@@ -1,7 +1,7 @@
 "use client";
-import { InpProps } from "@/app/declarations/componentsInterfaces";
-import { nlDl } from "@/app/declarations/types";
-import { parseNotNaN } from "@/app/lib/handlers";
+import { InpProps } from "../../../../../app/declarations/componentsInterfaces";
+import { nlDl } from "../../../../../app/declarations/types";
+import { parseNotNaN } from "../../../../../app/lib/handlers";
 import { useRef, useEffect } from "react";
 const recent: { [k: string]: string[] } = {};
 export default function LNumInp({

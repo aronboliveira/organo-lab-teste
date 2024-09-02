@@ -4,7 +4,7 @@ import GAnalyticsInitializer from "../client/initializers/GAnalyticsInitializer"
 import FlatsomeInitializer from "../client/initializers/FlatsomeInitializer";
 import EmojiInitializer from "../client/initializers/EmojiInitializer";
 import JQueryForminatorIntegrator from "../client/jQuery/JQueryForminatorIntegrator";
-import forminatorProps from "@/app/lib/head/js/client/forminatorProps";
+import forminatorProps from "../../../app/lib/head/js/client/forminatorProps";
 export default function NextOnlyHead():JSX.Element{
 	return(
 		<head>

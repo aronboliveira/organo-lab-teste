@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
-import { nlInp } from "@/app/declarations/types";
+import { nlInp } from "../../../app/declarations/types";
 import LNumInp from "../client/inputs/body/LNumInp";
 import CalcBtn from "../client/buttons/CalcBtn";
 export default function SoilDiv(): JSX.Element {

@@ -1,6 +1,6 @@
 "use client";
-import { SidebarProps } from "@/app/declarations/componentsInterfaces";
-import { nullishDiv } from "@/app/declarations/types";
+import { SidebarProps } from "../../../../app/declarations/componentsInterfaces";
+import { nullishDiv } from "../../../../app/declarations/types";
 import { useRef, useEffect } from "react";
 export default function SidebarContent(props: SidebarProps): JSX.Element {
   const mainRef = useRef<nullishDiv>(null);

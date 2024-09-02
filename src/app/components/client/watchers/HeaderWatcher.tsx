@@ -1,5 +1,5 @@
 "use client";
-import { parseNotNaN } from "@/app/lib/handlers";
+import { parseNotNaN } from "../../../../app/lib/handlers";
 import { useEffect } from "react";
 export default function HeaderWatcher(): JSX.Element {
   const handleScroll = () => {

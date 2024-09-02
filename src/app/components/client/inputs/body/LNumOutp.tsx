@@ -1,8 +1,8 @@
 "use client";
-import { IOProps } from "@/app/declarations/componentsInterfaces";
-import { nOutp, nlSel } from "@/app/declarations/types";
-import { parseNotNaN } from "@/app/lib/handlers";
-import { removeAccents } from "@/app/lib/models";
+import { IOProps } from "../../../../../app/declarations/componentsInterfaces";
+import { nOutp, nlSel } from "../../../../../app/declarations/types";
+import { parseNotNaN } from "../../../../../app/lib/handlers";
+import { removeAccents } from "../../../../../app/lib/models";
 import { useRef, useEffect } from "react";
 export default function LNumOutp({
   title,
