@@ -145,10 +145,7 @@ export default function NextOnlyHead(): JSX.Element {
         content={`${keyPhrase} — Calculadora de Solo`}
       />
       <meta property="og:url" content={origin} />
-      <meta
-        property="og:image"
-        content={`${origin}images/orglab_logo_og_630.png`}
-      />
+      <meta property="og:image" content={`/images/orglab_logo_og_630.png`} />
       <meta property="og:image:width" content="630" />
       <meta property="og:image:height" content="630" />
       <meta
@@ -180,7 +177,7 @@ export default function NextOnlyHead(): JSX.Element {
       />
       {/* Icons */}
       <link
-        href={`${origin}images/org_lab_logo_favicon_16.png`}
+        href={`/images/org_lab_logo_favicon_16.png`}
         data-icon-group="favicon"
         id="favicon_16"
         sizes="16x16"
@@ -188,7 +185,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href={`${origin}images/org_lab_logo_safari.png`}
+        href={`/images/org_lab_logo_safari.png`}
         data-icon-group="safari"
         id="safari_icon"
         sizes="16x16"
@@ -205,7 +202,7 @@ export default function NextOnlyHead(): JSX.Element {
         integrity="sha384-DIALoX8G5LpyVsVqCKCGL4/6EZVJUw9wOjQ2DI97RVXiZSCGLSj7yyI0wAOJK5lR"
       />
       <link
-        href={`${origin}images/org_lab_logo_favicon_64.png`}
+        href={`/images/org_lab_logo_favicon_64.png`}
         data-icon-group="favicon"
         id="favicon_64"
         sizes="64x64"
@@ -213,7 +210,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href={`${origin}images/org_lab_logo_ati_57.png`}
+        href={`/images/org_lab_logo_ati_57.png`}
         data-icon-group="apple-touch-icon"
         id="ati_icon_57"
         sizes="57x57"
@@ -221,7 +218,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href={`${origin}images/org_lab_logo_ati_60.png`}
+        href={`/images/org_lab_logo_ati_60.png`}
         data-icon-group="apple-touch-icon"
         id="ati_icon_60"
         sizes="60x60"
@@ -229,7 +226,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href={`${origin}images/org_lab_logo_ati_72.png`}
+        href={`/images/org_lab_logo_ati_72.png`}
         data-icon-group="apple-touch-icon"
         id="ati_icon_72"
         sizes="72x72"
@@ -237,7 +234,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href={`${origin}images/org_lab_logo_ati_76.png`}
+        href={`/images/org_lab_logo_ati_76.png`}
         data-icon-group="apple-touch-icon"
         id="ati_icon_76"
         sizes="76x76"
@@ -245,7 +242,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href={`${origin}images/org_lab_logo_favicon_96.png`}
+        href={`/images/org_lab_logo_favicon_96.png`}
         data-icon-group="favicon"
         id="favicon_96"
         sizes="96x96"
@@ -253,7 +250,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href={`${origin}images/org_lab_logo_ati_114.png`}
+        href={`/images/org_lab_logo_ati_114.png`}
         data-icon-group="apple-touch-icon"
         id="ati_icon_114"
         sizes="114x114"
@@ -261,7 +258,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href={`${origin}images/org_lab_logo_ati_120.png`}
+        href={`/images/org_lab_logo_ati_120.png`}
         data-icon-group="apple-touch-icon"
         id="ati_icon_120"
         sizes="120x120"
@@ -269,7 +266,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href={`${origin}images/org_lab_logo_ati_144.png`}
+        href={`/images/org_lab_logo_ati_144.png`}
         data-icon-group="apple-touch-icon"
         id="ati_icon_144"
         sizes="144x144"
@@ -277,7 +274,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href={`${origin}images/org_lab_logo_ati_152.png`}
+        href={`/images/org_lab_logo_ati_152.png`}
         data-icon-group="apple-touch-icon"
         id="ati_icon_152"
         sizes="152x152"
@@ -285,7 +282,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href={`${origin}images/org_lab_logo_ati_167.png`}
+        href={`/images/org_lab_logo_ati_167.png`}
         data-icon-group="apple-touch-icon"
         id="ati_icon_167"
         sizes="167x167"
@@ -311,7 +308,7 @@ export default function NextOnlyHead(): JSX.Element {
         integrity="sha384-I6tJqOez3XOojpZ2+syqhRWSdNuSYVYMoCbQmgcWBifQJtRChSrDr2vQ94Sm0e1m"
       />
       <link
-        href={`${origin}images/org_lab_logo_and_196.png`}
+        href={`/images/org_lab_logo_and_196.png`}
         data-icon-group="android-chrome"
         id="android_chrome_icon_196"
         sizes="196x196"
@@ -326,7 +323,7 @@ export default function NextOnlyHead(): JSX.Element {
         content="https://blog.organolab.com.br/wp-content/uploads/2022/05/cropped-ORGLAB_Logo-270x270.png"
       />
       <link
-        href={`${origin}images/org_lab_logo_and_512.png`}
+        href={`/images/org_lab_logo_and_512.png`}
         data-icon-group="android-chrome"
         id="android_chrome_icon_512"
         sizes="512x512"
