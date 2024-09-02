@@ -43,7 +43,7 @@ export default function LNumInp({
     };
     addEventListener("resize", handleResize);
     return () => removeEventListener("resize", handleResize);
-  }, []);
+  }, [r]);
   useEffect(() => {
     try {
       if (!(r.current instanceof HTMLInputElement)) return;
@@ -72,7 +72,7 @@ export default function LNumInp({
         }`
       );
     }
-  }, [s]);
+  }, [s, r]);
   return (
     <fieldset
       id={`fs${pascalId}`}

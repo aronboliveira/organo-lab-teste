@@ -55,100 +55,6 @@ export default function HeaderMenu(): JSX.Element {
       }
     }, 200);
   };
-  const handleMenuUpdate = (): void => {
-    const searchContent = (menuWrapper: HTMLElement): void => {
-      menuWrapper.addEventListener("click", handleClick);
-      const content = menuWrapper.querySelector(".mfp-content");
-      if (!content) throw new Error(`Failed to fetch mfp-content element`);
-      let idf = "mpf-content";
-      if (content.id === "") {
-        content.id = "sidebarContent";
-        idf = content.id;
-      }
-      if (menuRoots[idf] && !(menuRoots[idf] as any)["_innerRoot"]) {
-        setTimeout(() => {
-          menuRoots[idf].unmount();
-          delete menuRoots[idf];
-        }, 200);
-      }
-      if (!menuRoots[idf]) menuRoots[idf] = createRoot(content);
-      if (shouldOpenMenu) {
-        menuRoots[idf].render(
-          <SidebarContent s={shouldOpenMenu} d={setMenu} />
-        );
-        setTimeout(() => {
-          if (!document.getElementById("main-menu")) {
-            if (menuRoots[idf] && !(menuRoots[idf] as any)["_innerRoot"]) {
-              menuRoots[idf].unmount();
-              delete menuRoots[idf];
-            }
-            if (!menuRoots[idf]) menuRoots[idf] = createRoot(content);
-            menuRoots[idf].render(
-              <SidebarContent s={shouldOpenMenu} d={setMenu} />
-            );
-          }
-          setTimeout(() => {
-            const sideMenu = document.getElementById("main-menu");
-            if (!(sideMenu instanceof Element)) {
-              const message = "Failed o render menu. Try reloading!";
-              alert(message);
-              console.warn(`${message}\n
-              Root: ${menuRoots[idf] ?? "Failed to define"}\n
-              innerRoot: ${
-                (menuRoots[idf] as any)?._innerRoot
-              } ?? 'Failed to define.`);
-            } else {
-              try {
-                applyAttributesAndStyles(sideMenu, "Loja", -10, titles.shop);
-                applyAttributesAndStyles(
-                  sideMenu,
-                  "Artigos",
-                  0,
-                  titles.articles
-                );
-                applyAttributesAndStyles(
-                  sideMenu,
-                  "Downloads",
-                  10,
-                  titles.downloads
-                );
-                applyAttributesAndStyles(
-                  sideMenu,
-                  "Categorias",
-                  0,
-                  titles.categories
-                );
-              } catch (e) {
-                console.error(
-                  `Error executing procedures to applying attributes and styles to menu elements:\n${
-                    (e as Error).message
-                  }`
-                );
-              }
-            }
-          }, 200);
-        }, 200);
-      } else menuRoots[idf].render(<div></div>);
-    };
-    setTimeout(() => {
-      const menuWrapper = document.querySelector(".mfp-wrap.off-canvas");
-      if (!(menuWrapper instanceof HTMLElement)) {
-        console.warn("Failed to search content at first attempt...");
-        setTimeout(() => {
-          const menuWrapper = document.querySelector(".mfp-wrap.off-canvas");
-          if (!(menuWrapper instanceof HTMLElement)) {
-            console.warn(`No wrapper found!`);
-            return;
-          }
-          searchContent(menuWrapper);
-        }, 300);
-        return;
-      }
-      console.log("Searching content...");
-      document.querySelector("body")!.style.display = "100vw";
-      searchContent(menuWrapper);
-    }, 200);
-  };
   useEffect(() => {
     const handleKeyPress = (k: KeyboardEvent): void => {
       if (document.querySelector(".off-canvas") && k.key === "Escape") {
@@ -160,6 +66,100 @@ export default function HeaderMenu(): JSX.Element {
     return () => removeEventListener("keydown", handleKeyPress);
   }, []);
   useEffect(() => {
+    const handleMenuUpdate = (): void => {
+      const searchContent = (menuWrapper: HTMLElement): void => {
+        menuWrapper.addEventListener("click", handleClick);
+        const content = menuWrapper.querySelector(".mfp-content");
+        if (!content) throw new Error(`Failed to fetch mfp-content element`);
+        let idf = "mpf-content";
+        if (content.id === "") {
+          content.id = "sidebarContent";
+          idf = content.id;
+        }
+        if (menuRoots[idf] && !(menuRoots[idf] as any)["_innerRoot"]) {
+          setTimeout(() => {
+            menuRoots[idf].unmount();
+            delete menuRoots[idf];
+          }, 200);
+        }
+        if (!menuRoots[idf]) menuRoots[idf] = createRoot(content);
+        if (shouldOpenMenu) {
+          menuRoots[idf].render(
+            <SidebarContent s={shouldOpenMenu} d={setMenu} />
+          );
+          setTimeout(() => {
+            if (!document.getElementById("main-menu")) {
+              if (menuRoots[idf] && !(menuRoots[idf] as any)["_innerRoot"]) {
+                menuRoots[idf].unmount();
+                delete menuRoots[idf];
+              }
+              if (!menuRoots[idf]) menuRoots[idf] = createRoot(content);
+              menuRoots[idf].render(
+                <SidebarContent s={shouldOpenMenu} d={setMenu} />
+              );
+            }
+            setTimeout(() => {
+              const sideMenu = document.getElementById("main-menu");
+              if (!(sideMenu instanceof Element)) {
+                const message = "Failed o render menu. Try reloading!";
+                alert(message);
+                console.warn(`${message}\n
+                Root: ${menuRoots[idf] ?? "Failed to define"}\n
+                innerRoot: ${
+                  (menuRoots[idf] as any)?._innerRoot
+                } ?? 'Failed to define.`);
+              } else {
+                try {
+                  applyAttributesAndStyles(sideMenu, "Loja", -10, titles.shop);
+                  applyAttributesAndStyles(
+                    sideMenu,
+                    "Artigos",
+                    0,
+                    titles.articles
+                  );
+                  applyAttributesAndStyles(
+                    sideMenu,
+                    "Downloads",
+                    10,
+                    titles.downloads
+                  );
+                  applyAttributesAndStyles(
+                    sideMenu,
+                    "Categorias",
+                    0,
+                    titles.categories
+                  );
+                } catch (e) {
+                  console.error(
+                    `Error executing procedures to applying attributes and styles to menu elements:\n${
+                      (e as Error).message
+                    }`
+                  );
+                }
+              }
+            }, 200);
+          }, 200);
+        } else menuRoots[idf].render(<div></div>);
+      };
+      setTimeout(() => {
+        const menuWrapper = document.querySelector(".mfp-wrap.off-canvas");
+        if (!(menuWrapper instanceof HTMLElement)) {
+          console.warn("Failed to search content at first attempt...");
+          setTimeout(() => {
+            const menuWrapper = document.querySelector(".mfp-wrap.off-canvas");
+            if (!(menuWrapper instanceof HTMLElement)) {
+              console.warn(`No wrapper found!`);
+              return;
+            }
+            searchContent(menuWrapper);
+          }, 300);
+          return;
+        }
+        console.log("Searching content...");
+        document.querySelector("body")!.style.display = "100vw";
+        searchContent(menuWrapper);
+      }, 200);
+    };
     const preloader =
       document.querySelector(".mfp-preloader") ||
       document.querySelector(".mfp-preloader");
