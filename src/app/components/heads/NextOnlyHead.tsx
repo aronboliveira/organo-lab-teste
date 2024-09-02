@@ -7,12 +7,12 @@ import JQueryForminatorIntegrator from "../client/jQuery/JQueryForminatorIntegra
 import forminatorProps from "../../../app/lib/head/js/client/forminatorProps";
 import { keyPhrase } from "../../../app/page";
 import { metadata } from "../../../app/layout";
+const origin = "https://organo-lab-calculadora.netlify.app/";
 export default function NextOnlyHead(): JSX.Element {
   return (
     <head>
       <noscript>You need JavaScript to run this application.</noscript>
       <JsInitializer />
-      {/* //TODO ATUALIZAR AO FINAL */}
       <Script
         id="ldjson"
         type="application/ld+json"
@@ -27,7 +27,7 @@ export default function NextOnlyHead(): JSX.Element {
               {
                 "@type": "WebPage",
                 "@id": "https://blog.organolab.com.br/calculadora-de-solo/",
-                url: "https://organo-lab-calculadora.netlify.app/",
+                url: origin,
                 name: metadata.title,
                 isPartOf: {
                   "@id": "https://blog.organolab.com.br/#website",
@@ -42,7 +42,7 @@ export default function NextOnlyHead(): JSX.Element {
                 potentialAction: [
                   {
                     "@type": "ReadAction",
-                    target: ["https://organo-lab-calculadora.netlify.app/"],
+                    target: [origin],
                   },
                 ],
               },
@@ -89,7 +89,7 @@ export default function NextOnlyHead(): JSX.Element {
       />
       <link
         rel="canonical"
-        href="https://organo-lab-calculadora.netlify.app/"
+        href={origin}
         crossOrigin="anonymous"
         integrity="sha384-7XN4Czpe997dvWH0TWGoV73sSd/r5mooFcjAVxx5O8gdp+iJzTkhS4x1fCVNbaOr"
       />
@@ -144,15 +144,12 @@ export default function NextOnlyHead(): JSX.Element {
         property="og:title"
         content={`${keyPhrase} — Calculadora de Solo`}
       />
-      <meta
-        property="og:url"
-        content="https://organo-lab-calculadora.netlify.app/"
-      />
+      <meta property="og:url" content={origin} />
       <meta
         property="og:image"
-        content="https://organo-lab-calculadora.netlify.app/images/orglab_logo_og_700x630.png"
+        content={`${origin}images/orglab_logo_og_700x630.png`}
       />
-      <meta property="og:image:width" content="700" />
+      <meta property="og:image:width" content="630" />
       <meta property="og:image:height" content="630" />
       <meta
         property="og:image:alt"
@@ -175,7 +172,7 @@ export default function NextOnlyHead(): JSX.Element {
       />
       <meta
         name="twitter:image"
-        content="https://blog.organolab.com.br/images/orglab_logo_twitter_628.png"
+        content={`https://blog.organolab.com.br/images/orglab_logo_twitter_628.png`}
       />
       <meta
         name="twitter:description"
@@ -183,7 +180,7 @@ export default function NextOnlyHead(): JSX.Element {
       />
       {/* Icons */}
       <link
-        href="../../public/images/org_lab_logo_favicon_16.png"
+        href={`${origin}images/org_lab_logo_favicon_16.png`}
         data-icon-group="favicon"
         id="favicon_16"
         sizes="16x16"
@@ -191,7 +188,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href="../../public/images/org_lab_logo_safari.png"
+        href={`${origin}images/org_lab_logo_safari.png`}
         data-icon-group="safari"
         id="safari_icon"
         sizes="16x16"
@@ -208,7 +205,7 @@ export default function NextOnlyHead(): JSX.Element {
         integrity="sha384-DIALoX8G5LpyVsVqCKCGL4/6EZVJUw9wOjQ2DI97RVXiZSCGLSj7yyI0wAOJK5lR"
       />
       <link
-        href="../../public/images/org_lab_logo_favicon_64.png"
+        href={`${origin}images/org_lab_logo_favicon_64.png`}
         data-icon-group="favicon"
         id="favicon_64"
         sizes="64x64"
@@ -216,7 +213,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href="../../public/images/org_lab_logo_ati_57.png"
+        href={`${origin}images/org_lab_logo_ati_57.png`}
         data-icon-group="apple-touch-icon"
         id="ati_icon_57"
         sizes="57x57"
@@ -224,7 +221,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href="../../public/images/org_lab_logo_ati_60.png"
+        href={`${origin}images/org_lab_logo_ati_60.png`}
         data-icon-group="apple-touch-icon"
         id="ati_icon_60"
         sizes="60x60"
@@ -232,7 +229,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href="../../public/images/org_lab_logo_ati_72.png"
+        href={`${origin}images/org_lab_logo_ati_72.png`}
         data-icon-group="apple-touch-icon"
         id="ati_icon_72"
         sizes="72x72"
@@ -240,7 +237,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href="../../public/images/org_lab_logo_ati_76.png"
+        href={`${origin}images/org_lab_logo_ati_76.png`}
         data-icon-group="apple-touch-icon"
         id="ati_icon_76"
         sizes="76x76"
@@ -248,7 +245,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href="../../public/images/org_lab_logo_favicon_96.png"
+        href={`${origin}images/org_lab_logo_favicon_96.png`}
         data-icon-group="favicon"
         id="favicon_96"
         sizes="96x96"
@@ -256,7 +253,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href="../../public/images/org_lab_logo_ati_114.png"
+        href={`${origin}images/org_lab_logo_ati_114.png`}
         data-icon-group="apple-touch-icon"
         id="ati_icon_114"
         sizes="114x114"
@@ -264,7 +261,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href="../../public/images/org_lab_logo_ati_120.png"
+        href={`${origin}images/org_lab_logo_ati_120.png`}
         data-icon-group="apple-touch-icon"
         id="ati_icon_120"
         sizes="120x120"
@@ -272,7 +269,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href="../../public/images/org_lab_logo_ati_144.png"
+        href={`${origin}images/org_lab_logo_ati_144.png`}
         data-icon-group="apple-touch-icon"
         id="ati_icon_144"
         sizes="144x144"
@@ -280,7 +277,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href="../../public/images/org_lab_logo_ati_152.png"
+        href={`${origin}images/org_lab_logo_ati_152.png`}
         data-icon-group="apple-touch-icon"
         id="ati_icon_152"
         sizes="152x152"
@@ -288,7 +285,7 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
       />
       <link
-        href="../../public/images/org_lab_logo_ati_167.png"
+        href={`${origin}images/org_lab_logo_ati_167.png`}
         data-icon-group="apple-touch-icon"
         id="ati_icon_167"
         sizes="167x167"
@@ -314,7 +311,7 @@ export default function NextOnlyHead(): JSX.Element {
         integrity="sha384-I6tJqOez3XOojpZ2+syqhRWSdNuSYVYMoCbQmgcWBifQJtRChSrDr2vQ94Sm0e1m"
       />
       <link
-        href="../../public/images/org_lab_logo_and_196.png"
+        href={`${origin}images/org_lab_logo_and_196.png`}
         data-icon-group="android-chrome"
         id="android_chrome_icon_196"
         sizes="196x196"
@@ -329,7 +326,7 @@ export default function NextOnlyHead(): JSX.Element {
         content="https://blog.organolab.com.br/wp-content/uploads/2022/05/cropped-ORGLAB_Logo-270x270.png"
       />
       <link
-        href="../../public/images/org_lab_logo_and_512.png"
+        href={`${origin}images/org_lab_logo_and_512.png`}
         data-icon-group="android-chrome"
         id="android_chrome_icon_512"
         sizes="512x512"
@@ -521,7 +518,6 @@ export default function NextOnlyHead(): JSX.Element {
         // integrity="sha384-kb/iwIefTlNaT8PTyAdU3tFrLX08KYY4rC0RXn4ltVQiAdodvQ2Nnic5joZBljQW"
       />
       {/* jQuery chunks */}
-      {/* //todo */}
       {/* <Script
 			type="text/javascript"
 			defer
@@ -531,7 +527,6 @@ export default function NextOnlyHead(): JSX.Element {
 			strategy="beforeInteractive"
 			crossOrigin="anonymous"
 		/> */}
-      {/* //todo */}
       {/* <Script
 			type="text/javascript"
 			defer
@@ -541,7 +536,6 @@ export default function NextOnlyHead(): JSX.Element {
 			crossOrigin="anonymous"
 			integrity="sha384-ez4i72z0XhJqm0ZRoQkpPN0bDV8Kw8PK3n8kjEZsWhRDrfICLd0AGghHJB+vytx0"
 		/> */}
-      {/* //todo */}
       {/* <Script
 			type="text/javascript"
 			defer
@@ -578,7 +572,6 @@ export default function NextOnlyHead(): JSX.Element {
 			id="forminator-front-scripts-js"
 			integrity="sha384-a1FiYAG3ISqv/DhIe4ZOaXVGeSlyLbPiAAhit+iQdU2XnRkmGF7dCLV0ShgwkKpX"
 		/> */}
-      {/* //TODO */}
       {/* Axios */}
       {/* <AxiosNonceWrapper />  */}
       {/* Forminator chunks */}

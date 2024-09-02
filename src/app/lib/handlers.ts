@@ -325,6 +325,8 @@ export function syncAriaStates(
         el instanceof HTMLHtmlElement ||
         el instanceof HTMLScriptElement ||
         el instanceof HTMLLinkElement ||
+        el instanceof HTMLMetaElement ||
+        el instanceof HTMLTitleElement ||
         (el.parentElement && el.parentElement instanceof HTMLHeadElement)
       )
         return;
