@@ -755,21 +755,29 @@ header .logo a,
     }
     .calc-measure {
       @extend %flex-center;
-      height: 101%;
+      height: 100%;
       padding-left: 0.5rem;
       font-weight: 600;
       font-size: 0.8rem;
     }
   }
 }
-.calc-outp {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  transition: color 1s ease-in-out;
+.calc-inp {
+  transition: border-color 1s ease-in-out;
 }
-.calc-alert {
-  font-size: 0.8rem !important;
-  color: #9f3515 !important;
+.form-control {
+  &.calc-outp {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    &.calc-alert {
+      color: #e52f13a5;
+      font-weight: 600;
+      transition: color 2s ease-in-out;
+    }
+    &.calc-fade {
+      color: #e52f131f;
+    }
+  }
 }
 .flex-col {
   &:has(.header-nav) {

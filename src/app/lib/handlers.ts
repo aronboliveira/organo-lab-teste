@@ -117,7 +117,6 @@ export const factorsKits: Map<string, Map<string, number>> = new Map([
 ]);
 export function calcKits(v: string = "0", g: kitGroups = "main") {
   try {
-    console.log(`Calculating for ${g}...`);
     if (typeof v !== "string")
       throw new Error(
         `Inadequate primitive type argumented to calcKits as value`
@@ -125,13 +124,13 @@ export function calcKits(v: string = "0", g: kitGroups = "main") {
     let err = "#ERRO";
     let v_n = 0;
     if (v.length === 0) {
-      err = "Por favor preencha o campo de Solo.";
+      err = "Sem valor de solo!";
       v_n = 0;
     } else v_n = parseNotNaN(v.replace(/,/g, ".").replace(/[^0-9\.]/g, ""));
     if (!Number.isFinite(v_n)) {
       console.warn(`Value parsed as Not Finite. Defaulting to -1.`);
       v_n = -1;
-      err = "Entrada inválida. Por favor reveja os valores.";
+      err = "Entrada inválida.";
     }
     if (typeof g !== "string")
       throw new Error(
@@ -184,9 +183,23 @@ export function calcKits(v: string = "0", g: kitGroups = "main") {
             o.innerText = `${resV || err}`;
             if (o.innerText === err) {
               o.classList.add("calc-alert");
+              const soil = document.getElementById("soilQuant");
+              if (soil) {
+                soil.style.borderColor = "#e52f1351";
+                soil.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                  inline: "center",
+                });
+              }
+              setTimeout(() => {
+                if (o) o.classList.add("calc-fade");
+              }, 100);
               setTimeout(() => {
                 if (o) {
-                  o.classList.remove("calc-alert");
+                  const soil = document.getElementById("soilQuant");
+                  if (soil) soil.style.borderColor = "#ddd";
+                  o.classList.remove("calc-alert", "calc-fade");
                   o.innerText = "";
                 }
               }, 2000);
@@ -207,11 +220,25 @@ export function calcKits(v: string = "0", g: kitGroups = "main") {
               o.innerHTML === err
             ) {
               o.classList.add("calc-alert");
+              const soil = document.getElementById("soilQuant");
+              if (soil) {
+                soil.style.borderColor = "#e52f1351";
+                soil.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                  inline: "center",
+                });
+              }
               setTimeout(() => {
-                if (o) o.classList.remove("calc-alert");
+                if (o) o.classList.add("calc-fade");
+              }, 100);
+              setTimeout(() => {
+                if (o) o.classList.remove("calc-alert", "calc-fade");
+                const soil = document.getElementById("soilQuant");
+                if (soil) soil.style.borderColor = "#ddd";
                 o instanceof HTMLElement
                   ? (o.innerText = "")
-                  : o.innerHTML === "";
+                  : (o.innerHTML = "");
               }, 2000);
             }
           }
