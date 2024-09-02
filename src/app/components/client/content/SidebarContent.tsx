@@ -3,6 +3,7 @@ import { keyPhrase } from "../../../page";
 import { SidebarProps } from "../../../../app/declarations/componentsInterfaces";
 import { nullishDiv } from "../../../../app/declarations/types";
 import { useRef, useEffect } from "react";
+import { syncAriaStates } from "@/app/lib/handlers";
 export default function SidebarContent(props: SidebarProps): JSX.Element {
   const mainRef = useRef<nullishDiv>(null);
   useEffect(() => {
@@ -19,6 +20,7 @@ export default function SidebarContent(props: SidebarProps): JSX.Element {
         if (content instanceof HTMLElement)
           content.style.animation = `slideIn ease-in .2s`;
         container.classList.add("mfp-s-ready");
+        syncAriaStates(container.querySelectorAll("*"));
       }
     } catch (e) {
       console.error(

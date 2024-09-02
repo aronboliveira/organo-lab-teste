@@ -1,9 +1,7 @@
 "use client";
-
 import { CalcBtnProps } from "../../../../app/declarations/componentsInterfaces";
 import { kitGroups } from "../../../../app/declarations/types";
 import { calcKits } from "../../../../app/lib/handlers";
-
 export default function CalcBtn({ group, id }: CalcBtnProps): JSX.Element {
   return (
     <button

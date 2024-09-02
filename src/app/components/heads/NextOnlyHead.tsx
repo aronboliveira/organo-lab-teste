@@ -5,6 +5,7 @@ import FlatsomeInitializer from "../client/initializers/FlatsomeInitializer";
 import EmojiInitializer from "../client/initializers/EmojiInitializer";
 import JQueryForminatorIntegrator from "../client/jQuery/JQueryForminatorIntegrator";
 import forminatorProps from "../../../app/lib/head/js/client/forminatorProps";
+import { keyPhrase } from "../../../app/page";
 export default function NextOnlyHead(): JSX.Element {
   return (
     <head>
@@ -90,7 +91,7 @@ export default function NextOnlyHead(): JSX.Element {
       {/* //TODO DEFINIR APÓS DEPLOY */}
       <link
         rel="canonical"
-        href="https://blog.organolab.com.br/calculadora-de-solo/"
+        href="https://organo-lab-calculadora.netlify.app/"
         crossOrigin="anonymous"
         integrity="sha384-7XN4Czpe997dvWH0TWGoV73sSd/r5mooFcjAVxx5O8gdp+iJzTkhS4x1fCVNbaOr"
       />
@@ -141,10 +142,13 @@ export default function NextOnlyHead(): JSX.Element {
       <meta property="og:locale" content="pt_BR" />
       <meta property="og:type" content="article" />
       <meta property="og:site_name" content="Organo Lab" />
-      <meta property="og:title" content="Calculadora de Solo — Organo Lab ©" />
+      <meta
+        property="og:title"
+        content={`${keyPhrase} — Calculadora de Solo`}
+      />
       <meta
         property="og:url"
-        content="https://blog.organolab.com.br/calculadora-de-solo/"
+        content="https://organo-lab-calculadora.netlify.app/"
       />
       <meta
         property="og:image"
@@ -152,7 +156,10 @@ export default function NextOnlyHead(): JSX.Element {
       />
       <meta property="og:image:width" content="630" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content="Calculadora de Solo" />
+      <meta
+        property="og:image:alt"
+        content={`${keyPhrase} — Título: Calculadora de Solo`}
+      />
       <meta
         property="article:author"
         content="Aron Barbosa de Oliveira (https://github.com/aronboliveira)"
@@ -164,7 +171,10 @@ export default function NextOnlyHead(): JSX.Element {
         content="2024-01-29T01:40:09+00:00"
       />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Calculadora de Solo — Organo Lab ©" />
+      <meta
+        name="twitter:title"
+        content={`${keyPhrase} — Calculadora de Solo`}
+      />
       <meta
         name="twitter:image"
         content="https://blog.organolab.com.br/images/orglab_logo_twitter_628.png"

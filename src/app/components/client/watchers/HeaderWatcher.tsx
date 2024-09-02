@@ -1,5 +1,5 @@
 "use client";
-import { parseNotNaN } from "../../../../app/lib/handlers";
+import { parseNotNaN, syncAriaStates } from "../../../../app/lib/handlers";
 import { useEffect } from "react";
 export default function HeaderWatcher(): JSX.Element {
   const handleScroll = () => {
@@ -43,6 +43,7 @@ export default function HeaderWatcher(): JSX.Element {
       }
     });
     handleScroll();
+    syncAriaStates(document.querySelectorAll("*"));
     addEventListener("scroll", handleScroll);
     return () => removeEventListener("scroll", handleScroll);
   }, []);
