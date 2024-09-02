@@ -4,11 +4,9 @@ import {
   regularToPascal,
 } from "../../../app/lib/models";
 import LNumOutp from "../client/inputs/body/LNumOutp";
-import Image from "next/image";
 import SoilDiv from "./SoilDiv";
-import { calcKits } from "../../../app/lib/handlers";
-import { kitGroups } from "../../../app/declarations/types";
 import CalcBtn from "../client/buttons/CalcBtn";
+import { keyPhrase } from "../../page";
 const ap = {
   n: "agr_plaster",
   t: "Gesso Agrícola",
@@ -67,7 +65,7 @@ export default function Main(): JSX.Element {
         width={527}
         height={197}
       />
-      <h1 id="calc-title">Calculadora de Solo</h1>
+      <h1 id="calc-title">{keyPhrase} Calculadora de Solo</h1>
       <div id="invite-logo-wrapper">
         <img
           id="invite-logo-img"

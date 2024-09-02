@@ -100,6 +100,8 @@ export default function LNumInp({
           id={id}
           className="form-control calc-inp"
           name={name}
+          title="Digite aqui o valor de solo para ser avaliado."
+          placeholder="Digite aqui os litros de solo."
           data-title={joinedTitle}
           data-group={group}
           type="number"
@@ -112,6 +114,9 @@ export default function LNumInp({
           list={`dl${pascalId}`}
           ref={r}
           value={s}
+          onKeyDown={k => {
+            if (k.key === "+" || k.key === "-") k.preventDefault();
+          }}
           onInput={ev => d(sanitazeValue(ev.currentTarget.value))}
           onChange={ev => d(sanitazeValue(ev.currentTarget.value))}
         />

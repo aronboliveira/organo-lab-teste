@@ -1,5 +1,5 @@
 "use client";
-import { keyPhrase } from "../../../../app/layout";
+import { keyPhrase } from "../../../page";
 import { SidebarProps } from "../../../../app/declarations/componentsInterfaces";
 import { nullishDiv } from "../../../../app/declarations/types";
 import { useRef, useEffect } from "react";

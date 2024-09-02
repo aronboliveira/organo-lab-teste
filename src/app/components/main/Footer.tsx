@@ -1,9 +1,10 @@
+import { keyPhrase } from "../../page";
 export default function Footer(): JSX.Element {
   return (
     <footer id="brand-wrapper">
       <img
         id="soilPackage"
-        alt="Pacote de Solo Vivo"
+        alt={`${keyPhrase} — Pacote de Solo Vivo`}
         src="/images/kit_super_solo.jpg"
         width={375}
         height={480}
@@ -14,7 +15,7 @@ export default function Footer(): JSX.Element {
           <div id="brand-invite-subtitle-wrapper">
             <img
               id="brand-invite-logo"
-              alt="Logo Pequena"
+              alt={`Logo ${keyPhrase} Pequena`}
               src="/images/org_lab_logo_favicon_32.png"
               width={40}
               height={40}

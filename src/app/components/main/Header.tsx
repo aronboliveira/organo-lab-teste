@@ -2,7 +2,7 @@ import SearchHeader from "../client/inputs/header/SearchHeader";
 import FSSearchIcon from "../icons/FSSearchIcon";
 import HeaderMenu from "../client/anchors/HeaderMenu";
 import HeaderWatcher from "../client/watchers/HeaderWatcher";
-import { keyPhrase } from "../../../app/layout";
+import { keyPhrase } from "../../page";
 export const titles = {
   shop: "Clique aqui para visitar a nossa Loja!",
   articles: "Clique aqui para visitar nossos Artigos!",

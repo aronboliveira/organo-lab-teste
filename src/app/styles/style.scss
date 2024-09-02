@@ -529,6 +529,16 @@ input {
   &::selection {
     background-color: #a7a6a6dd;
   }
+  &:invalid {
+    color: #e52f13a5;
+  }
+  &::marker {
+    color: orange;
+  }
+  &::placeholder,
+  ::placeholder {
+    opacity: 0.1;
+  }
 }
 img {
   animation: fadeIn 2s ease-in-out;

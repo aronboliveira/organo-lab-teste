@@ -13,8 +13,8 @@ import "./lib/head/js/wp/wp-polyfill";
 import "./lib/head/js/flatsome/flatsome";
 import "./lib/head/js/flatsome/flatsome-live-search";
 import NextOnlyHead from "./components/heads/NextOnlyHead";
+import { keyPhrase } from "./page";
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
-export const keyPhrase = "Organo Lab ©";
 export const metadata: Metadata = {
   title: `${keyPhrase} — Calculadora de Solo`,
   description: `Calculadora da ${keyPhrase} para que você tenha suas receitas de uma forma simples e comece a montar seu solo em casa!\nAqui você receber valores precisos para os seus kits de cultivo e preparação de solo, seguindo as nossas receitas!`,
