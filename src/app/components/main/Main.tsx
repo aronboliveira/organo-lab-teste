@@ -60,7 +60,7 @@ const secondInpBlockB = [
 export default function Main(): JSX.Element {
   return (
     <main id="main">
-      <Image
+      <img
         id="soilSacs"
         alt="Sacos de Solo"
         src="/images/sacos_solo_redc.png"
@@ -69,7 +69,7 @@ export default function Main(): JSX.Element {
       />
       <h1 id="calc-title">Calculadora de Solo</h1>
       <div id="invite-logo-wrapper">
-        <Image
+        <img
           id="invite-logo-img"
           alt="Logo para Anúncio"
           src="/images/org_lab_logo_favicon_96.png"

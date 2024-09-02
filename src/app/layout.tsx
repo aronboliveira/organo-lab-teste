@@ -1,3 +1,8 @@
+/*
+COPYRIGHTED BY: Aron Barbosa de Oliveira
+Under GPL License
+https://github.com/aronboliveira
+*/
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./styles/style.scss";

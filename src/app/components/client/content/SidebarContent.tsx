@@ -6,6 +6,8 @@ export default function SidebarContent(props: SidebarProps): JSX.Element {
   const mainRef = useRef<nullishDiv>(null);
   useEffect(() => {
     try {
+      const body = document.querySelector("body");
+      if (body instanceof HTMLElement) body.style.width = "100vw";
       if (!mainRef.current) throw new Error(`Main reference voidish.`);
       const container = mainRef.current.closest(".mfp-container");
       if (!(container instanceof HTMLElement))
@@ -13,9 +15,8 @@ export default function SidebarContent(props: SidebarProps): JSX.Element {
       if (container.classList.contains("mfp-s-error")) {
         container.classList.remove("mfp-s-error");
         const content = mainRef.current.closest(".mfp-content");
-        if (content instanceof HTMLElement) {
+        if (content instanceof HTMLElement)
           content.style.animation = `slideIn ease-in .2s`;
-        }
         container.classList.add("mfp-s-ready");
       }
     } catch (e) {
@@ -25,6 +26,10 @@ export default function SidebarContent(props: SidebarProps): JSX.Element {
         }:\n${(e as Error).message}`
       );
     }
+    return () => {
+      const body = document.querySelector("body");
+      if (body instanceof HTMLElement) body.style.width = "100%";
+    };
   }, []);
   return (
     <div id="main-menu" className="mobile-sidebar no-scrollbar" ref={mainRef}>
