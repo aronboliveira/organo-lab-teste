@@ -323,6 +323,8 @@ export function syncAriaStates(
     els.forEach(el => {
       if (
         el instanceof HTMLHtmlElement ||
+        el instanceof HTMLScriptElement ||
+        el instanceof HTMLLinkElement ||
         (el.parentElement && el.parentElement instanceof HTMLHeadElement)
       )
         return;

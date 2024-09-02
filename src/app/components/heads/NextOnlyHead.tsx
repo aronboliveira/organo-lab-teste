@@ -6,6 +6,7 @@ import EmojiInitializer from "../client/initializers/EmojiInitializer";
 import JQueryForminatorIntegrator from "../client/jQuery/JQueryForminatorIntegrator";
 import forminatorProps from "../../../app/lib/head/js/client/forminatorProps";
 import { keyPhrase } from "../../../app/page";
+import { metadata } from "../../../app/layout";
 export default function NextOnlyHead(): JSX.Element {
   return (
     <head>
@@ -26,13 +27,13 @@ export default function NextOnlyHead(): JSX.Element {
               {
                 "@type": "WebPage",
                 "@id": "https://blog.organolab.com.br/calculadora-de-solo/",
-                url: "https://blog.organolab.com.br/calculadora-de-solo/",
-                name: "Calculadora de SOLO ! - Organo Lab - Blog",
+                url: "https://organo-lab-calculadora.netlify.app/",
+                name: metadata.title,
                 isPartOf: {
                   "@id": "https://blog.organolab.com.br/#website",
                 },
                 datePublished: "2023-12-03T17:23:06+00:00",
-                dateModified: "2024-01-29T01:40:09+00:00",
+                dateModified: new Date().toISOString(),
                 breadcrumb: {
                   "@id":
                     "https://blog.organolab.com.br/calculadora-de-solo/#breadcrumb",
@@ -41,9 +42,7 @@ export default function NextOnlyHead(): JSX.Element {
                 potentialAction: [
                   {
                     "@type": "ReadAction",
-                    target: [
-                      "https://blog.organolab.com.br/calculadora-de-solo/",
-                    ],
+                    target: ["https://organo-lab-calculadora.netlify.app/"],
                   },
                 ],
               },
@@ -61,7 +60,7 @@ export default function NextOnlyHead(): JSX.Element {
                   {
                     "@type": "ListItem",
                     position: 2,
-                    name: "Calculadora de SOLO !",
+                    name: metadata.title,
                   },
                 ],
               },
@@ -88,7 +87,6 @@ export default function NextOnlyHead(): JSX.Element {
           }),
         }}
       />
-      {/* //TODO DEFINIR APÓS DEPLOY */}
       <link
         rel="canonical"
         href="https://organo-lab-calculadora.netlify.app/"
@@ -152,9 +150,9 @@ export default function NextOnlyHead(): JSX.Element {
       />
       <meta
         property="og:image"
-        content="https://organo-lab-calculadora.netlify.app/images/orglab_logo_og_630.png"
+        content="https://organo-lab-calculadora.netlify.app/images/orglab_logo_og_700x630.png"
       />
-      <meta property="og:image:width" content="800" />
+      <meta property="og:image:width" content="700" />
       <meta property="og:image:height" content="630" />
       <meta
         property="og:image:alt"
@@ -168,7 +166,7 @@ export default function NextOnlyHead(): JSX.Element {
       <meta property="article:section" content="Science" />
       <meta
         property="article:modified_time"
-        content="2024-01-29T01:40:09+00:00"
+        content={new Date().toISOString()}
       />
       <meta name="twitter:card" content="summary_large_image" />
       <meta
