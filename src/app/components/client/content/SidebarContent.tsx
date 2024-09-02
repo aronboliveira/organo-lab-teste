@@ -1,4 +1,5 @@
 "use client";
+import { keyPhrase } from "../../../../app/layout";
 import { SidebarProps } from "../../../../app/declarations/componentsInterfaces";
 import { nullishDiv } from "../../../../app/declarations/types";
 import { useRef, useEffect } from "react";
@@ -38,7 +39,7 @@ export default function SidebarContent(props: SidebarProps): JSX.Element {
           <li className="html custom html_topbar_right">
             <a href="https://www.organolab.com.br/">
               <img
-                alt="Loja"
+                alt={`${keyPhrase} — Loja`}
                 src="https://blog.organolab.com.br/wp-content/uploads/2022/12/Sem-titulo-1.png"
                 width={150}
                 height={70}
@@ -48,7 +49,7 @@ export default function SidebarContent(props: SidebarProps): JSX.Element {
           <li className="html custom html_top_right_text">
             <a href="https://blog.organolab.com.br/blog">
               <img
-                alt="Artigos"
+                alt={`${keyPhrase} — Artigos`}
                 src="https://blog.organolab.com.br/wp-content/uploads/2022/05/artigos.png"
                 width={150}
                 height={70}
@@ -58,7 +59,7 @@ export default function SidebarContent(props: SidebarProps): JSX.Element {
           <li className="html custom html_nav_position_text_top">
             <a href="https://blog.organolab.com.br/blog/">
               <img
-                alt="Categorias"
+                alt={`${keyPhrase} — Categorias`}
                 src="https://blog.organolab.com.br/wp-content/uploads/2022/05/categorias.png"
                 width={150}
                 height={70}
@@ -68,7 +69,7 @@ export default function SidebarContent(props: SidebarProps): JSX.Element {
           <li className="html custom html_nav_position_text">
             <a href="https://blog.organolab.com.br/">
               <img
-                alt="downloads"
+                alt={`${keyPhrase} — Downloads`}
                 src="https://blog.organolab.com.br/wp-content/uploads/2022/05/downloads.png"
                 width={150}
                 height={70}

@@ -2,6 +2,7 @@ import SearchHeader from "../client/inputs/header/SearchHeader";
 import FSSearchIcon from "../icons/FSSearchIcon";
 import HeaderMenu from "../client/anchors/HeaderMenu";
 import HeaderWatcher from "../client/watchers/HeaderWatcher";
+import { keyPhrase } from "../../../app/layout";
 export const titles = {
   shop: "Clique aqui para visitar a nossa Loja!",
   articles: "Clique aqui para visitar nossos Artigos!",
@@ -23,7 +24,7 @@ export default function Header(): JSX.Element {
             <div id="logo" className="flex-col logo">
               <a
                 href="https://blog.organolab.com.br/"
-                title="Organo Lab – Blog - Cultive conhecimento."
+                title={`${keyPhrase} – Blog – Cultive conhecimento.`}
                 rel="home"
               >
                 <img
@@ -31,14 +32,14 @@ export default function Header(): JSX.Element {
                   height={100}
                   src="https://blog.organolab.com.br/wp-content/uploads/2022/05/LOGO-BLOG.png"
                   className="header_logo header-logo"
-                  alt="Organo Lab – Blog"
+                  alt={`${keyPhrase} – Blog`}
                 />
                 <img
                   width={1020}
                   height={1020}
                   src="https://blog.organolab.com.br/wp-content/uploads/2022/05/ORGLAB_Logo-1024x1024.png"
                   className="header-logo-dark"
-                  alt="Organo Lab – Blog"
+                  alt={`${keyPhrase} – Blog`}
                 />
               </a>
             </div>
@@ -113,7 +114,7 @@ export default function Header(): JSX.Element {
                     className="anchor-shop menu-external"
                   >
                     <img
-                      alt="Loja"
+                      alt={`${keyPhrase} — Loja`}
                       className="shop"
                       src="https://blog.organolab.com.br/wp-content/uploads/2022/12/Sem-titulo-1.png"
                       width={150}
@@ -128,7 +129,7 @@ export default function Header(): JSX.Element {
                     className="articles-shop menu-external"
                   >
                     <img
-                      alt="Artigos"
+                      alt={`${keyPhrase} — Artigos`}
                       className="articles"
                       src="https://blog.organolab.com.br/wp-content/uploads/2022/05/artigos.png"
                       width={150}
@@ -143,7 +144,7 @@ export default function Header(): JSX.Element {
                     className="anchor-shop menu-external"
                   >
                     <img
-                      alt="Downloads"
+                      alt={`${keyPhrase} — Downloads`}
                       className="downloads"
                       src="https://blog.organolab.com.br/wp-content/uploads/2022/05/downloads.png"
                       width={150}

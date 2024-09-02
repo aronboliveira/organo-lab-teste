@@ -14,10 +14,10 @@ import "./lib/head/js/flatsome/flatsome";
 import "./lib/head/js/flatsome/flatsome-live-search";
 import NextOnlyHead from "./components/heads/NextOnlyHead";
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
+export const keyPhrase = "Organo Lab ©";
 export const metadata: Metadata = {
-  title: "Calculador de Solo — Organo Lab ©",
-  description:
-    "Calculadora da Organo Lab © para que você tenha suas receitas de uma forma simples e comece a montar seu solo em casa!",
+  title: `${keyPhrase} — Calculadora de Solo`,
+  description: `Calculadora da ${keyPhrase} para que você tenha suas receitas de uma forma simples e comece a montar seu solo em casa!`,
 };
 export default function RootLayout({
   children,
