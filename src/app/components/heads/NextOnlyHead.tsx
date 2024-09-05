@@ -1,5 +1,5 @@
 import { keyPhrase } from "../../../app/page";
-const origin = "https://organo-lab-calculadora.netlify.app/";
+export const origin = "https://organo-lab-calculadora.netlify.app/";
 export default function NextOnlyHead(): JSX.Element {
   return (
     <head>

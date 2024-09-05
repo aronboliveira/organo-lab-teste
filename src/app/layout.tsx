@@ -12,7 +12,7 @@ import "./lib/head/js/wp/wp-emoji-release";
 import "./lib/head/js/wp/wp-polyfill";
 import "./lib/head/js/flatsome/flatsome";
 import "./lib/head/js/flatsome/flatsome-live-search";
-import NextOnlyHead from "./components/heads/NextOnlyHead";
+import NextOnlyHead, { origin } from "./components/heads/NextOnlyHead";
 import { keyPhrase } from "./page";
 import Script from "next/script";
 import JQueryForminatorIntegrator from "./components/client/jQuery/JQueryForminatorIntegrator";
