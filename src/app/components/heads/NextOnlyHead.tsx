@@ -1,92 +1,8 @@
-import Script from "next/script";
-import JsInitializer from "../client/initializers/JsInitializer";
-import GAnalyticsInitializer from "../client/initializers/GAnalyticsInitializer";
-import FlatsomeInitializer from "../client/initializers/FlatsomeInitializer";
-import EmojiInitializer from "../client/initializers/EmojiInitializer";
-import JQueryForminatorIntegrator from "../client/jQuery/JQueryForminatorIntegrator";
-import forminatorProps from "../../../app/lib/head/js/client/forminatorProps";
 import { keyPhrase } from "../../../app/page";
-import { metadata } from "../../../app/layout";
 const origin = "https://organo-lab-calculadora.netlify.app/";
 export default function NextOnlyHead(): JSX.Element {
   return (
     <head>
-      <noscript>You need JavaScript to run this application.</noscript>
-      <JsInitializer />
-      <Script
-        id="ldjson"
-        type="application/ld+json"
-        defer
-        className="yoast-schema-graph"
-        strategy="afterInteractive"
-        crossOrigin="anonymous"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "WebPage",
-                "@id": "https://blog.organolab.com.br/calculadora-de-solo/",
-                url: origin,
-                name: metadata.title,
-                isPartOf: {
-                  "@id": "https://blog.organolab.com.br/#website",
-                },
-                datePublished: "2023-12-03T17:23:06+00:00",
-                dateModified: new Date().toISOString(),
-                breadcrumb: {
-                  "@id":
-                    "https://blog.organolab.com.br/calculadora-de-solo/#breadcrumb",
-                },
-                inLanguage: "pt-BR",
-                potentialAction: [
-                  {
-                    "@type": "ReadAction",
-                    target: [origin],
-                  },
-                ],
-              },
-              {
-                "@type": "BreadcrumbList",
-                "@id":
-                  "https://blog.organolab.com.br/calculadora-de-solo/#breadcrumb",
-                itemListElement: [
-                  {
-                    "@type": "ListItem",
-                    position: 1,
-                    name: "Início",
-                    item: "https://blog.organolab.com.br/",
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 2,
-                    name: metadata.title,
-                  },
-                ],
-              },
-              {
-                "@type": "WebSite",
-                "@id": "https://blog.organolab.com.br/#website",
-                url: "https://blog.organolab.com.br/",
-                name: "Organo Lab - Blog",
-                description: "Cultive conhecimento.",
-                potentialAction: [
-                  {
-                    "@type": "SearchAction",
-                    target: {
-                      "@type": "EntryPoint",
-                      urlTemplate:
-                        "https://blog.organolab.com.br/?s={search_term_string}",
-                    },
-                    "query-input": "required name=search_term_string",
-                  },
-                ],
-                inLanguage: "pt-BR",
-              },
-            ],
-          }),
-        }}
-      />
       <link
         rel="canonical"
         href={origin}
@@ -399,8 +315,17 @@ export default function NextOnlyHead(): JSX.Element {
         crossOrigin="anonymous"
         integrity="sha384-0wcy8qFgK2KW18OIp7CDk5LA4IXc+dCW2jh5umyKxHgJWDx+o57w1LK/ZVNi73PQ"
       />
-      {/* Flatsome prefetches */}
-      {/* <link
+      {/* Bootstrap */}
+      <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossOrigin="anonymous"
+        id="bootstrap-css"
+      />
+      <div style={{ display: "none" }} id="rejected-meta-links">
+        {/* Flatsome prefetches */}
+        {/* <link
 			rel="prefetch"
 			href="https://blog.organolab.com.br/wp-content/themes/flatsome/assets/js/chunk.countup.fe2c1016.js"
 			id="prefetch-chunk-countup"
@@ -435,200 +360,7 @@ export default function NextOnlyHead(): JSX.Element {
 			crossOrigin="anonymous"
 			integrity="sha384-pRFRCUhYEgd5cGnDnUOud4CcC7XDIknq1/3G9K4yTyfxi8sCOJP9ztLJBnOGXTRQ"
 		/> */}
-      {/* Polyfill and delivr */}
-      {/* <Script
-			type="text/javascript"
-			defer
-			strategy="beforeInteractive"
-			crossOrigin="anonymous"
-			src="https://blog.organolab.com.br/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0"
-			id="wp-polyfill-js"
-			integrity="sha384-Wv/Z6lsRW2CJ5nLojZYtFAXqWAd0R/zpDKTYRJBU5K0Ep4v9qGTIrm/TrAbGWHfB"
-		/> */}
-      {/* Google Analytics */}
-      {/* <Script
-			type="text/javascript"
-			async
-			src="https://www.google-analytics.com/analytics.js"
-			id="google-analytics"
-			strategy="afterInteractive"
-			crossOrigin="anonymous"
-			integrity="sha384-n7dNaa3cQ6phJdeSMWcH2w0YhFtqEazxQPj8vYg/kdYpRxEfqlIEfq/5/pfe5Bzi"
-		/> */}
-      <GAnalyticsInitializer />
-      {/* <Script
-			type="text/javascript"
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-EK3Y6QCW4W&amp;l=dataLayer&amp;cx=c"
-			id="google-tag-manager-1"
-			integrity="sha384-6yFFCWHQCzHp3IBqt+DxIR9Q7S0Dqx23tghb65zXCEDphkQZZe5Xa7Rva7bFSdjv"
-		/> */}
-      {/* <Script
-			type="text/javascript"
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-4ZD7M3FZ3N&amp;l=dataLayer&amp;cx=c"
-			id="google-tag-manager-2"
-			integrity="sha384-L/4D2fUEz7kN/dLlHpFU37dLIO/yc6yMSfExNiB2aI+Mn62gttUTcbCQ+Sn3FFcf"
-		/> */}
-      {/* <Script
-			type="text/javascript"
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=UA-135835861-37"
-			id="google_gtagjs-js"
-			integrity="sha384-zJ4fdVywcoBj2H3B5lP3iNcIno2G1aYDo6EulY0qy9j24lBH6aw33eLzIATOjXv7"
-		/> */}
-      {/* Flatsome chunks */}
-      <FlatsomeInitializer />
-      {/*
-		<Script
-			type="text/javascript"
-			defer
-			strategy="afterInteractive"
-			crossOrigin="anonymous"
-			src="https://blog.organolab.com.br/wp-content/themes/flatsome/inc/extensions/flatsome-live-search/flatsome-live-search.js?ver=3.15.5"
-			id="flatsome-live-search-js"
-			integrity="sha384-3en60K1L1eQ8ImArgQjTMzpVCPe11nMt3P/4MY4uFYXitxD2uiXgo6cjiVpXZH0W"
-		/>
-		<Script
-			type="text/javascript"
-			defer
-			strategy="afterInteractive"
-			crossOrigin="anonymous"
-			src="https://blog.organolab.com.br/wp-content/themes/flatsome/assets/js/flatsome.js?ver=8d32fe071187c00e5c8eae51dcdefdd9"
-			id="flatsome-js-js"
-			integrity="sha384-HAQG5tcz8f+kOj2jJRZnj5is7NbvBKf0w+skR+c4HYoztIsqZyxqBrAfSiczuhan"
-		/>
-		<Script
-			type="text/javascript"
-			defer
-			strategy="afterInteractive"
-			crossOrigin="anonymous"
-			src="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/forminator-ui/js/forminator-form.min.js?ver=1.28.0"
-			id="forminator-form-js"
-			integrity="sha384-owEWCP97OyAlK9EhkbAk+38ZJArxodqafQkWlLES2njGpVhRdZN5Sn/EJ/O9MhgM"
-		/> */}
-      {/* Wp emoji chunks */}
-      {/* //TODO PRECISA ATIVAR SRI CHECK NO SCRIPT */}
-      <EmojiInitializer />
-      <Script
-        type="text/javascript"
-        defer
-        src="https://blog.organolab.com.br/wp-includes/js/wp-emoji-release.min.js?ver=6.6.1"
-        id="wp-emoji-release"
-        // integrity="sha384-kb/iwIefTlNaT8PTyAdU3tFrLX08KYY4rC0RXn4ltVQiAdodvQ2Nnic5joZBljQW"
-      />
-      {/* jQuery chunks */}
-      {/* <Script
-			type="text/javascript"
-			defer
-			src="https://blog.organolab.com.br/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"
-			id="jquery-core-js"
-			integrity="sha384-vT0xsrWPQ3JMjk9+X3p3J4glfdqQsMBzYwpxS1LPybrkJs6kZDw7slFXJ2iUkUy4"
-			strategy="beforeInteractive"
-			crossOrigin="anonymous"
-		/> */}
-      {/* <Script
-			type="text/javascript"
-			defer
-			src="https://blog.organolab.com.br/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"
-			id="jquery-migrate-js"
-			strategy="beforeInteractive"
-			crossOrigin="anonymous"
-			integrity="sha384-ez4i72z0XhJqm0ZRoQkpPN0bDV8Kw8PK3n8kjEZsWhRDrfICLd0AGghHJB+vytx0"
-		/> */}
-      {/* <Script
-			type="text/javascript"
-			defer
-			src="https://blog.organolab.com.br/wp-includes/js/hoverIntent.min.js?ver=1.10.2"
-			id="hoverIntent-js"
-			strategy="afterInteractive"
-			crossOrigin="anonymous"
-			integrity="sha384-rh2wODSO92I4kkH65Wap0BDa/7/nJ54xl7yHgB7wBZjruN+S02lzQmbrSuxOzYt+"
-		/> */}
-      {/* <Script
-			type="text/javascript"
-			defer
-			src="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/js/library/jquery.inputmask.min.js?ver=1.28.0"
-			id="forminator-jquery-inputmask-js"
-			strategy="afterInteractive"
-			crossOrigin="anonymous"
-			integrity="sha384-hZvMi8RmeJb+r1i0bQbUrcFgyJi70eRyil2ex7ykc2DD2a+NoRs8xZOWvNk6zxmc"
-		/> */}
-      {/* <Script
-			type="text/javascript"
-			defer
-			src="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/js/library/inputmask.binding.js?ver=1.28.0"
-			id="forminator-inputmask-binding-js"
-			strategy="afterInteractive"
-			crossOrigin="anonymous"
-			integrity="sha384-5/QNW3hy8X5q6O99uGaZYeL9LVtNdXFnoRfE91OuDev2Z76uc4PM0JEyO/sPV9TH"
-		/> */}
-      {/* <Script
-			type="text/javascript"
-			defer
-			strategy="afterInteractive"
-			crossOrigin="anonymous"
-			src="https://blog.organolab.com.br/wp-content/plugins/forminator/build/front/front.multi.min.js?ver=1.28.0"
-			id="forminator-front-scripts-js"
-			integrity="sha384-a1FiYAG3ISqv/DhIe4ZOaXVGeSlyLbPiAAhit+iQdU2XnRkmGF7dCLV0ShgwkKpX"
-		/> */}
-      {/* Axios */}
-      {/* <AxiosNonceWrapper />  */}
-      {/* Forminator chunks */}
-      <Script
-        type="text/javascript"
-        defer
-        id="forminator-front-scripts-js-extra"
-        crossOrigin="anonymous"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `const ForminatorFront = ${JSON.stringify(forminatorProps)}`,
-        }}
-      />
-      {/* <Script
-			type="text/javascript"
-			defer
-			strategy="afterInteractive"
-			crossOrigin="anonymous"
-			src="https://blog.organolab.com.br/wp-content/plugins/forminator/build/front/front.multi.min.js?ver=1.28.0"
-			id="forminator-front-scripts-js"
-			integrity="sha384-a1FiYAG3ISqv/DhIe4ZOaXVGeSlyLbPiAAhit+iQdU2XnRkmGF7dCLV0ShgwkKpX"
-		/> */}
-      {/* <Script
-			type="text/javascript"
-			defer
-			strategy="afterInteractive"
-			crossOrigin="anonymous"
-			src="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/js/library/inputmask.min.js?ver=1.28.0"
-			id="forminator-inputmask-js"
-			integrity="sha384-aUPHuXAJF+ohHX7TgMM9gI9X1BGhWqTcDigm1VVB+sOZKM18DT8yvqzgPP2D8h1J"
-		/> */}
-      {/* <Script
-			type="text/javascript"
-			defer
-			strategy="afterInteractive"
-			crossOrigin="anonymous"
-			src="https://blog.organolab.com.br/wp-content/plugins/forminator/assets/js/library/inputmask.binding.js?ver=1.28.0"
-			id="forminator-inputmask-binding-js"
-			integrity="sha384-5/QNW3hy8X5q6O99uGaZYeL9LVtNdXFnoRfE91OuDev2Z76uc4PM0JEyO/sPV9TH"
-		/> */}
-      <JQueryForminatorIntegrator />
-      {/* Bootstrap */}
-      <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-        crossOrigin="anonymous"
-        id="bootstrap-css"
-      />
-      <script
-        type="text/javascript"
-        defer
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossOrigin="anonymous"
-        id="boostrap-script"
-      />
+      </div>
     </head>
   );
 }
